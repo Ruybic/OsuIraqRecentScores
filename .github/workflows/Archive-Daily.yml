@@ -1,35 +1,46 @@
 name: Archive Daily Scores
 
+# Triggers: daily + manual
 on:
   schedule:
-    - cron: "55 23 * * *"  # once per day UTC
+    - cron: "55 23 * * *"  # Runs daily at 23:55 UTC
   workflow_dispatch:
+
+# Give write access to repo contents so git push works
+permissions:
+  contents: write
 
 jobs:
   archive:
     runs-on: ubuntu-latest
+
     steps:
+      # 1️⃣ Checkout repository
       - name: Checkout
         uses: actions/checkout@v4
 
+      # 2️⃣ Setup Node.js
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      - name: Install deps
+      # 3️⃣ Install dependencies
+      - name: Install dependencies
         run: npm install
 
+      # 4️⃣ Fetch daily scores
       - name: Fetch daily scores
         env:
           OSU_CLIENT_ID: ${{ secrets.OSU_CLIENT_ID }}
           OSU_CLIENT_SECRET: ${{ secrets.OSU_CLIENT_SECRET }}
         run: npm run fetch
 
+      # 5️⃣ Commit & push updated JSON
       - name: Commit & push
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
           git add data/
-          git commit -m "Archive daily scores for $(date -u +%F)" || exit 0
+          git commit -m "Archive daily scores for $(date -u +%F)" || echo "No changes to commit"
           git push
