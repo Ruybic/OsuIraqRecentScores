@@ -3,7 +3,7 @@ name: Archive Daily Scores
 # Triggers: daily + manual
 on:
   schedule:
-    - cron: "55 23 * * *"  # Runs daily at 23:55 UTC
+  - cron: "*/5 * * * *"  # every 5 minutes UTC
   workflow_dispatch:
 
 # Give write access to repo contents so git push works
