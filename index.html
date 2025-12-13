@@ -13,15 +13,17 @@
     <small id="lastUpdated">Last updated: --</small>
   </header>
 
-  <section id="todayScores">
-    <h2>Today’s Scores</h2>
-    <div id="scoresList">Loading...</div>
-  </section>
+  <div id="mainContent">
+    <aside id="calendarSection">
+      <h2>Previous Days</h2>
+      <div id="calendar"></div>
+    </aside>
 
-  <section id="calendarSection">
-    <h2>Previous Days</h2>
-    <div id="calendar"></div>
-  </section>
+    <section id="todayScores">
+      <h2>Scores</h2>
+      <div id="scoresList">Loading...</div>
+    </section>
+  </div>
 
   <footer>
     Data powered by osu! API v2 • Archived daily
@@ -29,37 +31,40 @@
 </div>
 
 <script>
-/* --------------------------
-   Simple calendar + daily fetch
------------------------------*/
-
-// Base path for GitHub Pages
 const BASE_PATH = '/OsuIraqRecentScores';
 
 // Utility: format ISO date to YYYY-MM-DD
 function formatDate(d){return d.toISOString().split('T')[0];}
 
-// Load index.json to get available dates
-fetch(`${BASE_PATH}/data/index.json`).then(r=>r.json()).then(idx=>{
-  const calendar = document.getElementById('calendar');
-  if(!idx.available_dates || idx.available_dates.length===0){
-    calendar.textContent = "No archived dates yet.";
-    document.getElementById('scoresList').textContent = "No scores available.";
-    return;
-  }
+// Load index.json
+function loadIndex() {
+  fetch(`${BASE_PATH}/data/index.json`).then(r=>r.json()).then(idx=>{
+    const calendar = document.getElementById('calendar');
+    calendar.innerHTML = '';
 
-  idx.available_dates.sort((a,b)=>b.localeCompare(a)).forEach(date=>{
-    const btn = document.createElement('button');
-    btn.textContent = date;
-    btn.onclick = ()=>loadDate(date);
-    calendar.appendChild(btn);
+    if(!idx.available_dates || idx.available_dates.length===0){
+      calendar.textContent = "No archived dates yet.";
+      document.getElementById('scoresList').textContent = "No scores available.";
+      return;
+    }
+
+    // Sort descending (newest first)
+    idx.available_dates.sort((a,b)=>b.localeCompare(a));
+
+    // Build calendar buttons
+    idx.available_dates.forEach(date=>{
+      const btn = document.createElement('button');
+      btn.textContent = date;
+      btn.onclick = ()=>loadDate(date);
+      calendar.appendChild(btn);
+    });
+
+    // Load today automatically if exists
+    const today = formatDate(new Date());
+    if(idx.available_dates.includes(today)) loadDate(today);
+    else loadDate(idx.available_dates[0]); // fallback to latest
   });
-
-  // Load today if exists, fallback to latest available
-  const today = formatDate(new Date());
-  if(idx.available_dates.includes(today)) loadDate(today);
-  else loadDate(idx.available_dates[idx.available_dates.length-1]);
-});
+}
 
 // Load scores for a given date
 function loadDate(date){
@@ -98,7 +103,9 @@ function loadDate(date){
       document.getElementById('scoresList').textContent = "Failed to load scores.";
     });
 }
-</script>
 
+// Initialize
+loadIndex();
+</script>
 </body>
 </html>
