@@ -1,0 +1,14 @@
+body{margin:0;font-family:Arial;background:#eee;color:#000}
+#container{width:900px;margin:20px auto;background:#fff;padding:10px;border:2px solid #999}
+header{background:#f2f2f2;padding:10px;border-bottom:2px solid #999}
+header h1{margin:0;font-size:24px}
+header small{color:#555}
+.score{display:flex;padding:8px;border-bottom:1px solid #ccc;margin-bottom:6px;align-items:center}
+.cover img{width:160px;height:90px;object-fit:cover;margin-right:10px;border:1px solid #888}
+.info{flex:1}
+.player{font-weight:bold}
+.meta{font-size:12px;margin:2px 0;color:#333}
+.mapTitle{font-size:13px;font-style:italic;margin:2px 0}
+.time{font-size:11px;color:#666}
+#calendar button{margin:2px;padding:4px 6px;font-size:12px;cursor:pointer}
+footer{padding:6px;font-size:11px;text-align:center;background:#f2f2f2;border-top:2px solid #999;margin-top:10px}
