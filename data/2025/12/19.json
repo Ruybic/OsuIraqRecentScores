@@ -1,0 +1,373 @@
+{
+  "date": "2025-12-19",
+  "country": "IQ",
+  "generated_at": "2025-12-19T01:40:17.450Z",
+  "scores": [
+    {
+      "user": "Y a d",
+      "user_id": 19521102,
+      "country": "IQ",
+      "score_id": 4956337379,
+      "rank": "A",
+      "accuracy": 0.9241622574955908,
+      "pp": 210.523,
+      "mods": [
+        "HD",
+        "DT"
+      ],
+      "combo": 90,
+      "created_at": "2025-12-19T01:04:49Z",
+      "beatmapset": {
+        "id": 2425417,
+        "title": "Determinate (Nightcore & Cut Ver.)",
+        "cover": "https://assets.ppy.sh/beatmaps/2425417/covers/card.jpg?1761335172"
+      }
+    },
+    {
+      "user": "Y a d",
+      "user_id": 19521102,
+      "country": "IQ",
+      "score_id": 4956336925,
+      "rank": "A",
+      "accuracy": 0.9891774891774892,
+      "pp": 208.388,
+      "mods": [
+        "HD",
+        "DT"
+      ],
+      "combo": 187,
+      "created_at": "2025-12-19T01:03:12Z",
+      "beatmapset": {
+        "id": 2425417,
+        "title": "Determinate (Nightcore & Cut Ver.)",
+        "cover": "https://assets.ppy.sh/beatmaps/2425417/covers/card.jpg?1761335172"
+      }
+    },
+    {
+      "user": "Y a d",
+      "user_id": 19521102,
+      "country": "IQ",
+      "score_id": 4956334550,
+      "rank": "A",
+      "accuracy": 0.9652278177458034,
+      "pp": 293.829,
+      "mods": [
+        "HD",
+        "DT"
+      ],
+      "combo": 320,
+      "created_at": "2025-12-19T00:54:40Z",
+      "beatmapset": {
+        "id": 2464479,
+        "title": "Maniac (Nightcore & Cut Ver.)",
+        "cover": "https://assets.ppy.sh/beatmaps/2464479/covers/card.jpg?1764663200"
+      }
+    },
+    {
+      "user": "Y a d",
+      "user_id": 19521102,
+      "country": "IQ",
+      "score_id": 4956332596,
+      "rank": "A",
+      "accuracy": 0.9774305555555556,
+      "pp": 250.618,
+      "mods": [
+        "HD",
+        "DT"
+      ],
+      "combo": 339,
+      "created_at": "2025-12-19T00:47:56Z",
+      "beatmapset": {
+        "id": 1124391,
+        "title": "ROCK-mode",
+        "cover": "https://assets.ppy.sh/beatmaps/1124391/covers/card.jpg?1650692695"
+      }
+    },
+    {
+      "user": "Y a d",
+      "user_id": 19521102,
+      "country": "IQ",
+      "score_id": 4956327196,
+      "rank": "A",
+      "accuracy": 0.9592252803261978,
+      "pp": 256.307,
+      "mods": [
+        "HD",
+        "DT"
+      ],
+      "combo": 200,
+      "created_at": "2025-12-19T00:28:55Z",
+      "beatmapset": {
+        "id": 1440767,
+        "title": "SAVE (Encore)",
+        "cover": "https://assets.ppy.sh/beatmaps/1440767/covers/card.jpg?1650709123"
+      }
+    },
+    {
+      "user": "6xSeven",
+      "user_id": 29452442,
+      "country": "IQ",
+      "score_id": 4956305973,
+      "rank": "D",
+      "accuracy": 0.6958925750394944,
+      "pp": 26.5358,
+      "mods": [],
+      "combo": 233,
+      "created_at": "2025-12-18T23:20:39Z",
+      "beatmapset": {
+        "id": 540457,
+        "title": "Victims of Contingency",
+        "cover": "https://assets.ppy.sh/beatmaps/540457/covers/card.jpg?1650679580"
+      }
+    },
+    {
+      "user": "6xSeven",
+      "user_id": 29452442,
+      "country": "IQ",
+      "score_id": 4956300787,
+      "rank": "C",
+      "accuracy": 0.7221837488457987,
+      "pp": null,
+      "mods": [],
+      "combo": 387,
+      "created_at": "2025-12-18T23:05:10Z",
+      "beatmapset": {
+        "id": 304439,
+        "title": "This Calling",
+        "cover": "https://assets.ppy.sh/beatmaps/304439/covers/card.jpg?1722602928"
+      }
+    },
+    {
+      "user": "ghoul534",
+      "user_id": 24991953,
+      "country": "IQ",
+      "score_id": 4956264734,
+      "rank": "D",
+      "accuracy": 0.6768707482993197,
+      "pp": 128.449,
+      "mods": [
+        "NF",
+        "DT"
+      ],
+      "combo": 73,
+      "created_at": "2025-12-18T21:30:35Z",
+      "beatmapset": {
+        "id": 1073074,
+        "title": "PADORU / PADORU",
+        "cover": "https://assets.ppy.sh/beatmaps/1073074/covers/card.jpg?1650689325"
+      }
+    },
+    {
+      "user": "ghoul534",
+      "user_id": 24991953,
+      "country": "IQ",
+      "score_id": 4956263492,
+      "rank": "A",
+      "accuracy": 0.9749715585893061,
+      "pp": 207.98,
+      "mods": [
+        "DT"
+      ],
+      "combo": 320,
+      "created_at": "2025-12-18T21:27:41Z",
+      "beatmapset": {
+        "id": 451250,
+        "title": "Caffeine Fighter",
+        "cover": "https://assets.ppy.sh/beatmaps/451250/covers/card.jpg?1650639620"
+      }
+    },
+    {
+      "user": "ghoul534",
+      "user_id": 24991953,
+      "country": "IQ",
+      "score_id": 4956261913,
+      "rank": "C",
+      "accuracy": 0.7387669801462905,
+      "pp": 124.082,
+      "mods": [
+        "DT"
+      ],
+      "combo": 142,
+      "created_at": "2025-12-18T21:23:57Z",
+      "beatmapset": {
+        "id": 1171789,
+        "title": "Imagination (TV Size)",
+        "cover": "https://assets.ppy.sh/beatmaps/1171789/covers/card.jpg?1622188996"
+      }
+    },
+    {
+      "user": "ghoul534",
+      "user_id": 24991953,
+      "country": "IQ",
+      "score_id": 4956259728,
+      "rank": "S",
+      "accuracy": 0.9399141630901288,
+      "pp": 338.78,
+      "mods": [
+        "DT"
+      ],
+      "combo": 221,
+      "created_at": "2025-12-18T21:18:41Z",
+      "beatmapset": {
+        "id": 1249048,
+        "title": "Horrible Kids",
+        "cover": "https://assets.ppy.sh/beatmaps/1249048/covers/card.jpg?1650700671"
+      }
+    },
+    {
+      "user": "ghoul534",
+      "user_id": 24991953,
+      "country": "IQ",
+      "score_id": 4956259263,
+      "rank": "A",
+      "accuracy": 0.9542203147353362,
+      "pp": 353.623,
+      "mods": [
+        "DT"
+      ],
+      "combo": 221,
+      "created_at": "2025-12-18T21:17:37Z",
+      "beatmapset": {
+        "id": 1249048,
+        "title": "Horrible Kids",
+        "cover": "https://assets.ppy.sh/beatmaps/1249048/covers/card.jpg?1650700671"
+      }
+    },
+    {
+      "user": "6xSeven",
+      "user_id": 29452442,
+      "country": "IQ",
+      "score_id": 4956255707,
+      "rank": "B",
+      "accuracy": 0.9014161220043573,
+      "pp": 70.297,
+      "mods": [],
+      "combo": 335,
+      "created_at": "2025-12-18T21:09:02Z",
+      "beatmapset": {
+        "id": 1777892,
+        "title": "Playing God",
+        "cover": "https://assets.ppy.sh/beatmaps/1777892/covers/card.jpg?1683711954"
+      }
+    },
+    {
+      "user": "6xSeven",
+      "user_id": 29452442,
+      "country": "IQ",
+      "score_id": 4956254272,
+      "rank": "B",
+      "accuracy": 0.857889237199582,
+      "pp": null,
+      "mods": [],
+      "combo": 349,
+      "created_at": "2025-12-18T21:05:40Z",
+      "beatmapset": {
+        "id": 581468,
+        "title": "Angreifer",
+        "cover": "https://assets.ppy.sh/beatmaps/581468/covers/card.jpg?1622116025"
+      }
+    },
+    {
+      "user": "6xSeven",
+      "user_id": 29452442,
+      "country": "IQ",
+      "score_id": 4956239342,
+      "rank": "C",
+      "accuracy": 0.764638346727899,
+      "pp": 51.857,
+      "mods": [],
+      "combo": 647,
+      "created_at": "2025-12-18T20:31:57Z",
+      "beatmapset": {
+        "id": 1470072,
+        "title": "The Words I Never Said",
+        "cover": "https://assets.ppy.sh/beatmaps/1470072/covers/card.jpg?1650105872"
+      }
+    },
+    {
+      "user": "Boiled_Aids",
+      "user_id": 11706528,
+      "country": "IQ",
+      "score_id": 4956033077,
+      "rank": "A",
+      "accuracy": 0.9724842767295597,
+      "pp": 190.798,
+      "mods": [],
+      "combo": 262,
+      "created_at": "2025-12-18T12:57:19Z",
+      "beatmapset": {
+        "id": 2250663,
+        "title": "Zetsubou plantation (Cut Ver.)",
+        "cover": "https://assets.ppy.sh/beatmaps/2250663/covers/card.jpg?1734636186"
+      }
+    },
+    {
+      "user": "Boiled_Aids",
+      "user_id": 11706528,
+      "country": "IQ",
+      "score_id": 4956032439,
+      "rank": "A",
+      "accuracy": 0.9867909867909868,
+      "pp": 279.902,
+      "mods": [],
+      "combo": 277,
+      "created_at": "2025-12-18T12:55:31Z",
+      "beatmapset": {
+        "id": 2250663,
+        "title": "Zetsubou plantation (Cut Ver.)",
+        "cover": "https://assets.ppy.sh/beatmaps/2250663/covers/card.jpg?1734636186"
+      }
+    },
+    {
+      "user": "Boiled_Aids",
+      "user_id": 11706528,
+      "country": "IQ",
+      "score_id": 4956031719,
+      "rank": "A",
+      "accuracy": 0.9584295612009238,
+      "pp": 184.126,
+      "mods": [],
+      "combo": 226,
+      "created_at": "2025-12-18T12:53:37Z",
+      "beatmapset": {
+        "id": 2250663,
+        "title": "Zetsubou plantation (Cut Ver.)",
+        "cover": "https://assets.ppy.sh/beatmaps/2250663/covers/card.jpg?1734636186"
+      }
+    },
+    {
+      "user": "Boiled_Aids",
+      "user_id": 11706528,
+      "country": "IQ",
+      "score_id": 4956031059,
+      "rank": "A",
+      "accuracy": 0.9635535307517085,
+      "pp": 232.931,
+      "mods": [],
+      "combo": 259,
+      "created_at": "2025-12-18T12:51:49Z",
+      "beatmapset": {
+        "id": 2250663,
+        "title": "Zetsubou plantation (Cut Ver.)",
+        "cover": "https://assets.ppy.sh/beatmaps/2250663/covers/card.jpg?1734636186"
+      }
+    },
+    {
+      "user": "Boiled_Aids",
+      "user_id": 11706528,
+      "country": "IQ",
+      "score_id": 4956029398,
+      "rank": "A",
+      "accuracy": 0.953810623556582,
+      "pp": 182.398,
+      "mods": [],
+      "combo": 332,
+      "created_at": "2025-12-18T12:47:14Z",
+      "beatmapset": {
+        "id": 2250663,
+        "title": "Zetsubou plantation (Cut Ver.)",
+        "cover": "https://assets.ppy.sh/beatmaps/2250663/covers/card.jpg?1734636186"
+      }
+    }
+  ]
+}
