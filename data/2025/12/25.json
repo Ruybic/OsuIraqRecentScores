@@ -1,0 +1,244 @@
+{
+  "date": "2025-12-25",
+  "country": "IQ",
+  "generated_at": "2025-12-25T01:41:03.833Z",
+  "scores": [
+    {
+      "user": "ghoul534",
+      "user_id": 24991953,
+      "country": "IQ",
+      "score_id": 4959268265,
+      "rank": "B",
+      "accuracy": 0.8888888888888888,
+      "pp": 315.907,
+      "mods": [
+        "HD",
+        "NC"
+      ],
+      "combo": 75,
+      "created_at": "2025-12-24T19:29:01Z",
+      "beatmapset": {
+        "id": 2282704,
+        "title": "Bubblegum Bitch (Nightcore & Cut Ver.)",
+        "cover": "https://assets.ppy.sh/beatmaps/2282704/covers/card.jpg?1756038849"
+      }
+    },
+    {
+      "user": "ghoul534",
+      "user_id": 24991953,
+      "country": "IQ",
+      "score_id": 4959267380,
+      "rank": "B",
+      "accuracy": 0.9076305220883534,
+      "pp": 296.425,
+      "mods": [
+        "HD",
+        "NC"
+      ],
+      "combo": 80,
+      "created_at": "2025-12-24T19:26:53Z",
+      "beatmapset": {
+        "id": 2282704,
+        "title": "Bubblegum Bitch (Nightcore & Cut Ver.)",
+        "cover": "https://assets.ppy.sh/beatmaps/2282704/covers/card.jpg?1756038849"
+      }
+    },
+    {
+      "user": "ghoul534",
+      "user_id": 24991953,
+      "country": "IQ",
+      "score_id": 4959266635,
+      "rank": "B",
+      "accuracy": 0.8955823293172691,
+      "pp": 337.09,
+      "mods": [
+        "HD",
+        "NC"
+      ],
+      "combo": 71,
+      "created_at": "2025-12-24T19:25:09Z",
+      "beatmapset": {
+        "id": 2282704,
+        "title": "Bubblegum Bitch (Nightcore & Cut Ver.)",
+        "cover": "https://assets.ppy.sh/beatmaps/2282704/covers/card.jpg?1756038849"
+      }
+    },
+    {
+      "user": "ghoul534",
+      "user_id": 24991953,
+      "country": "IQ",
+      "score_id": 4959265812,
+      "rank": "B",
+      "accuracy": 0.9053872053872054,
+      "pp": 233.548,
+      "mods": [
+        "HD",
+        "NC"
+      ],
+      "combo": 310,
+      "created_at": "2025-12-24T19:23:10Z",
+      "beatmapset": {
+        "id": 2288239,
+        "title": "SANTA SAN (Cut Ver.)",
+        "cover": "https://assets.ppy.sh/beatmaps/2288239/covers/card.jpg?1734556992"
+      }
+    },
+    {
+      "user": "ghoul534",
+      "user_id": 24991953,
+      "country": "IQ",
+      "score_id": 4959264388,
+      "rank": "C",
+      "accuracy": 0.8326271186440678,
+      "pp": 222.543,
+      "mods": [
+        "NC"
+      ],
+      "combo": 65,
+      "created_at": "2025-12-24T19:19:50Z",
+      "beatmapset": {
+        "id": 2282704,
+        "title": "Bubblegum Bitch (Nightcore & Cut Ver.)",
+        "cover": "https://assets.ppy.sh/beatmaps/2282704/covers/card.jpg?1756038849"
+      }
+    },
+    {
+      "user": "Y a d",
+      "user_id": 19521102,
+      "country": "IQ",
+      "score_id": 4959151768,
+      "rank": "A",
+      "accuracy": 0.9877515310586177,
+      "pp": 213.598,
+      "mods": [
+        "HD"
+      ],
+      "combo": 277,
+      "created_at": "2025-12-24T15:01:43Z",
+      "beatmapset": {
+        "id": 1068768,
+        "title": "Yume Chizu",
+        "cover": "https://assets.ppy.sh/beatmaps/1068768/covers/card.jpg?1645787898"
+      }
+    },
+    {
+      "user": "Y a d",
+      "user_id": 19521102,
+      "country": "IQ",
+      "score_id": 4959148356,
+      "rank": "A",
+      "accuracy": 0.981574539363484,
+      "pp": 168.372,
+      "mods": [
+        "HD"
+      ],
+      "combo": 353,
+      "created_at": "2025-12-24T14:54:41Z",
+      "beatmapset": {
+        "id": 774204,
+        "title": "Blade Dance",
+        "cover": "https://assets.ppy.sh/beatmaps/774204/covers/card.jpg?1650677092"
+      }
+    },
+    {
+      "user": "Biscuits0",
+      "user_id": 23843313,
+      "country": "IQ",
+      "score_id": 5949333518,
+      "rank": "A",
+      "accuracy": 0.9746666666666667,
+      "pp": 294.695,
+      "mods": [
+        "HD",
+        "HR"
+      ],
+      "combo": 158,
+      "created_at": "2025-12-24T08:48:53Z",
+      "beatmapset": {
+        "id": 1049899,
+        "title": "Say Goodbye (Nightcore & Cut Ver.)",
+        "cover": "https://assets.ppy.sh/beatmaps/1049899/covers/card.jpg?1724193986"
+      }
+    },
+    {
+      "user": "Biscuits0",
+      "user_id": 23843313,
+      "country": "IQ",
+      "score_id": 5949327610,
+      "rank": "A",
+      "accuracy": 0.9453333333333334,
+      "pp": 280.475,
+      "mods": [
+        "HD",
+        "HR"
+      ],
+      "combo": 184,
+      "created_at": "2025-12-24T08:46:40Z",
+      "beatmapset": {
+        "id": 1049899,
+        "title": "Say Goodbye (Nightcore & Cut Ver.)",
+        "cover": "https://assets.ppy.sh/beatmaps/1049899/covers/card.jpg?1724193986"
+      }
+    },
+    {
+      "user": "Biscuits0",
+      "user_id": 23843313,
+      "country": "IQ",
+      "score_id": 5949320518,
+      "rank": "A",
+      "accuracy": 0.9386666666666666,
+      "pp": 232.111,
+      "mods": [
+        "HD",
+        "HR"
+      ],
+      "combo": 159,
+      "created_at": "2025-12-24T08:44:02Z",
+      "beatmapset": {
+        "id": 1049899,
+        "title": "Say Goodbye (Nightcore & Cut Ver.)",
+        "cover": "https://assets.ppy.sh/beatmaps/1049899/covers/card.jpg?1724193986"
+      }
+    },
+    {
+      "user": "Biscuits0",
+      "user_id": 23843313,
+      "country": "IQ",
+      "score_id": 5949314216,
+      "rank": "A",
+      "accuracy": 0.9719298245614035,
+      "pp": 288.327,
+      "mods": [
+        "HD",
+        "HR"
+      ],
+      "combo": 435,
+      "created_at": "2025-12-24T08:41:43Z",
+      "beatmapset": {
+        "id": 2297809,
+        "title": "Diamond Happy (TV Size)",
+        "cover": "https://assets.ppy.sh/beatmaps/2297809/covers/card.jpg?1736605817"
+      }
+    },
+    {
+      "user": "Biscuits0",
+      "user_id": 23843313,
+      "country": "IQ",
+      "score_id": 5949308605,
+      "rank": "A",
+      "accuracy": 0.9421052631578948,
+      "pp": 220.352,
+      "mods": [
+        "HD",
+        "HR"
+      ],
+      "combo": 242,
+      "created_at": "2025-12-24T08:39:38Z",
+      "beatmapset": {
+        "id": 2297809,
+        "title": "Diamond Happy (TV Size)",
+        "cover": "https://assets.ppy.sh/beatmaps/2297809/covers/card.jpg?1736605817"
+      }
+    }
+  ]
+}
