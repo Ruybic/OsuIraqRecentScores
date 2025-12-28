@@ -1,0 +1,61 @@
+{
+  "date": "2025-12-28",
+  "country": "IQ",
+  "generated_at": "2025-12-28T01:50:51.495Z",
+  "scores": [
+    {
+      "user": "6xSeven",
+      "user_id": 29452442,
+      "country": "IQ",
+      "score_id": 4960519179,
+      "rank": "B",
+      "accuracy": 0.9107794361525705,
+      "pp": 83.0717,
+      "mods": [],
+      "combo": 282,
+      "created_at": "2025-12-27T11:18:26Z",
+      "beatmapset": {
+        "id": 2084749,
+        "title": "Hej Hej!",
+        "cover": "https://assets.ppy.sh/beatmaps/2084749/covers/card.jpg?1724312825"
+      }
+    },
+    {
+      "user": "6xSeven",
+      "user_id": 29452442,
+      "country": "IQ",
+      "score_id": 4960516566,
+      "rank": "C",
+      "accuracy": 0.8423772609819121,
+      "pp": 76.947,
+      "mods": [],
+      "combo": 170,
+      "created_at": "2025-12-27T11:10:28Z",
+      "beatmapset": {
+        "id": 558694,
+        "title": "Glorious Crown",
+        "cover": "https://assets.ppy.sh/beatmaps/558694/covers/card.jpg?1650648268"
+      }
+    },
+    {
+      "user": "6xSeven",
+      "user_id": 29452442,
+      "country": "IQ",
+      "score_id": 4960515262,
+      "rank": "B",
+      "accuracy": 0.8571051241415742,
+      "pp": 60.1023,
+      "mods": [
+        "HD",
+        "DT"
+      ],
+      "combo": 291,
+      "created_at": "2025-12-27T11:06:18Z",
+      "beatmapset": {
+        "id": 1814114,
+        "title": "offense mechanism",
+        "cover": "https://assets.ppy.sh/beatmaps/1814114/covers/card.jpg?1706136809"
+      }
+    }
+  ]
+}
