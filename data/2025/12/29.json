@@ -1,0 +1,181 @@
+{
+  "date": "2025-12-29",
+  "country": "IQ",
+  "generated_at": "2025-12-29T01:49:16.604Z",
+  "scores": [
+    {
+      "user": "6xSeven",
+      "user_id": 29452442,
+      "country": "IQ",
+      "score_id": 4961361360,
+      "rank": "C",
+      "accuracy": 0.7982174688057041,
+      "pp": 98.8761,
+      "mods": [],
+      "combo": 630,
+      "created_at": "2025-12-29T00:47:56Z",
+      "beatmapset": {
+        "id": 2289479,
+        "title": "Vertex Beta",
+        "cover": "https://assets.ppy.sh/beatmaps/2289479/covers/card.jpg?1740761650"
+      }
+    },
+    {
+      "user": "6xSeven",
+      "user_id": 29452442,
+      "country": "IQ",
+      "score_id": 4961357599,
+      "rank": "S",
+      "accuracy": 0.9617622610141313,
+      "pp": 230.583,
+      "mods": [],
+      "combo": 535,
+      "created_at": "2025-12-29T00:35:11Z",
+      "beatmapset": {
+        "id": 2269051,
+        "title": "If You Can't Hang (Cut Ver.)",
+        "cover": "https://assets.ppy.sh/beatmaps/2269051/covers/card.jpg?1734737382"
+      }
+    },
+    {
+      "user": "6xSeven",
+      "user_id": 29452442,
+      "country": "IQ",
+      "score_id": 4961356938,
+      "rank": "B",
+      "accuracy": 0.8567158931082982,
+      "pp": 89.6531,
+      "mods": [],
+      "combo": 483,
+      "created_at": "2025-12-29T00:32:58Z",
+      "beatmapset": {
+        "id": 835474,
+        "title": "Lemuria",
+        "cover": "https://assets.ppy.sh/beatmaps/835474/covers/card.jpg?1650673526"
+      }
+    },
+    {
+      "user": "6xSeven",
+      "user_id": 29452442,
+      "country": "IQ",
+      "score_id": 4961354195,
+      "rank": "B",
+      "accuracy": 0.8937134502923977,
+      "pp": null,
+      "mods": [],
+      "combo": 410,
+      "created_at": "2025-12-29T00:24:08Z",
+      "beatmapset": {
+        "id": 821798,
+        "title": "AO-Infinity",
+        "cover": "https://assets.ppy.sh/beatmaps/821798/covers/card.jpg?1622144422"
+      }
+    },
+    {
+      "user": "6xSeven",
+      "user_id": 29452442,
+      "country": "IQ",
+      "score_id": 4961351653,
+      "rank": "B",
+      "accuracy": 0.8864053186611646,
+      "pp": null,
+      "mods": [],
+      "combo": 394,
+      "created_at": "2025-12-29T00:15:56Z",
+      "beatmapset": {
+        "id": 813569,
+        "title": "Sound Chimera",
+        "cover": "https://assets.ppy.sh/beatmaps/813569/covers/card.jpg?1622143597"
+      }
+    },
+    {
+      "user": "ghoul534",
+      "user_id": 24991953,
+      "country": "IQ",
+      "score_id": 4961120950,
+      "rank": "A",
+      "accuracy": 0.9490803050695379,
+      "pp": null,
+      "mods": [],
+      "combo": 275,
+      "created_at": "2025-12-28T15:04:45Z",
+      "beatmapset": {
+        "id": 399096,
+        "title": "Turkish March - Owata \\(^o^)/",
+        "cover": "https://assets.ppy.sh/beatmaps/399096/covers/card.jpg?1622098240"
+      }
+    },
+    {
+      "user": "ghoul534",
+      "user_id": 24991953,
+      "country": "IQ",
+      "score_id": 4961118770,
+      "rank": "S",
+      "accuracy": 0.9586720867208672,
+      "pp": 321.259,
+      "mods": [],
+      "combo": 305,
+      "created_at": "2025-12-28T14:59:59Z",
+      "beatmapset": {
+        "id": 2352698,
+        "title": "American Girls (Juztan Remix)",
+        "cover": "https://assets.ppy.sh/beatmaps/2352698/covers/card.jpg?1748119114"
+      }
+    },
+    {
+      "user": "ghoul534",
+      "user_id": 24991953,
+      "country": "IQ",
+      "score_id": 4961115069,
+      "rank": "S",
+      "accuracy": 0.9858156028368794,
+      "pp": 325.901,
+      "mods": [
+        "DT"
+      ],
+      "combo": 311,
+      "created_at": "2025-12-28T14:52:01Z",
+      "beatmapset": {
+        "id": 2313199,
+        "title": "dumb dumb (Sped Up Ver.)",
+        "cover": "https://assets.ppy.sh/beatmaps/2313199/covers/card.jpg?1746524458"
+      }
+    },
+    {
+      "user": "ghoul534",
+      "user_id": 24991953,
+      "country": "IQ",
+      "score_id": 4961114405,
+      "rank": "A",
+      "accuracy": 0.9843971631205674,
+      "pp": 295.745,
+      "mods": [
+        "DT"
+      ],
+      "combo": 297,
+      "created_at": "2025-12-28T14:50:35Z",
+      "beatmapset": {
+        "id": 2313199,
+        "title": "dumb dumb (Sped Up Ver.)",
+        "cover": "https://assets.ppy.sh/beatmaps/2313199/covers/card.jpg?1746524458"
+      }
+    },
+    {
+      "user": "ghoul534",
+      "user_id": 24991953,
+      "country": "IQ",
+      "score_id": 0,
+      "rank": "A",
+      "accuracy": 0.9291666666666667,
+      "pp": null,
+      "mods": [],
+      "combo": 140,
+      "created_at": "2025-12-28T14:48:14Z",
+      "beatmapset": {
+        "id": 2055259,
+        "title": "Good In Bed (Nightcore & Cut Ver.)",
+        "cover": "https://assets.ppy.sh/beatmaps/2055259/covers/card.jpg?1697587229"
+      }
+    }
+  ]
+}
