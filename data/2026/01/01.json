@@ -1,0 +1,155 @@
+{
+  "date": "2026-01-01",
+  "country": "IQ",
+  "generated_at": "2026-01-01T01:51:44.882Z",
+  "scores": [
+    {
+      "user": "Y a d",
+      "user_id": 19521102,
+      "country": "IQ",
+      "score_id": 4962814078,
+      "rank": "S",
+      "accuracy": 0.9932659932659933,
+      "pp": 215.355,
+      "mods": [],
+      "combo": 161,
+      "created_at": "2026-01-01T00:36:01Z",
+      "beatmapset": {
+        "id": 2425417,
+        "title": "Determinate (Nightcore & Cut Ver.)",
+        "cover": "https://assets.ppy.sh/beatmaps/2425417/covers/card.jpg?1761335172"
+      }
+    },
+    {
+      "user": "Y a d",
+      "user_id": 19521102,
+      "country": "IQ",
+      "score_id": 4962812931,
+      "rank": "A",
+      "accuracy": 0.9794628751974723,
+      "pp": 142.867,
+      "mods": [],
+      "combo": 203,
+      "created_at": "2026-01-01T00:31:51Z",
+      "beatmapset": {
+        "id": 2379887,
+        "title": "This Little Girl (Nightcore & Cut Ver.)",
+        "cover": "https://assets.ppy.sh/beatmaps/2379887/covers/card.jpg?1749535372"
+      }
+    },
+    {
+      "user": "Y a d",
+      "user_id": 19521102,
+      "country": "IQ",
+      "score_id": 4962811341,
+      "rank": "A",
+      "accuracy": 0.9361702127659575,
+      "pp": 71.1779,
+      "mods": [],
+      "combo": 99,
+      "created_at": "2026-01-01T00:26:07Z",
+      "beatmapset": {
+        "id": 518737,
+        "title": "Endless Starlight ~Inochi no Kirameki~ (OP ver.)",
+        "cover": "https://assets.ppy.sh/beatmaps/518737/covers/card.jpg?1622109869"
+      }
+    },
+    {
+      "user": "6xSeven",
+      "user_id": 29452442,
+      "country": "IQ",
+      "score_id": 4962482602,
+      "rank": "A",
+      "accuracy": 0.9672727272727273,
+      "pp": 191.198,
+      "mods": [
+        "HD",
+        "DT"
+      ],
+      "combo": 255,
+      "created_at": "2025-12-31T08:44:05Z",
+      "beatmapset": {
+        "id": 2165639,
+        "title": "distance",
+        "cover": "https://assets.ppy.sh/beatmaps/2165639/covers/card.jpg?1715120461"
+      }
+    },
+    {
+      "user": "6xSeven",
+      "user_id": 29452442,
+      "country": "IQ",
+      "score_id": 4962482109,
+      "rank": "A",
+      "accuracy": 0.9393939393939394,
+      "pp": 141.361,
+      "mods": [
+        "HD",
+        "DT"
+      ],
+      "combo": 253,
+      "created_at": "2025-12-31T08:42:06Z",
+      "beatmapset": {
+        "id": 2165639,
+        "title": "distance",
+        "cover": "https://assets.ppy.sh/beatmaps/2165639/covers/card.jpg?1715120461"
+      }
+    },
+    {
+      "user": "6xSeven",
+      "user_id": 29452442,
+      "country": "IQ",
+      "score_id": 4962481447,
+      "rank": "B",
+      "accuracy": 0.8987878787878788,
+      "pp": 95.4553,
+      "mods": [
+        "HD",
+        "DT"
+      ],
+      "combo": 230,
+      "created_at": "2025-12-31T08:39:38Z",
+      "beatmapset": {
+        "id": 2165639,
+        "title": "distance",
+        "cover": "https://assets.ppy.sh/beatmaps/2165639/covers/card.jpg?1715120461"
+      }
+    },
+    {
+      "user": "6xSeven",
+      "user_id": 29452442,
+      "country": "IQ",
+      "score_id": 4962481012,
+      "rank": "A",
+      "accuracy": 0.9345991561181435,
+      "pp": 105.834,
+      "mods": [
+        "HD",
+        "DT"
+      ],
+      "combo": 191,
+      "created_at": "2025-12-31T08:38:06Z",
+      "beatmapset": {
+        "id": 2031244,
+        "title": "Happier Than Ever (Edit)",
+        "cover": "https://assets.ppy.sh/beatmaps/2031244/covers/card.jpg?1716722186"
+      }
+    },
+    {
+      "user": "6xSeven",
+      "user_id": 29452442,
+      "country": "IQ",
+      "score_id": 0,
+      "rank": "D",
+      "accuracy": 0.6338541666666667,
+      "pp": null,
+      "mods": [],
+      "combo": 68,
+      "created_at": "2025-12-31T08:32:18Z",
+      "beatmapset": {
+        "id": 1752728,
+        "title": "isogu (Stream Practice Maps)",
+        "cover": "https://assets.ppy.sh/beatmaps/1752728/covers/card.jpg?1653687013"
+      }
+    }
+  ]
+}
