@@ -1,0 +1,92 @@
+{
+  "date": "2026-01-07",
+  "country": "IQ",
+  "generated_at": "2026-01-07T01:43:09.079Z",
+  "scores": [
+    {
+      "user": "ghoul534",
+      "user_id": 24991953,
+      "country": "IQ",
+      "score_id": 0,
+      "rank": "A",
+      "accuracy": 0.9456721915285451,
+      "pp": null,
+      "mods": [],
+      "combo": 269,
+      "created_at": "2026-01-06T18:37:06Z",
+      "beatmapset": {
+        "id": 1988686,
+        "title": "R U 4 Me? (Cut Ver.)",
+        "cover": "https://assets.ppy.sh/beatmaps/1988686/covers/card.jpg?1686178846"
+      }
+    },
+    {
+      "user": "ghoul534",
+      "user_id": 24991953,
+      "country": "IQ",
+      "score_id": 4965446535,
+      "rank": "A",
+      "accuracy": 0.9415204678362573,
+      "pp": 136.597,
+      "mods": [],
+      "combo": 148,
+      "created_at": "2026-01-06T18:34:57Z",
+      "beatmapset": {
+        "id": 1240660,
+        "title": "Ben 10: Omniverse",
+        "cover": "https://assets.ppy.sh/beatmaps/1240660/covers/card.jpg?1622195843"
+      }
+    },
+    {
+      "user": "ghoul534",
+      "user_id": 24991953,
+      "country": "IQ",
+      "score_id": 4965443751,
+      "rank": "S",
+      "accuracy": 0.9655414908579466,
+      "pp": 187.6,
+      "mods": [],
+      "combo": 213,
+      "created_at": "2026-01-06T18:28:25Z",
+      "beatmapset": {
+        "id": 2296940,
+        "title": "Start Again (Cut Ver.)",
+        "cover": "https://assets.ppy.sh/beatmaps/2296940/covers/card.jpg?1743374659"
+      }
+    },
+    {
+      "user": "ghoul534",
+      "user_id": 24991953,
+      "country": "IQ",
+      "score_id": 4965442947,
+      "rank": "B",
+      "accuracy": 0.9013123359580052,
+      "pp": 81.58,
+      "mods": [],
+      "combo": 247,
+      "created_at": "2026-01-06T18:26:28Z",
+      "beatmapset": {
+        "id": 1366507,
+        "title": "moment",
+        "cover": "https://assets.ppy.sh/beatmaps/1366507/covers/card.jpg?1628360867"
+      }
+    },
+    {
+      "user": "ghoul534",
+      "user_id": 24991953,
+      "country": "IQ",
+      "score_id": 4965438077,
+      "rank": "A",
+      "accuracy": 0.9568965517241379,
+      "pp": 208.438,
+      "mods": [],
+      "combo": 119,
+      "created_at": "2026-01-06T18:14:32Z",
+      "beatmapset": {
+        "id": 2360937,
+        "title": "Valour Against All Odds",
+        "cover": "https://assets.ppy.sh/beatmaps/2360937/covers/card.jpg?1759935874"
+      }
+    }
+  ]
+}
