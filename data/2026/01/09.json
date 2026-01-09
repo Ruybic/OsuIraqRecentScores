@@ -1,0 +1,168 @@
+{
+  "date": "2026-01-09",
+  "country": "IQ",
+  "generated_at": "2026-01-09T01:43:59.855Z",
+  "scores": [
+    {
+      "user": "ghoul534",
+      "user_id": 24991953,
+      "country": "IQ",
+      "score_id": 0,
+      "rank": "C",
+      "accuracy": 0.7716049382716049,
+      "pp": null,
+      "mods": [],
+      "combo": 206,
+      "created_at": "2026-01-08T22:27:39Z",
+      "beatmapset": {
+        "id": 2102468,
+        "title": "Skibidi Toilet GAMMA",
+        "cover": "https://assets.ppy.sh/beatmaps/2102468/covers/card.jpg?1704803442"
+      }
+    },
+    {
+      "user": "ghoul534",
+      "user_id": 24991953,
+      "country": "IQ",
+      "score_id": 0,
+      "rank": "C",
+      "accuracy": 0.7307692307692307,
+      "pp": null,
+      "mods": [],
+      "combo": 177,
+      "created_at": "2026-01-08T22:25:51Z",
+      "beatmapset": {
+        "id": 2102468,
+        "title": "Skibidi Toilet GAMMA",
+        "cover": "https://assets.ppy.sh/beatmaps/2102468/covers/card.jpg?1704803442"
+      }
+    },
+    {
+      "user": "ghoul534",
+      "user_id": 24991953,
+      "country": "IQ",
+      "score_id": 0,
+      "rank": "C",
+      "accuracy": 0.7939221272554606,
+      "pp": null,
+      "mods": [],
+      "combo": 464,
+      "created_at": "2026-01-08T22:25:08Z",
+      "beatmapset": {
+        "id": 2102468,
+        "title": "Skibidi Toilet GAMMA",
+        "cover": "https://assets.ppy.sh/beatmaps/2102468/covers/card.jpg?1704803442"
+      }
+    },
+    {
+      "user": "ghoul534",
+      "user_id": 24991953,
+      "country": "IQ",
+      "score_id": 4966406638,
+      "rank": "A",
+      "accuracy": 0.9497126436781609,
+      "pp": 193.04,
+      "mods": [],
+      "combo": 113,
+      "created_at": "2026-01-08T22:07:28Z",
+      "beatmapset": {
+        "id": 2360937,
+        "title": "Valour Against All Odds",
+        "cover": "https://assets.ppy.sh/beatmaps/2360937/covers/card.jpg?1759935874"
+      }
+    },
+    {
+      "user": "Biscuits0",
+      "user_id": 23843313,
+      "country": "IQ",
+      "score_id": 4966404082,
+      "rank": "B",
+      "accuracy": 0.9140893470790378,
+      "pp": 71.998,
+      "mods": [
+        "HD"
+      ],
+      "combo": 390,
+      "created_at": "2026-01-08T22:00:53Z",
+      "beatmapset": {
+        "id": 1924212,
+        "title": "Hyperventilation",
+        "cover": "https://assets.ppy.sh/beatmaps/1924212/covers/card.jpg?1694227631"
+      }
+    },
+    {
+      "user": "Biscuits0",
+      "user_id": 23843313,
+      "country": "IQ",
+      "score_id": 0,
+      "rank": "B",
+      "accuracy": 0.8934178743961353,
+      "pp": null,
+      "mods": [
+        "HD"
+      ],
+      "combo": 166,
+      "created_at": "2026-01-08T21:49:25Z",
+      "beatmapset": {
+        "id": 1786171,
+        "title": "More-more LOVERS!!",
+        "cover": "https://assets.ppy.sh/beatmaps/1786171/covers/card.jpg?1657708238"
+      }
+    },
+    {
+      "user": "Biscuits0",
+      "user_id": 23843313,
+      "country": "IQ",
+      "score_id": 4966389102,
+      "rank": "B",
+      "accuracy": 0.8900078988941548,
+      "pp": 44.2967,
+      "mods": [],
+      "combo": 475,
+      "created_at": "2026-01-08T21:22:52Z",
+      "beatmapset": {
+        "id": 243,
+        "title": "Marisa wa Taihen na Mono wo Nusunde Ikimashita",
+        "cover": "https://assets.ppy.sh/beatmaps/243/covers/card.jpg?1631328754"
+      }
+    },
+    {
+      "user": "Biscuits0",
+      "user_id": 23843313,
+      "country": "IQ",
+      "score_id": 4966382862,
+      "rank": "B",
+      "accuracy": 0.9121813031161473,
+      "pp": 107.917,
+      "mods": [
+        "HD"
+      ],
+      "combo": 326,
+      "created_at": "2026-01-08T21:07:23Z",
+      "beatmapset": {
+        "id": 2277734,
+        "title": "Despair of ELFERIA",
+        "cover": "https://assets.ppy.sh/beatmaps/2277734/covers/card.jpg?1736294089"
+      }
+    },
+    {
+      "user": "Biscuits0",
+      "user_id": 23843313,
+      "country": "IQ",
+      "score_id": 4966381149,
+      "rank": "B",
+      "accuracy": 0.8851727982162765,
+      "pp": 102.071,
+      "mods": [
+        "HD"
+      ],
+      "combo": 258,
+      "created_at": "2026-01-08T21:03:22Z",
+      "beatmapset": {
+        "id": 2161149,
+        "title": "Wagamama Marionette",
+        "cover": "https://assets.ppy.sh/beatmaps/2161149/covers/card.jpg?1732857044"
+      }
+    }
+  ]
+}
