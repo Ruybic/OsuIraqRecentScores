@@ -1,0 +1,94 @@
+{
+  "date": "2026-01-10",
+  "country": "IQ",
+  "generated_at": "2026-01-10T01:40:39.475Z",
+  "scores": [
+    {
+      "user": "ghoul534",
+      "user_id": 24991953,
+      "country": "IQ",
+      "score_id": 4966860069,
+      "rank": "A",
+      "accuracy": 0.9468390804597702,
+      "pp": 160.998,
+      "mods": [
+        "NF"
+      ],
+      "combo": 97,
+      "created_at": "2026-01-09T21:53:38Z",
+      "beatmapset": {
+        "id": 2360937,
+        "title": "Valour Against All Odds",
+        "cover": "https://assets.ppy.sh/beatmaps/2360937/covers/card.jpg?1759935874"
+      }
+    },
+    {
+      "user": "ghoul534",
+      "user_id": 24991953,
+      "country": "IQ",
+      "score_id": 4966859586,
+      "rank": "B",
+      "accuracy": 0.9129129129129129,
+      "pp": 129.424,
+      "mods": [],
+      "combo": 59,
+      "created_at": "2026-01-09T21:52:33Z",
+      "beatmapset": {
+        "id": 2360937,
+        "title": "Valour Against All Odds",
+        "cover": "https://assets.ppy.sh/beatmaps/2360937/covers/card.jpg?1759935874"
+      }
+    },
+    {
+      "user": "ghoul534",
+      "user_id": 24991953,
+      "country": "IQ",
+      "score_id": 4966859048,
+      "rank": "A",
+      "accuracy": 0.9504504504504504,
+      "pp": 169.094,
+      "mods": [],
+      "combo": 87,
+      "created_at": "2026-01-09T21:51:14Z",
+      "beatmapset": {
+        "id": 2360937,
+        "title": "Valour Against All Odds",
+        "cover": "https://assets.ppy.sh/beatmaps/2360937/covers/card.jpg?1759935874"
+      }
+    },
+    {
+      "user": "ghoul534",
+      "user_id": 24991953,
+      "country": "IQ",
+      "score_id": 4966858602,
+      "rank": "A",
+      "accuracy": 0.9502923976608187,
+      "pp": 162.445,
+      "mods": [],
+      "combo": 111,
+      "created_at": "2026-01-09T21:50:12Z",
+      "beatmapset": {
+        "id": 2360937,
+        "title": "Valour Against All Odds",
+        "cover": "https://assets.ppy.sh/beatmaps/2360937/covers/card.jpg?1759935874"
+      }
+    },
+    {
+      "user": "ghoul534",
+      "user_id": 24991953,
+      "country": "IQ",
+      "score_id": 4966858224,
+      "rank": "B",
+      "accuracy": 0.912751677852349,
+      "pp": 111.538,
+      "mods": [],
+      "combo": 48,
+      "created_at": "2026-01-09T21:49:13Z",
+      "beatmapset": {
+        "id": 320118,
+        "title": "No title",
+        "cover": "https://assets.ppy.sh/beatmaps/320118/covers/card.jpg?1650632079"
+      }
+    }
+  ]
+}
