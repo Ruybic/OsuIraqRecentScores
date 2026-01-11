@@ -1,0 +1,189 @@
+{
+  "date": "2026-01-11",
+  "country": "IQ",
+  "generated_at": "2026-01-11T01:51:56.846Z",
+  "scores": [
+    {
+      "user": "Biscuits0",
+      "user_id": 23843313,
+      "country": "IQ",
+      "score_id": 4967442189,
+      "rank": "A",
+      "accuracy": 0.9408952629291613,
+      "pp": 140.139,
+      "mods": [
+        "HD"
+      ],
+      "combo": 365,
+      "created_at": "2026-01-11T01:46:18Z",
+      "beatmapset": {
+        "id": 1073483,
+        "title": "ALONE",
+        "cover": "https://assets.ppy.sh/beatmaps/1073483/covers/card.jpg?1650690123"
+      }
+    },
+    {
+      "user": "Biscuits0",
+      "user_id": 23843313,
+      "country": "IQ",
+      "score_id": 4967441030,
+      "rank": "A",
+      "accuracy": 0.9692531010820797,
+      "pp": 170.908,
+      "mods": [
+        "HD"
+      ],
+      "combo": 941,
+      "created_at": "2026-01-11T01:42:12Z",
+      "beatmapset": {
+        "id": 1601852,
+        "title": "Aimai Attitude (feat. Nakamura Sanso)",
+        "cover": "https://assets.ppy.sh/beatmaps/1601852/covers/card.jpg?1640510859"
+      }
+    },
+    {
+      "user": "ghoul534",
+      "user_id": 24991953,
+      "country": "IQ",
+      "score_id": 0,
+      "rank": "D",
+      "accuracy": 0.5336700336700336,
+      "pp": null,
+      "mods": [
+        "NF"
+      ],
+      "combo": 51,
+      "created_at": "2026-01-11T01:38:44Z",
+      "beatmapset": {
+        "id": 1495669,
+        "title": "Jump & Stream Practice",
+        "cover": "https://assets.ppy.sh/beatmaps/1495669/covers/card.jpg?1657980031"
+      }
+    },
+    {
+      "user": "ghoul534",
+      "user_id": 24991953,
+      "country": "IQ",
+      "score_id": 0,
+      "rank": "C",
+      "accuracy": 0.8384879725085911,
+      "pp": null,
+      "mods": [],
+      "combo": 70,
+      "created_at": "2026-01-11T01:33:17Z",
+      "beatmapset": {
+        "id": 1495669,
+        "title": "Jump & Stream Practice",
+        "cover": "https://assets.ppy.sh/beatmaps/1495669/covers/card.jpg?1657980031"
+      }
+    },
+    {
+      "user": "ghoul534",
+      "user_id": 24991953,
+      "country": "IQ",
+      "score_id": 0,
+      "rank": "C",
+      "accuracy": 0.8092783505154639,
+      "pp": null,
+      "mods": [],
+      "combo": 145,
+      "created_at": "2026-01-11T01:30:08Z",
+      "beatmapset": {
+        "id": 1495669,
+        "title": "Jump & Stream Practice",
+        "cover": "https://assets.ppy.sh/beatmaps/1495669/covers/card.jpg?1657980031"
+      }
+    },
+    {
+      "user": "ghoul534",
+      "user_id": 24991953,
+      "country": "IQ",
+      "score_id": 0,
+      "rank": "B",
+      "accuracy": 0.8388888888888889,
+      "pp": null,
+      "mods": [],
+      "combo": 15,
+      "created_at": "2026-01-11T01:27:58Z",
+      "beatmapset": {
+        "id": 1495669,
+        "title": "Jump & Stream Practice",
+        "cover": "https://assets.ppy.sh/beatmaps/1495669/covers/card.jpg?1657980031"
+      }
+    },
+    {
+      "user": "ghoul534",
+      "user_id": 24991953,
+      "country": "IQ",
+      "score_id": 0,
+      "rank": "B",
+      "accuracy": 0.9111111111111111,
+      "pp": null,
+      "mods": [],
+      "combo": 19,
+      "created_at": "2026-01-11T01:27:37Z",
+      "beatmapset": {
+        "id": 1495669,
+        "title": "Jump & Stream Practice",
+        "cover": "https://assets.ppy.sh/beatmaps/1495669/covers/card.jpg?1657980031"
+      }
+    },
+    {
+      "user": "Biscuits0",
+      "user_id": 23843313,
+      "country": "IQ",
+      "score_id": 4967169471,
+      "rank": "A",
+      "accuracy": 0.9528882575757576,
+      "pp": 163.031,
+      "mods": [
+        "HD"
+      ],
+      "combo": 523,
+      "created_at": "2026-01-10T14:31:11Z",
+      "beatmapset": {
+        "id": 2330881,
+        "title": "Telepathy feat. Hatsune Miku",
+        "cover": "https://assets.ppy.sh/beatmaps/2330881/covers/card.jpg?1740684492"
+      }
+    },
+    {
+      "user": "Biscuits0",
+      "user_id": 23843313,
+      "country": "IQ",
+      "score_id": 0,
+      "rank": "B",
+      "accuracy": 0.9015700483091788,
+      "pp": null,
+      "mods": [
+        "HD"
+      ],
+      "combo": 127,
+      "created_at": "2026-01-10T14:16:18Z",
+      "beatmapset": {
+        "id": 1786171,
+        "title": "More-more LOVERS!!",
+        "cover": "https://assets.ppy.sh/beatmaps/1786171/covers/card.jpg?1657708238"
+      }
+    },
+    {
+      "user": "Biscuits0",
+      "user_id": 23843313,
+      "country": "IQ",
+      "score_id": 4967160376,
+      "rank": "A",
+      "accuracy": 0.9530864197530864,
+      "pp": 215.853,
+      "mods": [
+        "HD"
+      ],
+      "combo": 943,
+      "created_at": "2026-01-10T14:10:59Z",
+      "beatmapset": {
+        "id": 1180058,
+        "title": "Attouteki Sonzaikan",
+        "cover": "https://assets.ppy.sh/beatmaps/1180058/covers/card.jpg?1650698046"
+      }
+    }
+  ]
+}
