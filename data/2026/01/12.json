@@ -1,0 +1,223 @@
+{
+  "date": "2026-01-12",
+  "country": "IQ",
+  "generated_at": "2026-01-12T01:48:29.092Z",
+  "scores": [
+    {
+      "user": "ghoul534",
+      "user_id": 24991953,
+      "country": "IQ",
+      "score_id": 0,
+      "rank": "S",
+      "accuracy": 0.9666666666666667,
+      "pp": null,
+      "mods": [],
+      "combo": 188,
+      "created_at": "2026-01-12T00:08:22Z",
+      "beatmapset": {
+        "id": 2348430,
+        "title": "DT Jump Pack 2",
+        "cover": "https://assets.ppy.sh/beatmaps/2348430/covers/card.jpg?1748471420"
+      }
+    },
+    {
+      "user": "ghoul534",
+      "user_id": 24991953,
+      "country": "IQ",
+      "score_id": 4967900488,
+      "rank": "B",
+      "accuracy": 0.8953823953823954,
+      "pp": 79.5384,
+      "mods": [],
+      "combo": 224,
+      "created_at": "2026-01-12T00:02:34Z",
+      "beatmapset": {
+        "id": 2116067,
+        "title": "Bling-Bang-Bang-Born (TV Size)",
+        "cover": "https://assets.ppy.sh/beatmaps/2116067/covers/card.jpg?1705179260"
+      }
+    },
+    {
+      "user": "ghoul534",
+      "user_id": 24991953,
+      "country": "IQ",
+      "score_id": 4967899779,
+      "rank": "C",
+      "accuracy": 0.8038369304556355,
+      "pp": 37.7199,
+      "mods": [],
+      "combo": 198,
+      "created_at": "2026-01-12T00:00:00Z",
+      "beatmapset": {
+        "id": 2237410,
+        "title": "FREEDOM DiVE",
+        "cover": "https://assets.ppy.sh/beatmaps/2237410/covers/card.jpg?1736838465"
+      }
+    },
+    {
+      "user": "ghoul534",
+      "user_id": 24991953,
+      "country": "IQ",
+      "score_id": 0,
+      "rank": "D",
+      "accuracy": 0.3608305274971942,
+      "pp": null,
+      "mods": [
+        "NF"
+      ],
+      "combo": 30,
+      "created_at": "2026-01-11T23:53:31Z",
+      "beatmapset": {
+        "id": 1495669,
+        "title": "Jump & Stream Practice",
+        "cover": "https://assets.ppy.sh/beatmaps/1495669/covers/card.jpg?1657980031"
+      }
+    },
+    {
+      "user": "ghoul534",
+      "user_id": 24991953,
+      "country": "IQ",
+      "score_id": 0,
+      "rank": "C",
+      "accuracy": 0.8098159509202454,
+      "pp": null,
+      "mods": [],
+      "combo": 75,
+      "created_at": "2026-01-11T23:51:02Z",
+      "beatmapset": {
+        "id": 2416913,
+        "title": "DT Jump Pack 3",
+        "cover": "https://assets.ppy.sh/beatmaps/2416913/covers/card.jpg?1759588235"
+      }
+    },
+    {
+      "user": "6xSeven",
+      "user_id": 29452442,
+      "country": "IQ",
+      "score_id": 4967838133,
+      "rank": "B",
+      "accuracy": 0.9144305307096005,
+      "pp": 123.085,
+      "mods": [],
+      "combo": 701,
+      "created_at": "2026-01-11T20:55:48Z",
+      "beatmapset": {
+        "id": 518426,
+        "title": "Sonata No.14 in cis-Moll, Op. 27/2 - 3. Satz",
+        "cover": "https://assets.ppy.sh/beatmaps/518426/covers/card.jpg?1622109835"
+      }
+    },
+    {
+      "user": "6xSeven",
+      "user_id": 29452442,
+      "country": "IQ",
+      "score_id": 4967835038,
+      "rank": "C",
+      "accuracy": 0.8293391430646333,
+      "pp": 46.6083,
+      "mods": [],
+      "combo": 364,
+      "created_at": "2026-01-11T20:47:57Z",
+      "beatmapset": {
+        "id": 1777892,
+        "title": "Playing God",
+        "cover": "https://assets.ppy.sh/beatmaps/1777892/covers/card.jpg?1683711954"
+      }
+    },
+    {
+      "user": "Biscuits0",
+      "user_id": 23843313,
+      "country": "IQ",
+      "score_id": 4967457290,
+      "rank": "A",
+      "accuracy": 0.9761564139246542,
+      "pp": 249.007,
+      "mods": [
+        "HD"
+      ],
+      "combo": 392,
+      "created_at": "2026-01-11T02:39:45Z",
+      "beatmapset": {
+        "id": 2468170,
+        "title": "Five Nights at Freddy's",
+        "cover": "https://assets.ppy.sh/beatmaps/2468170/covers/card.jpg?1766427293"
+      }
+    },
+    {
+      "user": "Biscuits0",
+      "user_id": 23843313,
+      "country": "IQ",
+      "score_id": 4967456508,
+      "rank": "A",
+      "accuracy": 0.9675727229375298,
+      "pp": 200.085,
+      "mods": [
+        "HD"
+      ],
+      "combo": 271,
+      "created_at": "2026-01-11T02:37:03Z",
+      "beatmapset": {
+        "id": 2468170,
+        "title": "Five Nights at Freddy's",
+        "cover": "https://assets.ppy.sh/beatmaps/2468170/covers/card.jpg?1766427293"
+      }
+    },
+    {
+      "user": "Biscuits0",
+      "user_id": 23843313,
+      "country": "IQ",
+      "score_id": 4967450433,
+      "rank": "A",
+      "accuracy": 0.9501510574018127,
+      "pp": null,
+      "mods": [
+        "HD"
+      ],
+      "combo": 219,
+      "created_at": "2026-01-11T02:15:45Z",
+      "beatmapset": {
+        "id": 418412,
+        "title": "Lyoshka",
+        "cover": "https://assets.ppy.sh/beatmaps/418412/covers/card.jpg?1622100101"
+      }
+    },
+    {
+      "user": "Biscuits0",
+      "user_id": 23843313,
+      "country": "IQ",
+      "score_id": 4967449005,
+      "rank": "B",
+      "accuracy": 0.8957475994513031,
+      "pp": 112.961,
+      "mods": [
+        "HD"
+      ],
+      "combo": 664,
+      "created_at": "2026-01-11T02:10:32Z",
+      "beatmapset": {
+        "id": 1180058,
+        "title": "Attouteki Sonzaikan",
+        "cover": "https://assets.ppy.sh/beatmaps/1180058/covers/card.jpg?1650698046"
+      }
+    },
+    {
+      "user": "Biscuits0",
+      "user_id": 23843313,
+      "country": "IQ",
+      "score_id": 4967447362,
+      "rank": "A",
+      "accuracy": 0.9823091247672253,
+      "pp": 277.239,
+      "mods": [
+        "HD"
+      ],
+      "combo": 398,
+      "created_at": "2026-01-11T02:04:45Z",
+      "beatmapset": {
+        "id": 388782,
+        "title": "No title",
+        "cover": "https://assets.ppy.sh/beatmaps/388782/covers/card.jpg?1676532532"
+      }
+    }
+  ]
+}
