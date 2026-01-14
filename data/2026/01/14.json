@@ -1,0 +1,189 @@
+{
+  "date": "2026-01-14",
+  "country": "IQ",
+  "generated_at": "2026-01-14T01:47:18.126Z",
+  "scores": [
+    {
+      "user": "ILOVEOSUTEAM",
+      "user_id": 20112002,
+      "country": "IQ",
+      "score_id": 6054587907,
+      "rank": "C",
+      "accuracy": 0.7098126232741617,
+      "pp": 60.3128,
+      "mods": [],
+      "combo": 159,
+      "created_at": "2026-01-14T01:35:16Z",
+      "beatmapset": {
+        "id": 2325504,
+        "title": "Thank you for your playing music",
+        "cover": "https://assets.ppy.sh/beatmaps/2325504/covers/card.jpg?1758983351"
+      }
+    },
+    {
+      "user": "Biscuits0",
+      "user_id": 23843313,
+      "country": "IQ",
+      "score_id": 4968698588,
+      "rank": "C",
+      "accuracy": 0.8291457286432161,
+      "pp": null,
+      "mods": [
+        "HD"
+      ],
+      "combo": 284,
+      "created_at": "2026-01-13T21:18:16Z",
+      "beatmapset": {
+        "id": 1289690,
+        "title": "Last Exit To Brooklyn",
+        "cover": "https://assets.ppy.sh/beatmaps/1289690/covers/card.jpg?1737718568"
+      }
+    },
+    {
+      "user": "Biscuits0",
+      "user_id": 23843313,
+      "country": "IQ",
+      "score_id": 4968695511,
+      "rank": "A",
+      "accuracy": 0.9523251270027354,
+      "pp": 193.065,
+      "mods": [
+        "HD"
+      ],
+      "combo": 313,
+      "created_at": "2026-01-13T21:10:05Z",
+      "beatmapset": {
+        "id": 2235601,
+        "title": "Temptation (feat. Rebecca) (Nightcore Mix)",
+        "cover": "https://assets.ppy.sh/beatmaps/2235601/covers/card.jpg?1749116184"
+      }
+    },
+    {
+      "user": "Biscuits0",
+      "user_id": 23843313,
+      "country": "IQ",
+      "score_id": 0,
+      "rank": "A",
+      "accuracy": 0.9478411053540587,
+      "pp": null,
+      "mods": [
+        "HD"
+      ],
+      "combo": 189,
+      "created_at": "2026-01-13T21:04:11Z",
+      "beatmapset": {
+        "id": 1103192,
+        "title": "humanly",
+        "cover": "https://assets.ppy.sh/beatmaps/1103192/covers/card.jpg?1597937467"
+      }
+    },
+    {
+      "user": "Biscuits0",
+      "user_id": 23843313,
+      "country": "IQ",
+      "score_id": 0,
+      "rank": "A",
+      "accuracy": 0.9692234848484849,
+      "pp": null,
+      "mods": [
+        "NF",
+        "HD",
+        "HR"
+      ],
+      "combo": 703,
+      "created_at": "2026-01-13T20:59:35Z",
+      "beatmapset": {
+        "id": 1103192,
+        "title": "humanly",
+        "cover": "https://assets.ppy.sh/beatmaps/1103192/covers/card.jpg?1597937467"
+      }
+    },
+    {
+      "user": "Biscuits0",
+      "user_id": 23843313,
+      "country": "IQ",
+      "score_id": 0,
+      "rank": "A",
+      "accuracy": 0.9544364508393285,
+      "pp": null,
+      "mods": [
+        "HD"
+      ],
+      "combo": 148,
+      "created_at": "2026-01-13T20:54:57Z",
+      "beatmapset": {
+        "id": 2293648,
+        "title": "DT Jump Pack",
+        "cover": "https://assets.ppy.sh/beatmaps/2293648/covers/card.jpg?1743348618"
+      }
+    },
+    {
+      "user": "ILOVEOSUTEAM",
+      "user_id": 20112002,
+      "country": "IQ",
+      "score_id": 6053185994,
+      "rank": "C",
+      "accuracy": 0.8536994070636762,
+      "pp": null,
+      "mods": [],
+      "combo": 567,
+      "created_at": "2026-01-13T18:59:23Z",
+      "beatmapset": {
+        "id": 2236375,
+        "title": "Makka Mecca",
+        "cover": "https://assets.ppy.sh/beatmaps/2236375/covers/card.jpg?1728833435"
+      }
+    },
+    {
+      "user": "ILOVEOSUTEAM",
+      "user_id": 20112002,
+      "country": "IQ",
+      "score_id": 6053064182,
+      "rank": "A",
+      "accuracy": 0.9589490968801314,
+      "pp": 129.102,
+      "mods": [],
+      "combo": 313,
+      "created_at": "2026-01-13T18:30:35Z",
+      "beatmapset": {
+        "id": 2035357,
+        "title": "Border Line",
+        "cover": "https://assets.ppy.sh/beatmaps/2035357/covers/card.jpg?1700230394"
+      }
+    },
+    {
+      "user": "ILOVEOSUTEAM",
+      "user_id": 20112002,
+      "country": "IQ",
+      "score_id": 6053042707,
+      "rank": "B",
+      "accuracy": 0.9199499687304565,
+      "pp": 135.918,
+      "mods": [],
+      "combo": 228,
+      "created_at": "2026-01-13T18:25:40Z",
+      "beatmapset": {
+        "id": 2354357,
+        "title": "Summer22",
+        "cover": "https://assets.ppy.sh/beatmaps/2354357/covers/card.jpg?1755124883"
+      }
+    },
+    {
+      "user": "ILOVEOSUTEAM",
+      "user_id": 20112002,
+      "country": "IQ",
+      "score_id": 6053030608,
+      "rank": "B",
+      "accuracy": 0.8753063725490197,
+      "pp": 45.448,
+      "mods": [],
+      "combo": 161,
+      "created_at": "2026-01-13T18:22:51Z",
+      "beatmapset": {
+        "id": 2287933,
+        "title": "Endroll",
+        "cover": "https://assets.ppy.sh/beatmaps/2287933/covers/card.jpg?1743027196"
+      }
+    }
+  ]
+}
