@@ -1,0 +1,102 @@
+{
+  "date": "2026-01-19",
+  "country": "IQ",
+  "generated_at": "2026-01-19T01:49:11.506Z",
+  "scores": [
+    {
+      "user": "Biscuits0",
+      "user_id": 23843313,
+      "country": "IQ",
+      "score_id": 4970691063,
+      "rank": "A",
+      "accuracy": 0.9270446096654275,
+      "pp": 140.253,
+      "mods": [
+        "HD"
+      ],
+      "combo": 261,
+      "created_at": "2026-01-18T08:07:23Z",
+      "beatmapset": {
+        "id": 1180927,
+        "title": "Ray",
+        "cover": "https://assets.ppy.sh/beatmaps/1180927/covers/card.jpg?1671310750"
+      }
+    },
+    {
+      "user": "Biscuits0",
+      "user_id": 23843313,
+      "country": "IQ",
+      "score_id": 4970686391,
+      "rank": "A",
+      "accuracy": 0.9552996532937098,
+      "pp": 187.425,
+      "mods": [
+        "HD"
+      ],
+      "combo": 255,
+      "created_at": "2026-01-18T07:48:31Z",
+      "beatmapset": {
+        "id": 534054,
+        "title": "Soundscape",
+        "cover": "https://assets.ppy.sh/beatmaps/534054/covers/card.jpg?1650689894"
+      }
+    },
+    {
+      "user": "Biscuits0",
+      "user_id": 23843313,
+      "country": "IQ",
+      "score_id": 4970684999,
+      "rank": "A",
+      "accuracy": 0.9768518518518519,
+      "pp": 252.718,
+      "mods": [
+        "HD"
+      ],
+      "combo": 316,
+      "created_at": "2026-01-18T07:42:44Z",
+      "beatmapset": {
+        "id": 1399810,
+        "title": "Art as <3",
+        "cover": "https://assets.ppy.sh/beatmaps/1399810/covers/card.jpg?1631962160"
+      }
+    },
+    {
+      "user": "Biscuits0",
+      "user_id": 23843313,
+      "country": "IQ",
+      "score_id": 4970684045,
+      "rank": "A",
+      "accuracy": 0.9567856275795096,
+      "pp": 189.691,
+      "mods": [
+        "HD"
+      ],
+      "combo": 587,
+      "created_at": "2026-01-18T07:38:34Z",
+      "beatmapset": {
+        "id": 1832955,
+        "title": "KIZUNA MUSIC",
+        "cover": "https://assets.ppy.sh/beatmaps/1832955/covers/card.jpg?1681080884"
+      }
+    },
+    {
+      "user": "Biscuits0",
+      "user_id": 23843313,
+      "country": "IQ",
+      "score_id": 4970682521,
+      "rank": "A",
+      "accuracy": 0.9399249061326659,
+      "pp": 210.83,
+      "mods": [
+        "HD"
+      ],
+      "combo": 631,
+      "created_at": "2026-01-18T07:32:03Z",
+      "beatmapset": {
+        "id": 2411013,
+        "title": "Cherry Pop feat. Hatsune Miku",
+        "cover": "https://assets.ppy.sh/beatmaps/2411013/covers/card.jpg?1753756069"
+      }
+    }
+  ]
+}
