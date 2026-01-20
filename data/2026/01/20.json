@@ -1,0 +1,195 @@
+{
+  "date": "2026-01-20",
+  "country": "IQ",
+  "generated_at": "2026-01-20T01:43:57.291Z",
+  "scores": [
+    {
+      "user": "Biscuits0",
+      "user_id": 23843313,
+      "country": "IQ",
+      "score_id": 4971224805,
+      "rank": "SH",
+      "accuracy": 0.9750356633380884,
+      "pp": null,
+      "mods": [
+        "HD"
+      ],
+      "combo": 551,
+      "created_at": "2026-01-19T13:10:35Z",
+      "beatmapset": {
+        "id": 426890,
+        "title": "thinking of you",
+        "cover": "https://assets.ppy.sh/beatmaps/426890/covers/card.jpg?1683195501"
+      }
+    },
+    {
+      "user": "Biscuits0",
+      "user_id": 23843313,
+      "country": "IQ",
+      "score_id": 4971223742,
+      "rank": "C",
+      "accuracy": 0.8452380952380952,
+      "pp": 55.7908,
+      "mods": [
+        "HD"
+      ],
+      "combo": 133,
+      "created_at": "2026-01-19T13:07:26Z",
+      "beatmapset": {
+        "id": 1715340,
+        "title": "Yamangomcpro6th",
+        "cover": "https://assets.ppy.sh/beatmaps/1715340/covers/card.jpg?1648368023"
+      }
+    },
+    {
+      "user": "Biscuits0",
+      "user_id": 23843313,
+      "country": "IQ",
+      "score_id": 4971223293,
+      "rank": "A",
+      "accuracy": 0.9486301369863014,
+      "pp": 159.823,
+      "mods": [
+        "HD"
+      ],
+      "combo": 322,
+      "created_at": "2026-01-19T13:06:12Z",
+      "beatmapset": {
+        "id": 212192,
+        "title": "FUNKY SUMMER BEACH",
+        "cover": "https://assets.ppy.sh/beatmaps/212192/covers/card.jpg?1622077630"
+      }
+    },
+    {
+      "user": "Biscuits0",
+      "user_id": 23843313,
+      "country": "IQ",
+      "score_id": 4971221714,
+      "rank": "C",
+      "accuracy": 0.846820809248555,
+      "pp": 51.8332,
+      "mods": [
+        "HD"
+      ],
+      "combo": 165,
+      "created_at": "2026-01-19T13:01:17Z",
+      "beatmapset": {
+        "id": 1906993,
+        "title": "Kurokami Midareshi Shura to Narite",
+        "cover": "https://assets.ppy.sh/beatmaps/1906993/covers/card.jpg?1678502955"
+      }
+    },
+    {
+      "user": "Biscuits0",
+      "user_id": 23843313,
+      "country": "IQ",
+      "score_id": 4971220884,
+      "rank": "A",
+      "accuracy": 0.9293193717277487,
+      "pp": 156.94,
+      "mods": [
+        "HD"
+      ],
+      "combo": 419,
+      "created_at": "2026-01-19T12:58:45Z",
+      "beatmapset": {
+        "id": 429882,
+        "title": "Delta Decision",
+        "cover": "https://assets.ppy.sh/beatmaps/429882/covers/card.jpg?1650638904"
+      }
+    },
+    {
+      "user": "ghoul534",
+      "user_id": 24991953,
+      "country": "IQ",
+      "score_id": 4971132776,
+      "rank": "A",
+      "accuracy": 0.958572339069471,
+      "pp": 182.349,
+      "mods": [],
+      "combo": 222,
+      "created_at": "2026-01-19T06:37:06Z",
+      "beatmapset": {
+        "id": 2422687,
+        "title": "Of Our Time (osu! Edit)",
+        "cover": "https://assets.ppy.sh/beatmaps/2422687/covers/card.jpg?1757433537"
+      }
+    },
+    {
+      "user": "ghoul534",
+      "user_id": 24991953,
+      "country": "IQ",
+      "score_id": 0,
+      "rank": "D",
+      "accuracy": 0.5053235053235053,
+      "pp": null,
+      "mods": [
+        "NF"
+      ],
+      "combo": 65,
+      "created_at": "2026-01-19T06:24:13Z",
+      "beatmapset": {
+        "id": 1495669,
+        "title": "Jump & Stream Practice",
+        "cover": "https://assets.ppy.sh/beatmaps/1495669/covers/card.jpg?1657980031"
+      }
+    },
+    {
+      "user": "ghoul534",
+      "user_id": 24991953,
+      "country": "IQ",
+      "score_id": 0,
+      "rank": "D",
+      "accuracy": 0.5432252701579385,
+      "pp": null,
+      "mods": [
+        "NF"
+      ],
+      "combo": 71,
+      "created_at": "2026-01-19T06:21:58Z",
+      "beatmapset": {
+        "id": 1495669,
+        "title": "Jump & Stream Practice",
+        "cover": "https://assets.ppy.sh/beatmaps/1495669/covers/card.jpg?1657980031"
+      }
+    },
+    {
+      "user": "ghoul534",
+      "user_id": 24991953,
+      "country": "IQ",
+      "score_id": 0,
+      "rank": "D",
+      "accuracy": 0.5303408146300914,
+      "pp": null,
+      "mods": [
+        "NF"
+      ],
+      "combo": 62,
+      "created_at": "2026-01-19T06:21:01Z",
+      "beatmapset": {
+        "id": 1495669,
+        "title": "Jump & Stream Practice",
+        "cover": "https://assets.ppy.sh/beatmaps/1495669/covers/card.jpg?1657980031"
+      }
+    },
+    {
+      "user": "ghoul534",
+      "user_id": 24991953,
+      "country": "IQ",
+      "score_id": 0,
+      "rank": "D",
+      "accuracy": 0.588248436103664,
+      "pp": null,
+      "mods": [
+        "NF"
+      ],
+      "combo": 96,
+      "created_at": "2026-01-19T06:19:56Z",
+      "beatmapset": {
+        "id": 1495669,
+        "title": "Jump & Stream Practice",
+        "cover": "https://assets.ppy.sh/beatmaps/1495669/covers/card.jpg?1657980031"
+      }
+    }
+  ]
+}
