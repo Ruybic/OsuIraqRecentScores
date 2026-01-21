@@ -1,0 +1,196 @@
+{
+  "date": "2026-01-21",
+  "country": "IQ",
+  "generated_at": "2026-01-21T01:47:11.280Z",
+  "scores": [
+    {
+      "user": "Y a d",
+      "user_id": 19521102,
+      "country": "IQ",
+      "score_id": 4971701618,
+      "rank": "A",
+      "accuracy": 0.9172932330827067,
+      "pp": 192.5,
+      "mods": [
+        "HD",
+        "DT"
+      ],
+      "combo": 131,
+      "created_at": "2026-01-20T15:04:12Z",
+      "beatmapset": {
+        "id": 2479183,
+        "title": "I Don't Know (Nightcore & Cut Ver.)",
+        "cover": "https://assets.ppy.sh/beatmaps/2479183/covers/card.jpg?1768172625"
+      }
+    },
+    {
+      "user": "Y a d",
+      "user_id": 19521102,
+      "country": "IQ",
+      "score_id": 4971701349,
+      "rank": "A",
+      "accuracy": 0.9267676767676768,
+      "pp": 246.177,
+      "mods": [
+        "HD",
+        "DT"
+      ],
+      "combo": 136,
+      "created_at": "2026-01-20T15:03:31Z",
+      "beatmapset": {
+        "id": 2479183,
+        "title": "I Don't Know (Nightcore & Cut Ver.)",
+        "cover": "https://assets.ppy.sh/beatmaps/2479183/covers/card.jpg?1768172625"
+      }
+    },
+    {
+      "user": "Y a d",
+      "user_id": 19521102,
+      "country": "IQ",
+      "score_id": 4971699390,
+      "rank": "B",
+      "accuracy": 0.8819776714513556,
+      "pp": 166.731,
+      "mods": [
+        "HD",
+        "DT"
+      ],
+      "combo": 271,
+      "created_at": "2026-01-20T14:58:43Z",
+      "beatmapset": {
+        "id": 2250634,
+        "title": "God is a Girl (Nightcore & Cut Ver.)",
+        "cover": "https://assets.ppy.sh/beatmaps/2250634/covers/card.jpg?1730395051"
+      }
+    },
+    {
+      "user": "Y a d",
+      "user_id": 19521102,
+      "country": "IQ",
+      "score_id": 4971698214,
+      "rank": "B",
+      "accuracy": 0.9099462365591398,
+      "pp": 201.539,
+      "mods": [
+        "HD",
+        "DT"
+      ],
+      "combo": 60,
+      "created_at": "2026-01-20T14:55:51Z",
+      "beatmapset": {
+        "id": 2284526,
+        "title": "Santa Senpai (Cut Ver.)",
+        "cover": "https://assets.ppy.sh/beatmaps/2284526/covers/card.jpg?1734177179"
+      }
+    },
+    {
+      "user": "Y a d",
+      "user_id": 19521102,
+      "country": "IQ",
+      "score_id": 4971697135,
+      "rank": "A",
+      "accuracy": 0.9566517189835575,
+      "pp": 310.268,
+      "mods": [
+        "HD",
+        "DT"
+      ],
+      "combo": 145,
+      "created_at": "2026-01-20T14:53:22Z",
+      "beatmapset": {
+        "id": 2281428,
+        "title": "Poison (Nightcore & Cut Ver.)",
+        "cover": "https://assets.ppy.sh/beatmaps/2281428/covers/card.jpg?1734634407"
+      }
+    },
+    {
+      "user": "Biscuits0",
+      "user_id": 23843313,
+      "country": "IQ",
+      "score_id": 0,
+      "rank": "A",
+      "accuracy": 0.9551748009691935,
+      "pp": null,
+      "mods": [],
+      "combo": 479,
+      "created_at": "2026-01-20T11:06:35Z",
+      "beatmapset": {
+        "id": 1257735,
+        "title": "Oriental's Long Stream Practice & Training Maps",
+        "cover": "https://assets.ppy.sh/beatmaps/1257735/covers/card.jpg?1605002459"
+      }
+    },
+    {
+      "user": "Biscuits0",
+      "user_id": 23843313,
+      "country": "IQ",
+      "score_id": 0,
+      "rank": "A",
+      "accuracy": 0.9305988231221876,
+      "pp": null,
+      "mods": [],
+      "combo": 613,
+      "created_at": "2026-01-20T11:04:35Z",
+      "beatmapset": {
+        "id": 1257735,
+        "title": "Oriental's Long Stream Practice & Training Maps",
+        "cover": "https://assets.ppy.sh/beatmaps/1257735/covers/card.jpg?1605002459"
+      }
+    },
+    {
+      "user": "Biscuits0",
+      "user_id": 23843313,
+      "country": "IQ",
+      "score_id": 0,
+      "rank": "S",
+      "accuracy": 0.9458290065766701,
+      "pp": null,
+      "mods": [],
+      "combo": 963,
+      "created_at": "2026-01-20T10:56:55Z",
+      "beatmapset": {
+        "id": 1257735,
+        "title": "Oriental's Long Stream Practice & Training Maps",
+        "cover": "https://assets.ppy.sh/beatmaps/1257735/covers/card.jpg?1605002459"
+      }
+    },
+    {
+      "user": "Biscuits0",
+      "user_id": 23843313,
+      "country": "IQ",
+      "score_id": 0,
+      "rank": "SH",
+      "accuracy": 0.974025974025974,
+      "pp": null,
+      "mods": [
+        "HD"
+      ],
+      "combo": 99,
+      "created_at": "2026-01-20T10:54:19Z",
+      "beatmapset": {
+        "id": 1151942,
+        "title": "Stream Practice Set",
+        "cover": "https://assets.ppy.sh/beatmaps/1151942/covers/card.jpg?1725190224"
+      }
+    },
+    {
+      "user": "Biscuits0",
+      "user_id": 23843313,
+      "country": "IQ",
+      "score_id": 0,
+      "rank": "SH",
+      "accuracy": 0.948051948051948,
+      "pp": null,
+      "mods": [
+        "HD"
+      ],
+      "combo": 97,
+      "created_at": "2026-01-20T10:53:57Z",
+      "beatmapset": {
+        "id": 1151942,
+        "title": "Stream Practice Set",
+        "cover": "https://assets.ppy.sh/beatmaps/1151942/covers/card.jpg?1725190224"
+      }
+    }
+  ]
+}
