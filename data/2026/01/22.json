@@ -1,0 +1,190 @@
+{
+  "date": "2026-01-22",
+  "country": "IQ",
+  "generated_at": "2026-01-22T01:47:03.434Z",
+  "scores": [
+    {
+      "user": "Biscuits0",
+      "user_id": 23843313,
+      "country": "IQ",
+      "score_id": 4972344356,
+      "rank": "A",
+      "accuracy": 0.9919137466307277,
+      "pp": 378.534,
+      "mods": [
+        "HD",
+        "HR"
+      ],
+      "combo": 449,
+      "created_at": "2026-01-21T23:43:54Z",
+      "beatmapset": {
+        "id": 2294787,
+        "title": "erase u (sped up & cut ver.)",
+        "cover": "https://assets.ppy.sh/beatmaps/2294787/covers/card.jpg?1741733564"
+      }
+    },
+    {
+      "user": "Biscuits0",
+      "user_id": 23843313,
+      "country": "IQ",
+      "score_id": 4972343856,
+      "rank": "A",
+      "accuracy": 0.9813333333333333,
+      "pp": 260.918,
+      "mods": [
+        "HD"
+      ],
+      "combo": 377,
+      "created_at": "2026-01-21T23:42:09Z",
+      "beatmapset": {
+        "id": 2294787,
+        "title": "erase u (sped up & cut ver.)",
+        "cover": "https://assets.ppy.sh/beatmaps/2294787/covers/card.jpg?1741733564"
+      }
+    },
+    {
+      "user": "Biscuits0",
+      "user_id": 23843313,
+      "country": "IQ",
+      "score_id": 4972343188,
+      "rank": "A",
+      "accuracy": 0.9712488769092543,
+      "pp": 253.303,
+      "mods": [
+        "HD",
+        "HR"
+      ],
+      "combo": 209,
+      "created_at": "2026-01-21T23:39:52Z",
+      "beatmapset": {
+        "id": 2294787,
+        "title": "erase u (sped up & cut ver.)",
+        "cover": "https://assets.ppy.sh/beatmaps/2294787/covers/card.jpg?1741733564"
+      }
+    },
+    {
+      "user": "Biscuits0",
+      "user_id": 23843313,
+      "country": "IQ",
+      "score_id": 4972342737,
+      "rank": "A",
+      "accuracy": 0.980276134122288,
+      "pp": 224.252,
+      "mods": [
+        "HD",
+        "HR"
+      ],
+      "combo": 294,
+      "created_at": "2026-01-21T23:38:16Z",
+      "beatmapset": {
+        "id": 2294787,
+        "title": "erase u (sped up & cut ver.)",
+        "cover": "https://assets.ppy.sh/beatmaps/2294787/covers/card.jpg?1741733564"
+      }
+    },
+    {
+      "user": "Biscuits0",
+      "user_id": 23843313,
+      "country": "IQ",
+      "score_id": 4972337054,
+      "rank": "B",
+      "accuracy": 0.8742249036366684,
+      "pp": 77.8934,
+      "mods": [
+        "HD"
+      ],
+      "combo": 423,
+      "created_at": "2026-01-21T23:18:14Z",
+      "beatmapset": {
+        "id": 1781620,
+        "title": "Glory Days",
+        "cover": "https://assets.ppy.sh/beatmaps/1781620/covers/card.jpg?1660851627"
+      }
+    },
+    {
+      "user": "ghoul534",
+      "user_id": 24991953,
+      "country": "IQ",
+      "score_id": 0,
+      "rank": "A",
+      "accuracy": 0.9434129089301503,
+      "pp": null,
+      "mods": [],
+      "combo": 179,
+      "created_at": "2026-01-21T12:49:10Z",
+      "beatmapset": {
+        "id": 1327467,
+        "title": "You Are The Only One",
+        "cover": "https://assets.ppy.sh/beatmaps/1327467/covers/card.jpg?1612319422"
+      }
+    },
+    {
+      "user": "ghoul534",
+      "user_id": 24991953,
+      "country": "IQ",
+      "score_id": 4972089282,
+      "rank": "A",
+      "accuracy": 0.9541387024608501,
+      "pp": 163.001,
+      "mods": [],
+      "combo": 82,
+      "created_at": "2026-01-21T12:45:51Z",
+      "beatmapset": {
+        "id": 320118,
+        "title": "No title",
+        "cover": "https://assets.ppy.sh/beatmaps/320118/covers/card.jpg?1650632079"
+      }
+    },
+    {
+      "user": "ghoul534",
+      "user_id": 24991953,
+      "country": "IQ",
+      "score_id": 4972088359,
+      "rank": "S",
+      "accuracy": 0.9691714836223507,
+      "pp": 115.492,
+      "mods": [],
+      "combo": 708,
+      "created_at": "2026-01-21T12:43:05Z",
+      "beatmapset": {
+        "id": 41860,
+        "title": "Chinese Snowy Dance",
+        "cover": "https://assets.ppy.sh/beatmaps/41860/covers/card.jpg?1622052126"
+      }
+    },
+    {
+      "user": "ghoul534",
+      "user_id": 24991953,
+      "country": "IQ",
+      "score_id": 0,
+      "rank": "C",
+      "accuracy": 0.7397910731244065,
+      "pp": null,
+      "mods": [],
+      "combo": 164,
+      "created_at": "2026-01-21T12:35:48Z",
+      "beatmapset": {
+        "id": 2102468,
+        "title": "Skibidi Toilet GAMMA",
+        "cover": "https://assets.ppy.sh/beatmaps/2102468/covers/card.jpg?1704803442"
+      }
+    },
+    {
+      "user": "ghoul534",
+      "user_id": 24991953,
+      "country": "IQ",
+      "score_id": 0,
+      "rank": "B",
+      "accuracy": 0.8765432098765432,
+      "pp": null,
+      "mods": [],
+      "combo": 406,
+      "created_at": "2026-01-21T12:34:31Z",
+      "beatmapset": {
+        "id": 2102468,
+        "title": "Skibidi Toilet GAMMA",
+        "cover": "https://assets.ppy.sh/beatmaps/2102468/covers/card.jpg?1704803442"
+      }
+    }
+  ]
+}
