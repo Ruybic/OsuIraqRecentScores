@@ -1,0 +1,296 @@
+{
+  "date": "2026-01-27",
+  "country": "IQ",
+  "generated_at": "2026-01-27T01:50:18.085Z",
+  "scores": [
+    {
+      "user": "Biscuits0",
+      "user_id": 23843313,
+      "country": "IQ",
+      "score_id": 4974713866,
+      "rank": "B",
+      "accuracy": 0.8996598639455783,
+      "pp": 247.718,
+      "mods": [
+        "HD",
+        "DT"
+      ],
+      "combo": 114,
+      "created_at": "2026-01-27T00:15:12Z",
+      "beatmapset": {
+        "id": 2425417,
+        "title": "Determinate (Nightcore & Cut Ver.)",
+        "cover": "https://assets.ppy.sh/beatmaps/2425417/covers/card.jpg?1761335172"
+      }
+    },
+    {
+      "user": "Biscuits0",
+      "user_id": 23843313,
+      "country": "IQ",
+      "score_id": 4974713631,
+      "rank": "B",
+      "accuracy": 0.8860544217687075,
+      "pp": 188.959,
+      "mods": [
+        "HD",
+        "DT"
+      ],
+      "combo": 55,
+      "created_at": "2026-01-27T00:14:28Z",
+      "beatmapset": {
+        "id": 2425417,
+        "title": "Determinate (Nightcore & Cut Ver.)",
+        "cover": "https://assets.ppy.sh/beatmaps/2425417/covers/card.jpg?1761335172"
+      }
+    },
+    {
+      "user": "Biscuits0",
+      "user_id": 23843313,
+      "country": "IQ",
+      "score_id": 4974713367,
+      "rank": "B",
+      "accuracy": 0.8652743652743653,
+      "pp": 124.8,
+      "mods": [
+        "HD",
+        "DT"
+      ],
+      "combo": 65,
+      "created_at": "2026-01-27T00:13:29Z",
+      "beatmapset": {
+        "id": 1124391,
+        "title": "ROCK-mode",
+        "cover": "https://assets.ppy.sh/beatmaps/1124391/covers/card.jpg?1650692695"
+      }
+    },
+    {
+      "user": "Biscuits0",
+      "user_id": 23843313,
+      "country": "IQ",
+      "score_id": 4974712640,
+      "rank": "B",
+      "accuracy": 0.8830508474576271,
+      "pp": 234.845,
+      "mods": [
+        "HD",
+        "DT"
+      ],
+      "combo": 284,
+      "created_at": "2026-01-27T00:10:59Z",
+      "beatmapset": {
+        "id": 1525595,
+        "title": "Heart Realize (TV Size)",
+        "cover": "https://assets.ppy.sh/beatmaps/1525595/covers/card.jpg?1645778377"
+      }
+    },
+    {
+      "user": "Biscuits0",
+      "user_id": 23843313,
+      "country": "IQ",
+      "score_id": 4974712147,
+      "rank": "B",
+      "accuracy": 0.8561215370866846,
+      "pp": 138.983,
+      "mods": [
+        "HD",
+        "DT"
+      ],
+      "combo": 205,
+      "created_at": "2026-01-27T00:09:16Z",
+      "beatmapset": {
+        "id": 1023311,
+        "title": "little my star",
+        "cover": "https://assets.ppy.sh/beatmaps/1023311/covers/card.jpg?1622168506"
+      }
+    },
+    {
+      "user": "L e n",
+      "user_id": 10286650,
+      "country": "IQ",
+      "score_id": 4974638298,
+      "rank": "SH",
+      "accuracy": 0.9877300613496932,
+      "pp": 170.961,
+      "mods": [
+        "HD",
+        "HR"
+      ],
+      "combo": 341,
+      "created_at": "2026-01-26T20:46:22Z",
+      "beatmapset": {
+        "id": 983911,
+        "title": "Bass Slut (Original Mix)",
+        "cover": "https://assets.ppy.sh/beatmaps/983911/covers/card.jpg?1650683411"
+      }
+    },
+    {
+      "user": "L e n",
+      "user_id": 10286650,
+      "country": "IQ",
+      "score_id": 4974636991,
+      "rank": "A",
+      "accuracy": 0.986709197235513,
+      "pp": 348.351,
+      "mods": [
+        "HD",
+        "DT"
+      ],
+      "combo": 802,
+      "created_at": "2026-01-26T20:43:28Z",
+      "beatmapset": {
+        "id": 375648,
+        "title": "Bass Slut (Original Mix)",
+        "cover": "https://assets.ppy.sh/beatmaps/375648/covers/card.jpg?1650635238"
+      }
+    },
+    {
+      "user": "L e n",
+      "user_id": 10286650,
+      "country": "IQ",
+      "score_id": 0,
+      "rank": "SH",
+      "accuracy": 0.9809523809523809,
+      "pp": null,
+      "mods": [
+        "HD",
+        "HR"
+      ],
+      "combo": 492,
+      "created_at": "2026-01-26T20:39:54Z",
+      "beatmapset": {
+        "id": 1621256,
+        "title": "Divine Intervention",
+        "cover": "https://assets.ppy.sh/beatmaps/1621256/covers/card.jpg?1651496450"
+      }
+    },
+    {
+      "user": "L e n",
+      "user_id": 10286650,
+      "country": "IQ",
+      "score_id": 4974634245,
+      "rank": "XH",
+      "accuracy": 1,
+      "pp": 70.5873,
+      "mods": [
+        "HD",
+        "HR"
+      ],
+      "combo": 520,
+      "created_at": "2026-01-26T20:37:32Z",
+      "beatmapset": {
+        "id": 851838,
+        "title": "One day (TV Size)",
+        "cover": "https://assets.ppy.sh/beatmaps/851838/covers/card.jpg?1650674311"
+      }
+    },
+    {
+      "user": "L e n",
+      "user_id": 10286650,
+      "country": "IQ",
+      "score_id": 4974631992,
+      "rank": "SH",
+      "accuracy": 0.995079950799508,
+      "pp": 265.707,
+      "mods": [
+        "HD",
+        "HR"
+      ],
+      "combo": 349,
+      "created_at": "2026-01-26T20:32:40Z",
+      "beatmapset": {
+        "id": 601419,
+        "title": "To Be The Best",
+        "cover": "https://assets.ppy.sh/beatmaps/601419/covers/card.jpg?1650649234"
+      }
+    },
+    {
+      "user": "ghoul534",
+      "user_id": 24991953,
+      "country": "IQ",
+      "score_id": 0,
+      "rank": "D",
+      "accuracy": 0.6044776119402985,
+      "pp": null,
+      "mods": [
+        "NF"
+      ],
+      "combo": 45,
+      "created_at": "2026-01-26T19:50:08Z",
+      "beatmapset": {
+        "id": 1664062,
+        "title": "Julaaaan's Triangle Jump Training 2",
+        "cover": "https://assets.ppy.sh/beatmaps/1664062/covers/card.jpg?1643430681"
+      }
+    },
+    {
+      "user": "ghoul534",
+      "user_id": 24991953,
+      "country": "IQ",
+      "score_id": 0,
+      "rank": "D",
+      "accuracy": 0.6077441077441077,
+      "pp": null,
+      "mods": [
+        "NF"
+      ],
+      "combo": 117,
+      "created_at": "2026-01-26T19:49:23Z",
+      "beatmapset": {
+        "id": 1664062,
+        "title": "Julaaaan's Triangle Jump Training 2",
+        "cover": "https://assets.ppy.sh/beatmaps/1664062/covers/card.jpg?1643430681"
+      }
+    },
+    {
+      "user": "ghoul534",
+      "user_id": 24991953,
+      "country": "IQ",
+      "score_id": 0,
+      "rank": "D",
+      "accuracy": 0.6517412935323383,
+      "pp": null,
+      "mods": [],
+      "combo": 26,
+      "created_at": "2026-01-26T19:48:31Z",
+      "beatmapset": {
+        "id": 1664062,
+        "title": "Julaaaan's Triangle Jump Training 2",
+        "cover": "https://assets.ppy.sh/beatmaps/1664062/covers/card.jpg?1643430681"
+      }
+    },
+    {
+      "user": "ghoul534",
+      "user_id": 24991953,
+      "country": "IQ",
+      "score_id": 0,
+      "rank": "A",
+      "accuracy": 0.967948717948718,
+      "pp": null,
+      "mods": [],
+      "combo": 66,
+      "created_at": "2026-01-26T19:47:58Z",
+      "beatmapset": {
+        "id": 1664062,
+        "title": "Julaaaan's Triangle Jump Training 2",
+        "cover": "https://assets.ppy.sh/beatmaps/1664062/covers/card.jpg?1643430681"
+      }
+    },
+    {
+      "user": "ghoul534",
+      "user_id": 24991953,
+      "country": "IQ",
+      "score_id": 0,
+      "rank": "C",
+      "accuracy": 0.7678275290215588,
+      "pp": null,
+      "mods": [],
+      "combo": 95,
+      "created_at": "2026-01-26T19:47:05Z",
+      "beatmapset": {
+        "id": 2416913,
+        "title": "DT Jump Pack 3",
+        "cover": "https://assets.ppy.sh/beatmaps/2416913/covers/card.jpg?1759588235"
+      }
+    }
+  ]
+}
