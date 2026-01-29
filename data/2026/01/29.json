@@ -1,0 +1,287 @@
+{
+  "date": "2026-01-29",
+  "country": "IQ",
+  "generated_at": "2026-01-29T01:59:07.431Z",
+  "scores": [
+    {
+      "user": "Biscuits0",
+      "user_id": 23843313,
+      "country": "IQ",
+      "score_id": 4975639022,
+      "rank": "A",
+      "accuracy": 0.9424616792495997,
+      "pp": 127.952,
+      "mods": [
+        "HD"
+      ],
+      "combo": 346,
+      "created_at": "2026-01-28T23:36:32Z",
+      "beatmapset": {
+        "id": 1007148,
+        "title": "MIIRO (LU-I Remix)",
+        "cover": "https://assets.ppy.sh/beatmaps/1007148/covers/card.jpg?1622166402"
+      }
+    },
+    {
+      "user": "Biscuits0",
+      "user_id": 23843313,
+      "country": "IQ",
+      "score_id": 4975636957,
+      "rank": "A",
+      "accuracy": 0.9666024405908799,
+      "pp": 177.248,
+      "mods": [
+        "HD"
+      ],
+      "combo": 236,
+      "created_at": "2026-01-28T23:29:50Z",
+      "beatmapset": {
+        "id": 1181454,
+        "title": "Hallelujah*Essaim",
+        "cover": "https://assets.ppy.sh/beatmaps/1181454/covers/card.jpg?1622190244"
+      }
+    },
+    {
+      "user": "Y a d",
+      "user_id": 19521102,
+      "country": "IQ",
+      "score_id": 4975579953,
+      "rank": "B",
+      "accuracy": 0.9147982062780269,
+      "pp": 192.949,
+      "mods": [
+        "DT"
+      ],
+      "combo": 147,
+      "created_at": "2026-01-28T20:55:45Z",
+      "beatmapset": {
+        "id": 2287463,
+        "title": "CHRISTMAS * ROCK",
+        "cover": "https://assets.ppy.sh/beatmaps/2287463/covers/card.jpg?1734432565"
+      }
+    },
+    {
+      "user": "Y a d",
+      "user_id": 19521102,
+      "country": "IQ",
+      "score_id": 4975579448,
+      "rank": "A",
+      "accuracy": 0.9284467713787086,
+      "pp": 233.004,
+      "mods": [
+        "DT"
+      ],
+      "combo": 89,
+      "created_at": "2026-01-28T20:54:36Z",
+      "beatmapset": {
+        "id": 2425417,
+        "title": "Determinate (Nightcore & Cut Ver.)",
+        "cover": "https://assets.ppy.sh/beatmaps/2425417/covers/card.jpg?1761335172"
+      }
+    },
+    {
+      "user": "Y a d",
+      "user_id": 19521102,
+      "country": "IQ",
+      "score_id": 4975579036,
+      "rank": "B",
+      "accuracy": 0.9065255731922398,
+      "pp": 182.384,
+      "mods": [
+        "HD",
+        "DT"
+      ],
+      "combo": 45,
+      "created_at": "2026-01-28T20:53:37Z",
+      "beatmapset": {
+        "id": 2425417,
+        "title": "Determinate (Nightcore & Cut Ver.)",
+        "cover": "https://assets.ppy.sh/beatmaps/2425417/covers/card.jpg?1761335172"
+      }
+    },
+    {
+      "user": "Y a d",
+      "user_id": 19521102,
+      "country": "IQ",
+      "score_id": 4975578052,
+      "rank": "A",
+      "accuracy": 0.9417040358744395,
+      "pp": 215.639,
+      "mods": [
+        "HD",
+        "DT"
+      ],
+      "combo": 173,
+      "created_at": "2026-01-28T20:51:26Z",
+      "beatmapset": {
+        "id": 2463664,
+        "title": "hate the way you love me (nightcore & cut ver.)",
+        "cover": "https://assets.ppy.sh/beatmaps/2463664/covers/card.jpg?1767818786"
+      }
+    },
+    {
+      "user": "Y a d",
+      "user_id": 19521102,
+      "country": "IQ",
+      "score_id": 4975577190,
+      "rank": "A",
+      "accuracy": 0.9814814814814815,
+      "pp": 298.656,
+      "mods": [
+        "HD",
+        "DT"
+      ],
+      "combo": 227,
+      "created_at": "2026-01-28T20:49:26Z",
+      "beatmapset": {
+        "id": 2463664,
+        "title": "hate the way you love me (nightcore & cut ver.)",
+        "cover": "https://assets.ppy.sh/beatmaps/2463664/covers/card.jpg?1767818786"
+      }
+    },
+    {
+      "user": "6xSeven",
+      "user_id": 29452442,
+      "country": "IQ",
+      "score_id": 4975540954,
+      "rank": "A",
+      "accuracy": 0.9410919540229885,
+      "pp": 112.849,
+      "mods": [],
+      "combo": 190,
+      "created_at": "2026-01-28T19:30:25Z",
+      "beatmapset": {
+        "id": 2398052,
+        "title": "Golden",
+        "cover": "https://assets.ppy.sh/beatmaps/2398052/covers/card.jpg?1753850095"
+      }
+    },
+    {
+      "user": "ghoul534",
+      "user_id": 24991953,
+      "country": "IQ",
+      "score_id": 4975534557,
+      "rank": "C",
+      "accuracy": 0.8513189448441247,
+      "pp": 131.724,
+      "mods": [
+        "DT"
+      ],
+      "combo": 148,
+      "created_at": "2026-01-28T19:16:39Z",
+      "beatmapset": {
+        "id": 2464479,
+        "title": "Maniac (Nightcore & Cut Ver.)",
+        "cover": "https://assets.ppy.sh/beatmaps/2464479/covers/card.jpg?1764663200"
+      }
+    },
+    {
+      "user": "ghoul534",
+      "user_id": 24991953,
+      "country": "IQ",
+      "score_id": 4975534123,
+      "rank": "C",
+      "accuracy": 0.7945492662473794,
+      "pp": 118.127,
+      "mods": [
+        "DT"
+      ],
+      "combo": 81,
+      "created_at": "2026-01-28T19:15:40Z",
+      "beatmapset": {
+        "id": 2464479,
+        "title": "Maniac (Nightcore & Cut Ver.)",
+        "cover": "https://assets.ppy.sh/beatmaps/2464479/covers/card.jpg?1764663200"
+      }
+    },
+    {
+      "user": "ghoul534",
+      "user_id": 24991953,
+      "country": "IQ",
+      "score_id": 4975530448,
+      "rank": "A",
+      "accuracy": 0.9726907630522088,
+      "pp": 139.291,
+      "mods": [],
+      "combo": 479,
+      "created_at": "2026-01-28T19:07:51Z",
+      "beatmapset": {
+        "id": 2246377,
+        "title": "The Emptiness Machine (Cut Ver.)",
+        "cover": "https://assets.ppy.sh/beatmaps/2246377/covers/card.jpg?1726770838"
+      }
+    },
+    {
+      "user": "ghoul534",
+      "user_id": 24991953,
+      "country": "IQ",
+      "score_id": 4975526511,
+      "rank": "A",
+      "accuracy": 0.9755077658303465,
+      "pp": 99.9812,
+      "mods": [],
+      "combo": 306,
+      "created_at": "2026-01-28T18:59:19Z",
+      "beatmapset": {
+        "id": 213629,
+        "title": "Five Nights at Freddy's",
+        "cover": "https://assets.ppy.sh/beatmaps/213629/covers/card.jpg?1650627414"
+      }
+    },
+    {
+      "user": "ghoul534",
+      "user_id": 24991953,
+      "country": "IQ",
+      "score_id": 4975521285,
+      "rank": "A",
+      "accuracy": 0.9391785150078988,
+      "pp": 100.967,
+      "mods": [],
+      "combo": 85,
+      "created_at": "2026-01-28T18:47:39Z",
+      "beatmapset": {
+        "id": 609311,
+        "title": "sweets parade",
+        "cover": "https://assets.ppy.sh/beatmaps/609311/covers/card.jpg?1650650183"
+      }
+    },
+    {
+      "user": "Biscuits0",
+      "user_id": 23843313,
+      "country": "IQ",
+      "score_id": 4975219399,
+      "rank": "B",
+      "accuracy": 0.8797909407665505,
+      "pp": 68.5716,
+      "mods": [
+        "HD"
+      ],
+      "combo": 279,
+      "created_at": "2026-01-28T02:29:39Z",
+      "beatmapset": {
+        "id": 862297,
+        "title": "Bon Appetit S (Oldskool HappyHardcore Remix)",
+        "cover": "https://assets.ppy.sh/beatmaps/862297/covers/card.jpg?1737856645"
+      }
+    },
+    {
+      "user": "Biscuits0",
+      "user_id": 23843313,
+      "country": "IQ",
+      "score_id": 4975217134,
+      "rank": "A",
+      "accuracy": 0.929691101890272,
+      "pp": 145.176,
+      "mods": [
+        "HD"
+      ],
+      "combo": 151,
+      "created_at": "2026-01-28T02:21:18Z",
+      "beatmapset": {
+        "id": 1793226,
+        "title": "Azul Remix",
+        "cover": "https://assets.ppy.sh/beatmaps/1793226/covers/card.jpg?1671034629"
+      }
+    }
+  ]
+}
