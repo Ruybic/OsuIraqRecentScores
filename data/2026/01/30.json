@@ -1,0 +1,200 @@
+{
+  "date": "2026-01-30",
+  "country": "IQ",
+  "generated_at": "2026-01-30T01:59:34.274Z",
+  "scores": [
+    {
+      "user": "Biscuits0",
+      "user_id": 23843313,
+      "country": "IQ",
+      "score_id": 4976090023,
+      "rank": "A",
+      "accuracy": 0.959349593495935,
+      "pp": 191.007,
+      "mods": [
+        "HD"
+      ],
+      "combo": 111,
+      "created_at": "2026-01-29T22:01:24Z",
+      "beatmapset": {
+        "id": 2367460,
+        "title": "Adventure Starts Here (Sped Up Ver.)",
+        "cover": "https://assets.ppy.sh/beatmaps/2367460/covers/card.jpg?1748497522"
+      }
+    },
+    {
+      "user": "Biscuits0",
+      "user_id": 23843313,
+      "country": "IQ",
+      "score_id": 4976079014,
+      "rank": "A",
+      "accuracy": 0.9773399014778326,
+      "pp": 252.703,
+      "mods": [
+        "HD"
+      ],
+      "combo": 1261,
+      "created_at": "2026-01-29T21:34:04Z",
+      "beatmapset": {
+        "id": 1054931,
+        "title": "Ray",
+        "cover": "https://assets.ppy.sh/beatmaps/1054931/covers/card.jpg?1622172511"
+      }
+    },
+    {
+      "user": "Biscuits0",
+      "user_id": 23843313,
+      "country": "IQ",
+      "score_id": 4976076367,
+      "rank": "A",
+      "accuracy": 0.9746476295075965,
+      "pp": 285.066,
+      "mods": [
+        "HD"
+      ],
+      "combo": 1370,
+      "created_at": "2026-01-29T21:27:38Z",
+      "beatmapset": {
+        "id": 475886,
+        "title": "Justability",
+        "cover": "https://assets.ppy.sh/beatmaps/475886/covers/card.jpg?1650640750"
+      }
+    },
+    {
+      "user": "Biscuits0",
+      "user_id": 23843313,
+      "country": "IQ",
+      "score_id": 4976073014,
+      "rank": "A",
+      "accuracy": 0.9725694444444445,
+      "pp": 250.556,
+      "mods": [
+        "HD"
+      ],
+      "combo": 540,
+      "created_at": "2026-01-29T21:19:49Z",
+      "beatmapset": {
+        "id": 1863866,
+        "title": "Seishun Complex",
+        "cover": "https://assets.ppy.sh/beatmaps/1863866/covers/card.jpg?1670514366"
+      }
+    },
+    {
+      "user": "Biscuits0",
+      "user_id": 23843313,
+      "country": "IQ",
+      "score_id": 4976070490,
+      "rank": "B",
+      "accuracy": 0.9070996978851964,
+      "pp": null,
+      "mods": [
+        "HD"
+      ],
+      "combo": 128,
+      "created_at": "2026-01-29T21:14:02Z",
+      "beatmapset": {
+        "id": 418412,
+        "title": "Lyoshka",
+        "cover": "https://assets.ppy.sh/beatmaps/418412/covers/card.jpg?1622100101"
+      }
+    },
+    {
+      "user": "6xSeven",
+      "user_id": 29452442,
+      "country": "IQ",
+      "score_id": 4975906102,
+      "rank": "C",
+      "accuracy": 0.8330090791180286,
+      "pp": 58.2483,
+      "mods": [
+        "DT"
+      ],
+      "combo": 118,
+      "created_at": "2026-01-29T15:17:44Z",
+      "beatmapset": {
+        "id": 7619,
+        "title": "Decode",
+        "cover": "https://assets.ppy.sh/beatmaps/7619/covers/card.jpg?1622025619"
+      }
+    },
+    {
+      "user": "6xSeven",
+      "user_id": 29452442,
+      "country": "IQ",
+      "score_id": 4975897799,
+      "rank": "B",
+      "accuracy": 0.8803854875283447,
+      "pp": 80.9467,
+      "mods": [
+        "HD",
+        "DT"
+      ],
+      "combo": 198,
+      "created_at": "2026-01-29T14:58:26Z",
+      "beatmapset": {
+        "id": 2024419,
+        "title": "All I Wanted",
+        "cover": "https://assets.ppy.sh/beatmaps/2024419/covers/card.jpg?1697933060"
+      }
+    },
+    {
+      "user": "6xSeven",
+      "user_id": 29452442,
+      "country": "IQ",
+      "score_id": 4975895490,
+      "rank": "C",
+      "accuracy": 0.8415084388185654,
+      "pp": 73.0631,
+      "mods": [
+        "HD",
+        "DT"
+      ],
+      "combo": 195,
+      "created_at": "2026-01-29T14:53:20Z",
+      "beatmapset": {
+        "id": 1992574,
+        "title": "i'll die anyway.",
+        "cover": "https://assets.ppy.sh/beatmaps/1992574/covers/card.jpg?1692551401"
+      }
+    },
+    {
+      "user": "6xSeven",
+      "user_id": 29452442,
+      "country": "IQ",
+      "score_id": 4975893337,
+      "rank": "B",
+      "accuracy": 0.9298708920187794,
+      "pp": 143.581,
+      "mods": [
+        "HD",
+        "DT"
+      ],
+      "combo": 335,
+      "created_at": "2026-01-29T14:48:22Z",
+      "beatmapset": {
+        "id": 1992574,
+        "title": "i'll die anyway.",
+        "cover": "https://assets.ppy.sh/beatmaps/1992574/covers/card.jpg?1692551401"
+      }
+    },
+    {
+      "user": "6xSeven",
+      "user_id": 29452442,
+      "country": "IQ",
+      "score_id": 4975892030,
+      "rank": "B",
+      "accuracy": 0.9014084507042254,
+      "pp": 98.894,
+      "mods": [
+        "DT"
+      ],
+      "combo": 223,
+      "created_at": "2026-01-29T14:45:22Z",
+      "beatmapset": {
+        "id": 1992574,
+        "title": "i'll die anyway.",
+        "cover": "https://assets.ppy.sh/beatmaps/1992574/covers/card.jpg?1692551401"
+      }
+    }
+  ]
+}
