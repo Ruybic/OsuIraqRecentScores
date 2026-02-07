@@ -1,0 +1,102 @@
+{
+  "date": "2026-02-07",
+  "country": "IQ",
+  "generated_at": "2026-02-07T01:57:39.644Z",
+  "scores": [
+    {
+      "user": "Biscuits0",
+      "user_id": 23843313,
+      "country": "IQ",
+      "score_id": 0,
+      "rank": "A",
+      "accuracy": 0.9361017897091722,
+      "pp": null,
+      "mods": [
+        "HD"
+      ],
+      "combo": 1192,
+      "created_at": "2026-02-06T23:38:42Z",
+      "beatmapset": {
+        "id": 1257735,
+        "title": "Oriental's Long Stream Practice & Training Maps",
+        "cover": "https://assets.ppy.sh/beatmaps/1257735/covers/card.jpg?1605002459"
+      }
+    },
+    {
+      "user": "Biscuits0",
+      "user_id": 23843313,
+      "country": "IQ",
+      "score_id": 0,
+      "rank": "SH",
+      "accuracy": 0.9462102689486552,
+      "pp": null,
+      "mods": [
+        "HD"
+      ],
+      "combo": 1636,
+      "created_at": "2026-02-06T23:36:21Z",
+      "beatmapset": {
+        "id": 1257735,
+        "title": "Oriental's Long Stream Practice & Training Maps",
+        "cover": "https://assets.ppy.sh/beatmaps/1257735/covers/card.jpg?1605002459"
+      }
+    },
+    {
+      "user": "Biscuits0",
+      "user_id": 23843313,
+      "country": "IQ",
+      "score_id": 0,
+      "rank": "SH",
+      "accuracy": 0.9717303510406958,
+      "pp": null,
+      "mods": [
+        "HD"
+      ],
+      "combo": 1073,
+      "created_at": "2026-02-06T23:33:08Z",
+      "beatmapset": {
+        "id": 1257735,
+        "title": "Oriental's Long Stream Practice & Training Maps",
+        "cover": "https://assets.ppy.sh/beatmaps/1257735/covers/card.jpg?1605002459"
+      }
+    },
+    {
+      "user": "Biscuits0",
+      "user_id": 23843313,
+      "country": "IQ",
+      "score_id": 0,
+      "rank": "SH",
+      "accuracy": 0.9543336439888164,
+      "pp": null,
+      "mods": [
+        "HD"
+      ],
+      "combo": 1073,
+      "created_at": "2026-02-06T23:30:58Z",
+      "beatmapset": {
+        "id": 1257735,
+        "title": "Oriental's Long Stream Practice & Training Maps",
+        "cover": "https://assets.ppy.sh/beatmaps/1257735/covers/card.jpg?1605002459"
+      }
+    },
+    {
+      "user": "Biscuits0",
+      "user_id": 23843313,
+      "country": "IQ",
+      "score_id": 0,
+      "rank": "A",
+      "accuracy": 0.9319664492078286,
+      "pp": null,
+      "mods": [
+        "HD"
+      ],
+      "combo": 1073,
+      "created_at": "2026-02-06T23:28:38Z",
+      "beatmapset": {
+        "id": 1257735,
+        "title": "Oriental's Long Stream Practice & Training Maps",
+        "cover": "https://assets.ppy.sh/beatmaps/1257735/covers/card.jpg?1605002459"
+      }
+    }
+  ]
+}
