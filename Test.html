@@ -69,15 +69,58 @@
         .score-grid { display: grid; gap: 16px; grid-template-columns: 1fr; }
         @media (min-width: 1024px) { .score-grid { grid-template-columns: repeat(5, 1fr); } }
 
-        /* SCORE CARD STYLES (Same as before) */
+        /* DYNAMIC SCORE CARD */
         .score-card { background: var(--panel-bg); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; transition: 0.2s; border: 1px solid #3e3e4a; }
         .score-card:hover { transform: translateY(-8px); border-color: var(--osu-pink); }
-        .map-header { width: 100%; height: 110px; background-size: cover; position: relative; }
-        .rank-grade { position: absolute; top: 0; left: 0; background: rgba(0,0,0,0.7); color: #fff; font-weight: 900; padding: 4px 10px; border-radius: 0 0 8px 0; }
-        .pp-value { position: absolute; bottom: 8px; right: 8px; background: var(--osu-pink); padding: 4px 10px; border-radius: 8px; font-weight: 800; font-size: 12px; }
-        .card-body { padding: 15px; background: var(--panel-bg); }
-        .player-name { font-weight: 800; color: white; display: block; }
-        .map-title { font-size: 12px; color: var(--text-muted); display: block; margin-bottom: 5px; }
+        
+        .map-header { 
+            width: 100%; height: 110px; background-size: cover; background-position: center; position: relative; 
+        }
+        /* Gradient overlay for text readability */
+        .map-header::after {
+            content: ''; position: absolute; top:0; left:0; right:0; bottom:0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7));
+        }
+
+        .rank-grade { 
+            position: absolute; top: 0; left: 0; z-index: 2;
+            background: rgba(0,0,0,0.8); color: #fff; font-weight: 900; font-size: 20px;
+            padding: 4px 12px; border-radius: 0 0 10px 0; border-right: 2px solid var(--osu-pink);
+        }
+        
+        .rank-SS, .rank-SSH { color: silver; text-shadow: 0 0 5px white; }
+        .rank-S, .rank-SH { color: #ffcc22; text-shadow: 0 0 5px orange; }
+        .rank-A { color: #22ff22; }
+        .rank-B { color: #22aaff; }
+        .rank-C { color: #cc22ff; }
+        .rank-D { color: #ff2222; }
+
+        .pp-value { 
+            position: absolute; bottom: 8px; right: 8px; z-index: 2;
+            background: var(--osu-pink); color: white; padding: 4px 10px; border-radius: 6px; 
+            font-weight: 800; font-size: 13px; box-shadow: 0 2px 5px black;
+        }
+
+        .card-body { padding: 15px; background: var(--panel-bg); position: relative; z-index: 3; }
+        
+        .user-avatar {
+            width: 45px; height: 45px; border-radius: 50%; border: 3px solid var(--panel-bg);
+            position: absolute; top: -25px; right: 15px; background: #333;
+        }
+
+        .player-name { font-weight: 800; color: white; display: block; font-size: 15px; margin-bottom: 2px; }
+        .map-title { font-size: 12px; color: var(--text-muted); display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        
+        .score-stats {
+            margin-top: 12px; padding-top: 10px; border-top: 1px solid #3e3e4a;
+            display: flex; justify-content: space-between; font-size: 11px; font-weight: 600;
+        }
+        .accuracy { color: #88ffcc; }
+        .mods { color: #ffcc22; margin-left: 5px; }
+        .time-ago { color: var(--text-muted); }
+
+        /* Loading / Error States */
+        .status-msg { grid-column: 1 / -1; text-align: center; padding: 40px; color: var(--text-muted); font-style: italic; }
     </style>
 </head>
 <body>
@@ -89,7 +132,8 @@
     <div class="dropdown">
         <button class="dropbtn" id="menuBtn">MENU ▼</button>
         <div class="dropdown-content" id="myDropdown">
-            <a href="#">Showcase</a>
+            <a href="#">Showcase (Videos)</a>
+            <a href="#">Mapping</a>
             <a href="#">Rankings</a>
             <a href="#">Discord</a>
         </div>
@@ -97,39 +141,101 @@
 </header>
 
 <div class="controls-bar">
-    <span class="section-label" id="currentDateLabel">LATEST COMMUNITY SCORES</span>
+    <span class="section-label" id="currentDateLabel">LATEST SCORES</span>
     <button class="date-btn" id="calendarBtn">📅 SELECT DATE</button>
 </div>
 
 <div class="calendar-popup" id="calendarPopup">
     <div class="cal-header">
         <span class="cal-nav" onclick="changeMonth(-1)">&#9664;</span>
-        <span class="cal-month" id="calMonthYear">December 2025</span>
+        <span class="cal-month" id="calMonthYear"></span>
         <span class="cal-nav" onclick="changeMonth(1)">&#9654;</span>
     </div>
-    <div class="cal-grid" id="calGrid">
-        </div>
+    <div class="cal-grid" id="calGrid"></div>
 </div>
 
 <div class="feed-container">
     <div class="score-grid" id="scoreGrid">
-        <div class="score-card">
-            <div class="map-header" style="background-image: url('https://assets.ppy.sh/beatmaps/1011011/covers/cover.jpg');">
-                <div class="rank-grade">S</div>
-                <div class="pp-value">540pp</div>
-            </div>
-            <div class="card-body">
-                <span class="player-name">FancyToast</span>
-                <span class="map-title">Hatsune Miku - Senbonzakura</span>
-            </div>
-        </div>
+        <div class="status-msg">Select a date to view history...</div>
     </div>
 </div>
 
 <script>
-    /* --- CALENDAR LOGIC --- */
+    // --- UTILITIES ---
+    function timeAgo(dateString) {
+        const date = new Date(dateString);
+        const now = new Date();
+        const seconds = Math.floor((now - date) / 1000);
+        let interval = Math.floor(seconds / 3600);
+        if (interval > 24) return date.toLocaleDateString(); // Show date if older than 24h
+        if (interval >= 1) return interval + "h ago";
+        interval = Math.floor(seconds / 60);
+        if (interval >= 1) return interval + "m ago";
+        return "Just now";
+    }
+
+    // --- MAIN RENDERER ---
+    async function fetchAndRender(path) {
+        const grid = document.getElementById('scoreGrid');
+        grid.innerHTML = '<div class="status-msg">Loading data...</div>';
+
+        try {
+            // In a real local server, this fetches the file. 
+            // If you are just opening HTML file, browsers block fetch. You need a local server (Live Server extension).
+            const response = await fetch(path);
+            
+            if (!response.ok) throw new Error("Data not found for this date.");
+            
+            const data = await response.json();
+            
+            if (!data.scores || data.scores.length === 0) {
+                grid.innerHTML = '<div class="status-msg">No scores recorded for this day.</div>';
+                return;
+            }
+
+            grid.innerHTML = ''; // Clear loading message
+
+            data.scores.forEach(score => {
+                // Formatting Data
+                const ppText = score.pp ? Math.round(score.pp) + "pp" : "";
+                const accText = (score.accuracy * 100).toFixed(2) + "%";
+                const modsText = score.mods && score.mods.length > 0 ? "+" + score.mods.join("") : "";
+                const avatarUrl = `https://a.ppy.sh/${score.user_id}`;
+                const bgUrl = score.beatmapset.cover || 'https://osu.ppy.sh/assets/images/backgrounds/initial.6fa0f4e4.jpg';
+                const rankClass = `rank-${score.rank}`; // For colors
+                
+                // Construct HTML
+                const card = document.createElement('div');
+                card.className = 'score-card';
+                card.innerHTML = `
+                    <div class="map-header" style="background-image: url('${bgUrl}');">
+                        <div class="rank-grade ${rankClass}">${score.rank}</div>
+                        ${ppText ? `<div class="pp-value">${ppText}</div>` : ''}
+                    </div>
+                    <div class="card-body">
+                        <img src="${avatarUrl}" class="user-avatar" onerror="this.src='https://osu.ppy.sh/images/layout/avatar-guest.png'">
+                        <span class="player-name">${score.user}</span>
+                        <span class="map-title">${score.beatmapset.title}</span>
+                        <div class="score-stats">
+                            <div>
+                                <span class="accuracy">${accText}</span>
+                                <span class="mods">${modsText}</span>
+                            </div>
+                            <span class="time-ago">${timeAgo(score.created_at)}</span>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+
+        } catch (error) {
+            console.error(error);
+            grid.innerHTML = `<div class="status-msg">⚠️ No data found (Check path: ${path})</div>`;
+        }
+    }
+
+    // --- CALENDAR LOGIC ---
     let currentDate = new Date();
-    let selectedDate = null;
     
     function renderCalendar(date) {
         const month = date.getMonth();
@@ -159,35 +265,35 @@
     }
 
     function selectDay(year, month, day) {
-        // --- PATH FINDING LOGIC ---
-        // Formatting month/day to be 2 digits (e.g., 01, 13)
         const mm = month.toString().padStart(2, '0');
         const dd = day.toString().padStart(2, '0');
         
+        // --- PATH HANDLING ---
         let path = "";
         
-        // Handle 2025 vs 2026 format difference
+        // Handles your specific folder structure requirements
         if (year === 2025) {
-            path = `Test/Data/${year}/${mm}/${dd}.json`; // Assuming folders are 2025/12/13.json
+            // Based on your input: Test/Data/"2025/12"/13.json
+            // Note: Browsers usually ignore quotes in paths, assuming standard folder structure here
+            path = `Test/Data/${year}/${mm}/${dd}.json`; 
         } else {
+            // Standard: Test/Data/2026/01/01.json
             path = `Test/Data/${year}/${mm}/${dd}.json`;
         }
 
-        console.log("Fetching data from:", path);
-        document.getElementById('currentDateLabel').innerText = `SCORES FROM: ${year}-${mm}-${dd}`;
+        document.getElementById('currentDateLabel').innerText = `ARCHIVE: ${year}-${mm}-${dd}`;
         document.getElementById('calendarPopup').classList.remove('open');
         
-        // Here you would call fetch(path) to get real data
-        // For now, we simulate a reload or visual update
+        // Trigger the fetch
+        fetchAndRender(path);
     }
 
-    /* --- EVENT LISTENERS --- */
+    // --- INITIALIZATION ---
     document.getElementById('calendarBtn').onclick = () => {
         document.getElementById('calendarPopup').classList.toggle('open');
         renderCalendar(currentDate);
     };
 
-    // Existing Menu Logic
     const menuBtn = document.getElementById('menuBtn');
     const dropdown = document.getElementById('myDropdown');
     menuBtn.onclick = (e) => { dropdown.classList.toggle("show"); e.stopPropagation(); };
@@ -198,8 +304,12 @@
         }
     };
     
-    // Initial Render
+    // Render calendar immediately
     renderCalendar(currentDate);
+    
+    // Optional: Load today's data immediately (if you have it)
+    // selectDay(2026, 2, 1); 
+
 </script>
 
 </body>
