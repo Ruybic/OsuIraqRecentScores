@@ -1,0 +1,101 @@
+{
+  "date": "2026-02-12",
+  "country": "IQ",
+  "generated_at": "2026-02-12T02:08:57.664Z",
+  "scores": [
+    {
+      "user": "ghoul534",
+      "user_id": 24991953,
+      "country": "IQ",
+      "score_id": 4982487134,
+      "rank": "A",
+      "accuracy": 0.9564032697547684,
+      "pp": 213.94,
+      "mods": [
+        "DT"
+      ],
+      "combo": 135,
+      "created_at": "2026-02-12T02:08:37Z",
+      "beatmapset": {
+        "id": 2423347,
+        "title": "Last Christmas (Nightcore Mix)",
+        "cover": "https://assets.ppy.sh/beatmaps/2423347/covers/card.jpg?1765731478"
+      }
+    },
+    {
+      "user": "ghoul534",
+      "user_id": 24991953,
+      "country": "IQ",
+      "score_id": 4982486266,
+      "rank": "B",
+      "accuracy": 0.9124767225325885,
+      "pp": 240.255,
+      "mods": [
+        "DT"
+      ],
+      "combo": 186,
+      "created_at": "2026-02-12T02:05:15Z",
+      "beatmapset": {
+        "id": 2405583,
+        "title": "How Do You Do? (Potatoheadz Remix) (Nightcore & Cut Ver.)",
+        "cover": "https://assets.ppy.sh/beatmaps/2405583/covers/card.jpg?1764783562"
+      }
+    },
+    {
+      "user": "ghoul534",
+      "user_id": 24991953,
+      "country": "IQ",
+      "score_id": 4982485794,
+      "rank": "A",
+      "accuracy": 0.9798850574712644,
+      "pp": 299.952,
+      "mods": [
+        "HD",
+        "DT"
+      ],
+      "combo": 188,
+      "created_at": "2026-02-12T02:03:28Z",
+      "beatmapset": {
+        "id": 2288193,
+        "title": "Backstabber (Sped Up & Cut Ver.)",
+        "cover": "https://assets.ppy.sh/beatmaps/2288193/covers/card.jpg?1755044874"
+      }
+    },
+    {
+      "user": "ghoul534",
+      "user_id": 24991953,
+      "country": "IQ",
+      "score_id": 4982483066,
+      "rank": "A",
+      "accuracy": 0.9773391812865497,
+      "pp": 239.377,
+      "mods": [],
+      "combo": 448,
+      "created_at": "2026-02-12T01:53:14Z",
+      "beatmapset": {
+        "id": 2284092,
+        "title": "Parasite (Cut Ver.)",
+        "cover": "https://assets.ppy.sh/beatmaps/2284092/covers/card.jpg?1741658673"
+      }
+    },
+    {
+      "user": "ghoul534",
+      "user_id": 24991953,
+      "country": "IQ",
+      "score_id": 0,
+      "rank": "B",
+      "accuracy": 0.907103825136612,
+      "pp": null,
+      "mods": [
+        "DT"
+      ],
+      "combo": 84,
+      "created_at": "2026-02-12T01:47:24Z",
+      "beatmapset": {
+        "id": 2505235,
+        "title": "Take a Hint feat. Victoria Justice & Elizabeth Gillies (Nightcore & Cut Ver.)",
+        "cover": "https://assets.ppy.sh/beatmaps/2505235/covers/card.jpg?1770735532"
+      }
+    }
+  ]
+}
