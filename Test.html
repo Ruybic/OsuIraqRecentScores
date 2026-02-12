@@ -3,61 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>osu! Iraq Portal</title>
+    <title>osu! Iraq Hub</title>
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
-        :root { --osu-pink: #ff66aa; --dark-base: #1c1c21; --panel-bg: #2e2e38; --text-main: #ffffff; }
-        body { background-color: var(--dark-base); color: var(--text-main); font-family: 'Exo 2', sans-serif; margin: 0; }
+        :root { --osu-pink: #ff66aa; --dark-base: #1c1c21; --panel-bg: #2e2e38; --text-main: #ffffff; --text-muted: #888895; }
+        body { background-color: var(--dark-base); color: var(--text-main); font-family: 'Exo 2', sans-serif; margin: 0; padding-bottom: 50px; }
 
-        /* HEADER: Logo Left, Videos Left, Menu Right */
+        /* HEADER */
         header {
-            background: #111116;
-            padding: 10px 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            border-bottom: 2px solid var(--panel-bg);
+            background: #111116; padding: 10px 20px; display: flex; align-items: center;
+            justify-content: space-between; border-bottom: 2px solid var(--panel-bg);
             position: sticky; top: 0; z-index: 1000;
         }
         .header-left { display: flex; align-items: center; gap: 15px; }
-        .header-left img { height: 30px; }
+        .header-left img { height: 35px; flex-shrink: 0; }
         .header-left a { color: white; text-decoration: none; font-weight: 600; font-size: 14px; }
 
-        /* VIEW MORE DROPDOWN */
+        /* COLLAPSIBLE DROPDOWN */
         .dropdown { position: relative; display: inline-block; }
-        .dropbtn { background: var(--panel-bg); color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer; font-family: 'Exo 2'; }
+        .dropbtn { background: var(--panel-bg); color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer; font-family: 'Exo 2'; outline: none; }
         .dropdown-content {
             display: none; position: absolute; right: 0; background-color: #25252e;
-            min-width: 160px; box-shadow: 0px 8px 16px rgba(0,0,0,0.5); z-index: 1; border-radius: 5px;
+            min-width: 160px; box-shadow: 0px 8px 16px rgba(0,0,0,0.5); z-index: 1; border-radius: 5px; margin-top: 5px;
         }
-        .dropdown-content a { color: white; padding: 12px 16px; text-decoration: none; display: block; font-size: 14px; }
-        .dropdown-content a:hover { background-color: var(--osu-pink); }
-        .dropdown:hover .dropdown-content { display: block; }
+        .dropdown-content a { color: white; padding: 12px 16px; text-decoration: none; display: block; font-size: 14px; border-bottom: 1px solid #333; }
+        .dropdown-content.show { display: block; }
 
-        /* RECENT SCORES (MAIN HERO) */
-        .scores-hero { padding: 40px 20px; background: linear-gradient(to bottom, #25252e, #1c1c21); }
-        .score-card { 
-            background: rgba(255,255,255,0.05); border-left: 4px solid var(--osu-pink);
-            margin: 10px auto; padding: 15px; max-width: 800px; display: flex; justify-content: space-between;
+        /* SCORE FEED (Main View) */
+        .feed-container { max-width: 1000px; margin: 0 auto; padding: 20px; }
+        .section-label { color: var(--osu-pink); font-weight: 800; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 15px; display: block; }
+        
+        /* SCORE CARD: PC = 5 per row, Mobile = 1 per row */
+        .score-grid { display: grid; gap: 12px; grid-template-columns: 1fr; }
+        @media (min-width: 1024px) { .score-grid { grid-template-columns: repeat(5, 1fr); } }
+
+        .score-card {
+            background: var(--panel-bg); border-radius: 10px; overflow: hidden;
+            display: flex; flex-direction: column; position: relative;
+            transition: transform 0.2s; border: 1px solid transparent;
+        }
+        .score-card:hover { transform: translateY(-5px); border-color: var(--osu-pink); }
+
+        .map-bg {
+            width: 100%; height: 100px; background-size: cover; background-position: center;
+            position: relative; display: flex; align-items: flex-end;
+        }
+        .pp-badge {
+            background: var(--osu-pink); color: white; font-weight: 800;
+            padding: 2px 8px; border-radius: 4px; font-size: 14px; margin: 5px;
         }
 
-        /* VIDEO GRID: 5 per row PC, 1 per row Mobile */
-        .video-grid {
-            display: grid; gap: 15px; padding: 20px; max-width: 1600px; margin: 0 auto;
-            grid-template-columns: 1fr;
-        }
-        @media (min-width: 1024px) { .video-grid { grid-template-columns: repeat(5, 1fr); } }
-
-        .video-card { background: var(--panel-bg); border-radius: 8px; overflow: hidden; display: none; } /* Hidden by default for pagination */
-        .video-card.active { display: block; } /* Shown by script */
-
-        .iframe-wrapper { position: relative; padding-bottom: 56.25%; height: 0; }
-        .iframe-wrapper iframe { position: absolute; top:0; left:0; width:100%; height:100%; border:0; }
+        .score-details { padding: 10px; display: flex; flex-direction: column; gap: 4px; }
+        .player-name { font-weight: 800; color: var(--osu-pink); font-size: 14px; text-decoration: none; }
+        .map-name { font-size: 12px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .score-time { font-size: 10px; color: var(--text-muted); }
 
         /* PAGINATION */
-        .pagination { text-align: center; padding: 40px; }
-        .page-btn { background: #333; color: white; border: none; padding: 10px 18px; margin: 5px; cursor: pointer; border-radius: 5px; }
-        .page-btn.active { background: var(--osu-pink); font-weight: bold; }
+        .pagination { text-align: center; padding: 30px; }
+        .page-btn { background: #333; color: white; border: none; padding: 8px 15px; margin: 5px; cursor: pointer; border-radius: 4px; }
+        .page-btn.active { background: var(--osu-pink); }
     </style>
 </head>
 <body>
@@ -65,56 +69,59 @@
 <header>
     <div class="header-left">
         <img src="https://i.im.ge/2026/02/13/eygP26.Picsart-26-02-13-01-23-55-682.jpeg" alt="Logo">
-        <a href="#video-section">VIDEOS</a>
+        <a href="#">VIDEOS</a>
     </div>
     <div class="dropdown">
-        <button class="dropbtn">VIEW MORE ▼</button>
-        <div class="dropdown-content">
+        <button class="dropbtn" id="menuBtn">VIEW MORE ▼</button>
+        <div class="dropdown-content" id="myDropdown">
             <a href="#">Mapping</a>
             <a href="#">Rankings</a>
             <a href="#">Discord</a>
-            <a href="https://discord.com/users/fancytoast551" style="color: #ff4444;">Report Clip</a>
         </div>
     </div>
 </header>
 
-<section class="scores-hero">
-    <h2 style="text-align:center;">Recent Iraqi Top Scores</h2>
-    <div class="score-card">
-        <span><strong>PlayerName</strong> | Map Title [Diff]</span>
-        <span style="color: var(--osu-pink); font-weight: 800;">742pp</span>
-    </div>
-    </section>
+<div class="feed-container">
+    <span class="section-label">Recent Iraqi Scores</span>
+    <div class="score-grid">
+        
+        <div class="score-card">
+            <div class="map-bg" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.8)), url('https://assets.ppy.sh/beatmaps/12345/covers/cover.jpg');">
+                <span class="pp-badge">720pp</span>
+            </div>
+            <div class="score-details">
+                <a href="#" class="player-name">FancyToast</a>
+                <span class="map-name">Freedom Dive [Four Dimensions]</span>
+                <span class="score-time">2 hours ago</span>
+            </div>
+        </div>
 
-<div class="video-grid" id="video-section">
-    <div class="video-card active"><div class="iframe-wrapper"><iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"></iframe></div></div>
-    <div class="video-card active"><div class="iframe-wrapper"><iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"></iframe></div></div>
-    </div>
+        </div>
+</div>
 
 <div class="pagination">
-    <button class="page-btn active" onclick="changePage(1)">1</button>
-    <button class="page-btn" onclick="changePage(2)">2</button>
-    </div>
+    <button class="page-btn active">1</button>
+    <button class="page-btn">2</button>
+</div>
 
 <script>
-    function changePage(pageNum) {
-        const videos = document.querySelectorAll('.video-card');
-        const perPage = 20;
-        const start = (pageNum - 1) * perPage;
-        const end = start + perPage;
+    /* COLLAPSIBLE MENU LOGIC */
+    const menuBtn = document.getElementById('menuBtn');
+    const dropdown = document.getElementById('myDropdown');
 
-        videos.forEach((v, index) => {
-            if (index >= start && index < end) {
-                v.classList.add('active');
-            } else {
-                v.classList.remove('active');
+    menuBtn.onclick = function(event) {
+        dropdown.classList.toggle("show");
+        event.stopPropagation(); // Prevents immediate closing
+    };
+
+    // Close if user clicks anywhere else
+    window.onclick = function(event) {
+        if (!event.target.matches('.dropbtn')) {
+            if (dropdown.classList.contains('show')) {
+                dropdown.classList.remove('show');
             }
-        });
-
-        // Update button styles
-        document.querySelectorAll('.page-btn').forEach(btn => btn.classList.remove('active'));
-        event.target.classList.add('active');
-    }
+        }
+    };
 </script>
 
 </body>
