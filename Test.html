@@ -136,6 +136,13 @@
 
         /* Loading / Error States */
         .status-msg { grid-column: 1 / -1; text-align: center; padding: 40px; color: var(--text-muted); font-style: italic; }
+/* Ensures the text inside the clickable card stays white/muted and doesn't turn blue */
+.score-card {
+    text-decoration: none;
+    color: inherit;
+    display: flex; /* Keeps the card structure solid */
+}
+        
     </style>
 </head>
 <body>
@@ -200,7 +207,45 @@ async function fetchAndRender(path) {
         
         if (!response.ok) throw new Error("No data found for this date.");
         
-        const data = await response.json();
+       data.scores.forEach(score => {
+    const ppText = score.pp ? Math.round(score.pp) + "pp" : "";
+    const accText = (score.accuracy * 100).toFixed(2) + "%";
+    const modsText = score.mods && score.mods.length > 0 ? "+" + score.mods.join("") : "";
+    const avatarUrl = `https://a.ppy.sh/${score.user_id}`;
+    const bgUrl = score.beatmapset.cover;
+    const rankClass = `rank-${score.rank}`; 
+    
+    // 1. Create the card as an anchor tag 'a'
+    const card = document.createElement('a'); 
+    card.className = 'score-card';
+    
+    // 2. Set the link using the beatmapset id from your JSON
+    card.href = `https://osu.ppy.sh/beatmapsets/${score.beatmapset.id}`;
+    card.target = "_blank"; // Opens in a new tab
+    card.style.textDecoration = "none"; // Removes default link underlining
+
+    card.innerHTML = `
+        <div class="map-header" style="background-image: url('${bgUrl}');">
+            ${ppText ? `<div class="pp-value">${ppText}</div>` : ''}
+            <div class="rank-grade ${rankClass}">${score.rank}</div>
+        </div>
+        <div class="card-body">
+            <img src="${avatarUrl}" class="user-avatar" onerror="this.src='https://osu.ppy.sh/images/layout/avatar-guest.png'">
+            <span class="player-name">${score.user}</span>
+            <span class="map-title">${score.beatmapset.title}</span>
+            <div class="score-stats">
+                <div>
+                    <span class="accuracy">${accText}</span>
+                    <span class="mods">${modsText}</span>
+                </div>
+                <span class="time-ago">${timeAgo(score.created_at)}</span>
+            </div>
+        </div>
+    `;
+    grid.appendChild(card);
+});
+        
+ const data = await response.json();
         
         if (!data.scores || data.scores.length === 0) {
             grid.innerHTML = '<div class="status-msg">No scores recorded for this day.</div>';
@@ -209,37 +254,7 @@ async function fetchAndRender(path) {
 
         grid.innerHTML = ''; 
 
-        data.scores.forEach(score => {
-            const ppText = score.pp ? Math.round(score.pp) + "pp" : "";
-            const accText = (score.accuracy * 100).toFixed(2) + "%";
-            const modsText = score.mods && score.mods.length > 0 ? "+" + score.mods.join("") : "";
-            const avatarUrl = `https://a.ppy.sh/${score.user_id}`;
-            // Use the cover from your JSON
-            const bgUrl = score.beatmapset.cover;
-            const rankClass = `rank-${score.rank}`; 
-            
-            const card = document.createElement('div');
-            card.className = 'score-card';
-            card.innerHTML = `
-                <div class="map-header" style="background-image: url('${bgUrl}');">
-                    <div class="rank-grade ${rankClass}">${score.rank}</div>
-                    ${ppText ? `<div class="pp-value">${ppText}</div>` : ''}
-                </div>
-                <div class="card-body">
-                    <img src="${avatarUrl}" class="user-avatar" onerror="this.src='https://osu.ppy.sh/images/layout/avatar-guest.png'">
-                    <span class="player-name">${score.user}</span>
-                    <span class="map-title">${score.beatmapset.title}</span>
-                    <div class="score-stats">
-                        <div>
-                            <span class="accuracy">${accText}</span>
-                            <span class="mods">${modsText}</span>
-                        </div>
-                        <span class="time-ago">${timeAgo(score.created_at)}</span>
-                    </div>
-                </div>
-            `;
-            grid.appendChild(card);
-        });
+
 
     } catch (error) {
         console.error(error);
