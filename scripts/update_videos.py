@@ -14,65 +14,66 @@ def get_videos():
     all_videos = []
     
     for channel in CHANNELS:
-        print(f"Fetching videos for: {channel['name']}...")
+        print(f"Fetching: {channel['name']}...")
         
-        # Build the yt-dlp command
-        # --dump-json: Output raw data
-        # --flat-playlist: Scrape list only (don't download videos) -> Super fast
+        # We use the /videos tab specifically
+        url = f"https://www.youtube.com/channel/{channel['id']}/videos"
+        
         cmd = [
             "yt-dlp",
             "--dump-json",
             "--flat-playlist",
-            f"https://www.youtube.com/channel/{channel['id']}/videos"
+            "--quiet",
+            "--no-warnings",
+            "--user-agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36",
+            url
         ]
         
         try:
-            # Run command and capture output
+            # Capture output
             result = subprocess.run(cmd, capture_output=True, text=True, encoding='utf-8')
             
-            # yt-dlp outputs one JSON object per line
-            for line in result.stdout.strip().split('\n'):
-                if not line: continue
+            if result.stderr:
+                print(f"Log for {channel['name']}: {result.stderr}")
+
+            lines = result.stdout.strip().split('\n')
+            count = 0
+            for line in lines:
+                if not line.strip(): continue
                 
-                try:
-                    video_data = json.loads(line)
-                    
-                    # Extract only what we need
-                    # Note: We skip live streams that haven't happened yet (checks for upload_date)
-                    if 'upload_date' in video_data:
-                        # Format Date from YYYYMMDD to YYYY-MM-DD for JavaScript
-                        raw_date = video_data['upload_date']
-                        formatted_date = f"{raw_date[:4]}-{raw_date[4:6]}-{raw_date[6:]}"
-                        
-                        all_videos.append({
-                            "id": video_data['id'],
-                            "title": video_data['title'],
-                            "channel": channel['name'],
-                            "published": formatted_date,
-                            "timestamp": raw_date # Used for sorting
-                        })
-                except json.JSONDecodeError:
-                    continue
+                video_data = json.loads(line)
+                
+                # yt-dlp flat-playlist uses 'id' and 'title'
+                # For date, it might use 'upload_date' or None in flat mode
+                raw_date = video_data.get('upload_date', "20240101") 
+                formatted_date = f"{raw_date[:4]}-{raw_date[4:6]}-{raw_date[6:]}"
+
+                all_videos.append({
+                    "id": video_data['id'],
+                    "title": video_data['title'],
+                    "channel": channel['name'],
+                    "published": formatted_date,
+                    "timestamp": raw_date
+                })
+                count += 1
+            
+            print(f"Found {count} videos for {channel['name']}")
                     
         except Exception as e:
             print(f"Error scraping {channel['name']}: {e}")
 
-    # Sort all videos by date (Newest first)
-    # We compare the 'timestamp' strings (YYYYMMDD sorts correctly as string)
+    # Sort: Newest first
     all_videos.sort(key=lambda x: x['timestamp'], reverse=True)
 
-    # Remove the helper 'timestamp' key before saving (optional, keeps JSON clean)
+    # Clean up
     for v in all_videos:
-        del v['timestamp']
+        if 'timestamp' in v: del v['timestamp']
 
-    # Ensure directory exists
     os.makedirs(os.path.dirname(OUTPUT_FILE), exist_ok=True)
-
-    # Save to file
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         json.dump(all_videos, f, indent=4)
     
-    print(f"Successfully saved {len(all_videos)} videos.")
+    print(f"Final Count: {len(all_videos)} videos saved to {OUTPUT_FILE}")
 
 if __name__ == "__main__":
     get_videos()
