@@ -2,9 +2,8 @@ name: Update Video Feed
 
 on:
   schedule:
-    # Runs every 6 hours
-    - cron: '0 */6 * * *'
-  workflow_dispatch: # Allows you to run it manually from Actions tab
+    - cron: '0 */12 * * *' # Runs every 12 hours (scans are heavier, so we run less often)
+  workflow_dispatch: # Allows manual run
 
 jobs:
   build:
@@ -21,9 +20,12 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          pip install feedparser
+          pip install yt-dlp
 
       - name: Fetch Latest Videos
+        # Make sure this points to where your file actually is!
+        # If it is in the root folder, use: python update_videos.py
+        # If it is in scripts folder, use: python scripts/update_videos.py
         run: python scripts/update_videos.py
 
       - name: Commit and Push Changes
@@ -31,5 +33,5 @@ jobs:
           git config --global user.name "osu-iraq-bot"
           git config --global user.email "bot@osuiraq.com"
           git add data/videos.json
-          git commit -m "Update video feed" || echo "No new videos found"
+          git commit -m "Update full video feed" || echo "No changes to commit"
           git push
