@@ -6,107 +6,479 @@
     <title>osu! Iraq | Showcase</title>
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
-        :root { --osu-pink: #ff66aa; --dark-base: #1c1c21; --panel-bg: #2e2e38; --text-muted: #888895; }
-        body { background-color: var(--dark-base); color: white; font-family: 'Exo 2', sans-serif; margin: 0; padding: 0; }
+        :root { --osu-pink: #ff66aa; --dark-base: #1c1c21; --panel-bg: #2e2e38; --text-main: #ffffff; --text-muted: #888895; }
+        body { background-color: var(--dark-base); color: var(--text-main); font-family: 'Exo 2', sans-serif; margin: 0; }
 
-        /* HEADER & NAV */
+        /* HEADER */
         header {
-            background: #111116; padding: 15px 25px; display: flex; align-items: center;
+            background: #111116; padding: 12px 25px; display: flex; align-items: center;
             justify-content: space-between; border-bottom: 2px solid var(--panel-bg);
             position: sticky; top: 0; z-index: 1000;
         }
-        .logo { font-weight: 800; color: var(--osu-pink); font-size: 22px; text-decoration: none; }
-        .nav-links a { color: white; text-decoration: none; margin-left: 20px; font-weight: 600; font-size: 14px; transition: 0.2s; }
-        .nav-links a:hover { color: var(--osu-pink); }
-
-        .container { max-width: 1400px; margin: 40px auto; padding: 0 20px; }
-        .page-title { margin-bottom: 30px; border-left: 4px solid var(--osu-pink); padding-left: 15px; }
-        .page-title h1 { margin: 0; font-size: 28px; font-weight: 800; }
-        .page-title p { margin: 5px 0 0; color: var(--text-muted); }
-
-        /* THE VIDEO GRID */
-        .video-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); 
-            gap: 25px; 
+        .logo-box img { height: 38px; display: block; }
+        
+        .dropdown { position: relative; }
+        .dropbtn { background: var(--panel-bg); color: white; border: none; padding: 10px 18px; border-radius: 6px; cursor: pointer; font-family: 'Exo 2'; font-weight: 600; transition: 0.2s; }
+        .dropbtn:hover { background: #3e3e4a; }
+        .dropdown-content {
+            display: none; position: absolute; right: 0; background-color: #25252e;
+            min-width: 180px; box-shadow: 0px 8px 24px rgba(0,0,0,0.6); z-index: 1; border-radius: 6px; margin-top: 8px; overflow: hidden;
         }
+        .dropdown-content a { color: white; padding: 14px 20px; text-decoration: none; display: block; font-size: 14px; border-bottom: 1px solid #333; }
+        .dropdown-content.show { display: block; }
 
+        /* CONTROLS BAR */
+        .controls-bar {
+            max-width: 1400px; margin: 30px auto 10px; padding: 0 20px;
+            display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;
+        }
+        .section-label { color: var(--osu-pink); font-weight: 800; font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; margin: 0; }
+        
+        /* SEARCH & FILTER TOOLS */
+        .tools-box { display: flex; gap: 10px; }
+        
+        .search-input {
+            background: transparent; border: 1px solid #444; color: white;
+            padding: 8px 12px; border-radius: 4px; font-family: 'Exo 2'; font-size: 13px;
+            width: 200px; transition: 0.2s;
+        }
+        .search-input:focus { border-color: var(--osu-pink); outline: none; }
+        
+        .action-btn {
+            background: transparent; border: 1px solid var(--osu-pink); color: var(--osu-pink);
+            padding: 8px 16px; border-radius: 4px; font-size: 12px; font-weight: bold;
+            cursor: pointer; display: flex; align-items: center; gap: 8px; transition: 0.2s;
+        }
+        .action-btn:hover { background: var(--osu-pink); color: white; }
+        .action-btn.active { background: var(--osu-pink); color: white; }
+
+        /* VIDEO GRID */
+        .feed-container { max-width: 1400px; margin: 0 auto; padding: 10px 20px 30px; }
+        .video-grid { 
+            display: grid; gap: 20px; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); 
+        }
+        
         .video-card { 
-            background: var(--panel-bg); 
-            border-radius: 12px; 
-            overflow: hidden; 
-            border: 1px solid #3e3e4a; 
-            position: relative;
-            transition: transform 0.3s ease;
+            background: var(--panel-bg); border-radius: 12px; overflow: hidden; 
+            border: 1px solid #3e3e4a; position: relative; transition: 0.3s; 
         }
         .video-card:hover { transform: translateY(-5px); border-color: var(--osu-pink); }
-
-        /* Video ID Number Badge */
+        
         .video-num { 
-            position: absolute; top: 10px; left: 10px; 
+            position: absolute; top: 10px; left: 10px; z-index: 5;
             background: rgba(0,0,0,0.8); color: var(--osu-pink); 
-            padding: 3px 8px; border-radius: 6px; font-weight: 800; font-size: 12px; z-index: 5;
-            border: 1px solid var(--osu-pink);
+            padding: 3px 8px; border-radius: 6px; font-weight: 800; font-size: 12px; 
+            border: 1px solid var(--osu-pink); pointer-events: none;
         }
 
+        .vid-thumb { width: 100%; aspect-ratio: 16 / 9; background: black; }
+        iframe { width: 100%; height: 100%; border: none; }
+        
         .video-card h3 { 
-            font-size: 15px; padding: 15px; margin: 0; 
-            white-space: nowrap; overflow: hidden; text-overflow: ellipsis; 
-            background: #25252e; color: #eee;
+            font-size: 14px; padding: 15px; margin: 0; line-height: 1.4;
+            background: #25252e; color: #eee; min-height: 40px;
+            display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
         }
-
-        iframe { width: 100%; aspect-ratio: 16 / 9; border: none; display: block; }
-
-        @media (max-width: 480px) {
-            .video-grid { grid-template-columns: 1fr; }
+        
+        /* Message when search finds nothing */
+        .no-results { 
+            grid-column: 1 / -1; text-align: center; padding: 40px; 
+            color: var(--text-muted); display: none; 
         }
     </style>
 </head>
 <body>
 
 <header>
-    <a href="index.html" class="logo">FancyToastOsu!</a>
-    <nav class="nav-links">
-        <a href="index.html">Daily Scores</a>
-        <a href="Videos.html" style="color: var(--osu-pink);">Showcase</a>
-    </nav>
+    <div class="logo-box">
+        <img src="https://i.im.ge/2026/02/13/eygP26.Picsart-26-02-13-01-23-55-682.jpeg" alt="osu! Iraq">
+    </div>
+    <div class="dropdown">
+        <button class="dropbtn" id="menuBtn">MENU ▼</button>
+        <div class="dropdown-content" id="myDropdown">
+            <a href="index.html">Daily Scores</a>
+            <a href="Videos.html">Showcase (Videos)</a>
+            <a href="#">Rankings</a>
+            <a href="#">Discord</a>
+        </div>
+    </div>
 </header>
 
-<div class="container">
-    <div class="page-title">
-        <h1>Community Showcase</h1>
-        <p>Latest replays and highlights from Iraqi players</p>
-    </div>
-
-    <div class="video-grid" id="videoGrid">
-        
-        <div class="video-card">
-            <div class="video-num">#5</div>
-            <h3>[2.15⭐] Maitake Dance 100% SS FC (HDNCHR) / [Take's Normal] mapped by Take</h3>
-            <iframe src="https://www.youtube.com/embed/6OZW6p4g7mc" allowfullscreen loading="lazy"></iframe>
-        </div>
-        <div class="video-card">
-            <div class="video-num">#4</div>
-            <h3>[2.06⭐] Which one? 100% SS FC (HDNCHR) / [Normal] mapped by Moa</h3>
-            <iframe src="https://www.youtube.com/embed/v8Ci1mWx8Pk" allowfullscreen loading="lazy"></iframe>
-        </div>
-        <div class="video-card">
-            <div class="video-num">#3</div>
-            <h3>[1.96⭐] A-TYPE 100% SS FC (HDNCHR) / [B-TYPE] mapped by Nitroz</h3>
-            <iframe src="https://www.youtube.com/embed/ffuEbbU6ujw" allowfullscreen loading="lazy"></iframe>
-        </div>
-        <div class="video-card">
-            <div class="video-num">#2</div>
-            <h3>[3.15⭐] Yoru no Kodomo-tachi 100% SS FC (HDDT) / [Collab Hyper] mapped by Spayyce</h3>
-            <iframe src="https://www.youtube.com/embed/p05G5_xTOdk" allowfullscreen loading="lazy"></iframe>
-        </div>
-        <div class="video-card">
-            <div class="video-num">#1</div>
-            <h3>[1.90⭐] Risen (by Terry A. Davis) 100% SS FC (HDNCHR) / [Loyal] mapped by 1103</h3>
-            <iframe src="https://www.youtube.com/embed/-_k2jBsvmw4" allowfullscreen loading="lazy"></iframe>
-        </div>
+<div class="controls-bar">
+    <span class="section-label">COMMUNITY SHOWCASE</span>
+    
+    <div class="tools-box">
+        <input type="text" id="searchInput" class="search-input" placeholder="Search videos...">
+        <button class="action-btn" id="sortBtn" onclick="toggleSort()">
+            ⬇️ NEWEST
+        </button>
     </div>
 </div>
+
+<div class="feed-container">
+    <div class="video-grid" id="videoGrid">
+        
+        <div class="video-card" data-date="NA" data-title="[2.15⭐] maitake dance 100% ss fc (hdnchr) / [take's normal] mapped by take">
+            <div class="video-num">#44</div>
+            <div class="vid-thumb">
+                <iframe src="https://www.youtube.com/embed/6OZW6p4g7mc" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <h3>[2.15⭐] Maitake Dance 100% SS FC (HDNCHR) / [Take's Normal] mapped by Take</h3>
+        </div>
+        <div class="video-card" data-date="NA" data-title="[2.06⭐] which one? 100% ss fc (hdnchr) / [normal] mapped by moa">
+            <div class="video-num">#43</div>
+            <div class="vid-thumb">
+                <iframe src="https://www.youtube.com/embed/v8Ci1mWx8Pk" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <h3>[2.06⭐] Which one? 100% SS FC (HDNCHR) / [Normal] mapped by Moa</h3>
+        </div>
+        <div class="video-card" data-date="NA" data-title="[1.96⭐] a-type 100% ss fc (hdnchr) / [b-type] mapped by nitroz">
+            <div class="video-num">#42</div>
+            <div class="vid-thumb">
+                <iframe src="https://www.youtube.com/embed/ffuEbbU6ujw" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <h3>[1.96⭐] A-TYPE 100% SS FC (HDNCHR) / [B-TYPE] mapped by Nitroz</h3>
+        </div>
+        <div class="video-card" data-date="NA" data-title="[3.15⭐] yoru no kodomo-tachi 100% ss fc (hddt) / [collab hyper] mapped by spayyce">
+            <div class="video-num">#41</div>
+            <div class="vid-thumb">
+                <iframe src="https://www.youtube.com/embed/p05G5_xTOdk" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <h3>[3.15⭐] Yoru no Kodomo-tachi 100% SS FC (HDDT) / [Collab Hyper] mapped by Spayyce</h3>
+        </div>
+        <div class="video-card" data-date="NA" data-title="[1.90⭐] risen (by terry a. davis) 100% ss fc (hdnchr) / [loyal] mapped by 1103">
+            <div class="video-num">#40</div>
+            <div class="vid-thumb">
+                <iframe src="https://www.youtube.com/embed/-_k2jBsvmw4" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <h3>[1.90⭐] Risen (by Terry A. Davis) 100% SS FC (HDNCHR) / [Loyal] mapped by 1103</h3>
+        </div>
+        <div class="video-card" data-date="NA" data-title="[3.02⭐] opening (by oka soyo) 100% ss fc (hdnc) / [hazu's hard] mapped by hazu-">
+            <div class="video-num">#39</div>
+            <div class="vid-thumb">
+                <iframe src="https://www.youtube.com/embed/kbDn2pYl22c" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <h3>[3.02⭐] OPENING (by Oka Soyo) 100% SS FC (HDNC) / [Hazu's Hard] mapped by Hazu-</h3>
+        </div>
+        <div class="video-card" data-date="NA" data-title="[3.21⭐] remember when (push rewind) (nc & cut ver.) 100% ss fc (hdnc) / [hard] mapped by kumocha">
+            <div class="video-num">#38</div>
+            <div class="vid-thumb">
+                <iframe src="https://www.youtube.com/embed/__hh9PT1tCg" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <h3>[3.21⭐] Remember When (Push Rewind) (NC & Cut Ver.) 100% SS FC (HDNC) / [Hard] mapped by Kumocha</h3>
+        </div>
+        <div class="video-card" data-date="NA" data-title="[1.74⭐] this little girl 100% ss fc (hdnchr) / [beginner] mapped by bouncebabe">
+            <div class="video-num">#37</div>
+            <div class="vid-thumb">
+                <iframe src="https://www.youtube.com/embed/ekhNWgxYBVw" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <h3>[1.74⭐] This Little Girl 100% SS FC (HDNCHR) / [Beginner] mapped by BounceBabe</h3>
+        </div>
+        <div class="video-card" data-date="NA" data-title="[2.15⭐] kuchizuke (tv size) 100% ss fc (hdnchr) / [harumi's normal] mapped by harumiii">
+            <div class="video-num">#36</div>
+            <div class="vid-thumb">
+                <iframe src="https://www.youtube.com/embed/l4ouRZf8reo" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <h3>[2.15⭐] Kuchizuke (TV Size) 100% SS FC (HDNCHR) / [Harumi's Normal] mapped by Harumiii</h3>
+        </div>
+        <div class="video-card" data-date="NA" data-title="[1.71 ⭐] dokkin summer adventure 100% ss fc (hdnchr) / [kencho's easy] mapped by kencho">
+            <div class="video-num">#35</div>
+            <div class="vid-thumb">
+                <iframe src="https://www.youtube.com/embed/oI3nQ-1emPQ" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <h3>[1.71 ⭐] Dokkin Summer Adventure 100% SS FC (HDNCHR) / [Kencho's Easy] mapped by Kencho</h3>
+        </div>
+        <div class="video-card" data-date="NA" data-title="[1.54 ⭐] wakusei rabbit (feat. toriena) 100% ss fc (hdnchr) / [shogun's easy] mapped by shunao">
+            <div class="video-num">#34</div>
+            <div class="vid-thumb">
+                <iframe src="https://www.youtube.com/embed/LmHI7CST70s" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <h3>[1.54 ⭐] Wakusei Rabbit (feat. TORIENA) 100% SS FC (HDNCHR) / [Shogun's Easy] mapped by Shunao</h3>
+        </div>
+        <div class="video-card" data-date="NA" data-title="[2.31 ⭐] saishuu kichiku ze~nbu! shinra-bansho 100% ss fc (hdnchr) / [easy] mapped by vitas2222">
+            <div class="video-num">#33</div>
+            <div class="vid-thumb">
+                <iframe src="https://www.youtube.com/embed/ufLBO-X9kw8" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <h3>[2.31 ⭐] Saishuu Kichiku Ze~nbu! ShinRa-Bansho 100% SS FC (HDNCHR) / [Easy] mapped by Vitas2222</h3>
+        </div>
+        <div class="video-card" data-date="NA" data-title="[1.64 ⭐] spawn (by toby fox) 100% ss fc (hdnchr) / [neosk's easy] mapped by ruhuyu">
+            <div class="video-num">#32</div>
+            <div class="vid-thumb">
+                <iframe src="https://www.youtube.com/embed/Nl-vYIqsuIw" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <h3>[1.64 ⭐] SPAWN (by Toby Fox) 100% SS FC (HDNCHR) / [NEOSK'S EASY] mapped by Ruhuyu</h3>
+        </div>
+        <div class="video-card" data-date="NA" data-title="last section just sucks 😭">
+            <div class="video-num">#31</div>
+            <div class="vid-thumb">
+                <iframe src="https://www.youtube.com/embed/O2cyZrs9an8" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <h3>Last section just sucks 😭</h3>
+        </div>
+        <div class="video-card" data-date="NA" data-title="[2.24⭐] obsessed post-frailty extended jersey mix .. (number edit) 100% ss fc (hdnchr) / [normal]">
+            <div class="video-num">#30</div>
+            <div class="vid-thumb">
+                <iframe src="https://www.youtube.com/embed/V_nEuJ4p0z4" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <h3>[2.24⭐] OBSESSED POST-FRAILTY EXTENDED JERSEY MIX .. (NUMBER EDIT) 100% SS FC (HDNCHR) / [NORMAL]</h3>
+        </div>
+        <div class="video-card" data-date="NA" data-title="[0.85 ⭐] silentnight 100% ss fc (flhdnchr) / [harumi's beginner] mapped by harumiii">
+            <div class="video-num">#29</div>
+            <div class="vid-thumb">
+                <iframe src="https://www.youtube.com/embed/U_D-42jt0p0" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <h3>[0.85 ⭐] SilentNight 100% SS FC (FLHDNCHR) / [Harumi's Beginner] mapped by Harumiii</h3>
+        </div>
+        <div class="video-card" data-date="NA" data-title="[2.82 ⭐] talalalalalalalalalalalaaaaalalaaaaaaaaaaaaa 100% ss fc (hdnc) / [iaport's advanced]">
+            <div class="video-num">#28</div>
+            <div class="vid-thumb">
+                <iframe src="https://www.youtube.com/embed/GqBLyBVcK4o" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <h3>[2.82 ⭐] TALALALALALALALALALALALAAAAALALAAAAAAAAAAAAA 100% SS FC (HDNC) / [iaport's Advanced]</h3>
+        </div>
+        <div class="video-card" data-date="NA" data-title="[2.02 ⭐] route 10 100% ss fc (hdnchr) / [ness' normal] mapped by ness_okey">
+            <div class="video-num">#27</div>
+            <div class="vid-thumb">
+                <iframe src="https://www.youtube.com/embed/O9iVeVQxl2k" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <h3>[2.02 ⭐] Route 10 100% SS FC (HDNCHR) / [Ness' Normal] mapped by Ness_Okey</h3>
+        </div>
+        <div class="video-card" data-date="NA" data-title="[2.19 ⭐] how do you do? (potatoheadz remix) 100% ss fc (hdnchr) / [harumi's normal]">
+            <div class="video-num">#26</div>
+            <div class="vid-thumb">
+                <iframe src="https://www.youtube.com/embed/GguvP4QR3ls" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <h3>[2.19 ⭐] How Do You Do? (Potatoheadz Remix) 100% SS FC (HDNCHR) / [Harumi's Normal]</h3>
+        </div>
+        <div class="video-card" data-date="NA" data-title="[1.70 ⭐] girls in bikinis (cut ver.) 100% ss fc (hdnchr) / [normal] mapped by kitasan">
+            <div class="video-num">#25</div>
+            <div class="vid-thumb">
+                <iframe src="https://www.youtube.com/embed/E7PZpA9dWU0" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <h3>[1.70 ⭐] Girls In Bikinis (Cut Ver.) 100% SS FC (HDNCHR) / [Normal] mapped by Kitasan</h3>
+        </div>
+        <div class="video-card" data-date="NA" data-title="[3.26 ⭐] pretty little psycho (nightcore & cut ver.) 100% ss fc (hddt) / [hard] mapped by fufla">
+            <div class="video-num">#24</div>
+            <div class="vid-thumb">
+                <iframe src="https://www.youtube.com/embed/E1DczjA0ATY" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <h3>[3.26 ⭐] Pretty Little Psycho (Nightcore & Cut Ver.) 100% SS FC (HDDT) / [Hard] mapped by Fufla</h3>
+        </div>
+        <div class="video-card" data-date="NA" data-title="7 digits are built different in 2025">
+            <div class="video-num">#23</div>
+            <div class="vid-thumb">
+                <iframe src="https://www.youtube.com/embed/EeRRgXq4OpU" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <h3>7 Digits are built different in 2025</h3>
+        </div>
+        <div class="video-card" data-date="NA" data-title="[2.24 ⭐] jingle bells (cut ver.) 100% ss fc (hdnchr) / [arutama's normal] mapped by arutama">
+            <div class="video-num">#22</div>
+            <div class="vid-thumb">
+                <iframe src="https://www.youtube.com/embed/TGs4fa37DUU" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <h3>[2.24 ⭐] Jingle Bells (Cut Ver.) 100% SS FC (HDNCHR) / [arutama's Normal] mapped by arutama</h3>
+        </div>
+        <div class="video-card" data-date="NA" data-title="[2.29 ⭐] blu 100% ss fc (hdnchr) / [normal] mapped by bloxi">
+            <div class="video-num">#21</div>
+            <div class="vid-thumb">
+                <iframe src="https://www.youtube.com/embed/peqk4JhmCCo" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <h3>[2.29 ⭐] blu 100% SS FC (HDNCHR) / [normal] mapped by Bloxi</h3>
+        </div>
+        <div class="video-card" data-date="NA" data-title="[1.82 ⭐] bellow 100% ss fc (hdnchr) / [easy] mapped by ticclick">
+            <div class="video-num">#20</div>
+            <div class="vid-thumb">
+                <iframe src="https://www.youtube.com/embed/dM1obRSxsXc" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <h3>[1.82 ⭐] bellow 100% SS FC (HDNCHR) / [easy] mapped by TicClick</h3>
+        </div>
+        <div class="video-card" data-date="NA" data-title="[1.53 ⭐] equilibrium (music box ver.) 100% ss fc (hdnchr) / [normal] mapped by lan wings">
+            <div class="video-num">#19</div>
+            <div class="vid-thumb">
+                <iframe src="https://www.youtube.com/embed/Ylb7k539UrE" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <h3>[1.53 ⭐] Equilibrium (Music Box Ver.) 100% SS FC (HDNCHR) / [Normal] mapped by Lan wings</h3>
+        </div>
+        <div class="video-card" data-date="NA" data-title="[3.03⭐] emotional uplifting orchestral 100% ss fc (hdnchr) / mapped by venix">
+            <div class="video-num">#18</div>
+            <div class="vid-thumb">
+                <iframe src="https://www.youtube.com/embed/zSmKGPvRJJo" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <h3>[3.03⭐] Emotional Uplifting Orchestral 100% SS FC (HDNCHR) / mapped by Venix</h3>
+        </div>
+        <div class="video-card" data-date="NA" data-title="[1.85 ⭐] linga guli guli 100% ss fc (hdnchr) / [harumiii normal] mapped by harumiii">
+            <div class="video-num">#17</div>
+            <div class="vid-thumb">
+                <iframe src="https://www.youtube.com/embed/d4ZWPJtMjMM" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <h3>[1.85 ⭐] linga guli guli 100% SS FC (HDNCHR) / [harumiii normal] mapped by Harumiii</h3>
+        </div>
+        <div class="video-card" data-date="NA" data-title="[1.99 ⭐] life [eris's "a fate encounter" mix] 100% ss fc (hdnchr) / [kanor's normal] mapped by kanor">
+            <div class="video-num">#16</div>
+            <div class="vid-thumb">
+                <iframe src="https://www.youtube.com/embed/boadL5zq4-I" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <h3>[1.99 ⭐] Life [Eris's "a Fate Encounter" mix] 100% SS FC (HDNCHR) / [kanor's Normal] mapped by kanor</h3>
+        </div>
+        <div class="video-card" data-date="NA" data-title="[1.80 ⭐] let me hit it (audiostalkers original mix) 100% ss fc(hdnchr) / [normal] mapped by annabel">
+            <div class="video-num">#15</div>
+            <div class="vid-thumb">
+                <iframe src="https://www.youtube.com/embed/xaCvNXtPecg" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <h3>[1.80 ⭐] Let Me Hit It (Audiostalkers Original Mix) 100% SS FC(HDNCHR) / [Normal] mapped by Annabel</h3>
+        </div>
+        <div class="video-card" data-date="NA" data-title="[1.58 ⭐] last christmas 100% ss fc (hdnchr) / [easy] mapped by pappy">
+            <div class="video-num">#14</div>
+            <div class="vid-thumb">
+                <iframe src="https://www.youtube.com/embed/oDUovaFWqqU" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <h3>[1.58 ⭐] Last Christmas 100% SS FC (HDNCHR) / [Easy] mapped by Pappy</h3>
+        </div>
+        <div class="video-card" data-date="NA" data-title="[1.85 ⭐] koigokoro 100% ss fc (hdnchr) / [normal] mapped by trynna">
+            <div class="video-num">#13</div>
+            <div class="vid-thumb">
+                <iframe src="https://www.youtube.com/embed/n3U7BUNAudA" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <h3>[1.85 ⭐] Koigokoro 100% SS FC (HDNCHR) / [Normal] mapped by Trynna</h3>
+        </div>
+        <div class="video-card" data-date="NA" data-title="[2.34 ⭐] jingle bell (cut ver.) 100% ss fc (hdnchr) / [normal] mapped by meaqua tete">
+            <div class="video-num">#12</div>
+            <div class="vid-thumb">
+                <iframe src="https://www.youtube.com/embed/SQT8IHwaK48" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <h3>[2.34 ⭐] Jingle Bell (Cut Ver.) 100% SS FC (HDNCHR) / [Normal] mapped by MeAqua tete</h3>
+        </div>
+        <div class="video-card" data-date="NA" data-title="[1.80 ⭐] yume wa mijikashi koiseyo otome (tv size) 100% ss fc (hdnchr)/[easy] mapped by uzawa reisa">
+            <div class="video-num">#11</div>
+            <div class="vid-thumb">
+                <iframe src="https://www.youtube.com/embed/C6Lx83pXdqI" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <h3>[1.80 ⭐] Yume wa Mijikashi Koiseyo Otome (Tv Size) 100% SS FC (HDNCHR)/[Easy] mapped by Uzawa Reisa</h3>
+        </div>
+        <div class="video-card" data-date="NA" data-title="[2.21 ⭐] angel with a shotgun (sped up ver.) 100% ss fc (hdnchr) / [normal] mapped by sotarks">
+            <div class="video-num">#10</div>
+            <div class="vid-thumb">
+                <iframe src="https://www.youtube.com/embed/NuimDtIzwqw" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <h3>[2.21 ⭐] Angel With A Shotgun (Sped UP Ver.) 100% SS FC (HDNCHR) / [Normal] mapped by Sotarks</h3>
+        </div>
+        <div class="video-card" data-date="NA" data-title="[1.88 ⭐] affection (mr.kitty vs invisibles remix) 100% ss fc (hdnchr) / [normal] mapped by shmiklak">
+            <div class="video-num">#9</div>
+            <div class="vid-thumb">
+                <iframe src="https://www.youtube.com/embed/zxM_8baopLY" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <h3>[1.88 ⭐] Affection (Mr.Kitty vs Invisibles Remix) 100% SS FC (HDNCHR) / [Normal] mapped by Shmiklak</h3>
+        </div>
+        <div class="video-card" data-date="NA" data-title="[1.86 ⭐] ~disk 1~ 100% ss fc (hdnchr) / [airin's normal] mapped by flins (pka airincat)">
+            <div class="video-num">#8</div>
+            <div class="vid-thumb">
+                <iframe src="https://www.youtube.com/embed/V089GI6GHVI" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <h3>[1.86 ⭐] ~Disk 1~ 100% SS FC (HDNCHR) / [Airin's Normal] mapped by Flins (pka AirinCat)</h3>
+        </div>
+        <div class="video-card" data-date="NA" data-title="[2.50 ⭐] answer 100% ss fc (hdnchr) / [normal] mapped by bigfrog">
+            <div class="video-num">#7</div>
+            <div class="vid-thumb">
+                <iframe src="https://www.youtube.com/embed/z62civtj3jY" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <h3>[2.50 ⭐] Answer 100% SS FC (HDNCHR) / [Normal] mapped by bigfrog</h3>
+        </div>
+        <div class="video-card" data-date="NA" data-title="[1.69 ⭐] christmas slop 100% ss fc (hdnchr) / [take's easy] mapped by take">
+            <div class="video-num">#6</div>
+            <div class="vid-thumb">
+                <iframe src="https://www.youtube.com/embed/SCNxw-HFOrQ" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <h3>[1.69 ⭐] Christmas Slop 100% SS FC (HDNCHR) / [Take's Easy] mapped by Take</h3>
+        </div>
+        <div class="video-card" data-date="NA" data-title="fancytoast551 | peak osu! gaming (ep2)">
+            <div class="video-num">#5</div>
+            <div class="vid-thumb">
+                <iframe src="https://www.youtube.com/embed/TwkWtsM_194" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <h3>Fancytoast551 | Peak Osu! Gaming (Ep2)</h3>
+        </div>
+        <div class="video-card" data-date="NA" data-title="fancytoast551 | peak osu! gaming (ep1)">
+            <div class="video-num">#4</div>
+            <div class="vid-thumb">
+                <iframe src="https://www.youtube.com/embed/MLi1zWHBXow" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <h3>Fancytoast551 | Peak Osu! Gaming (Ep1)</h3>
+        </div>
+        <div class="video-card" data-date="NA" data-title="[3.03 ⭐] hddt how to farm weekend's "blinding lights"">
+            <div class="video-num">#3</div>
+            <div class="vid-thumb">
+                <iframe src="https://www.youtube.com/embed/5cjS71ruTQg" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <h3>[3.03 ⭐] HDDT how to farm weekend's "blinding lights"</h3>
+        </div>
+        <div class="video-card" data-date="NA" data-title="[3.50 ⭐] hddt on samurai (spirix remix)">
+            <div class="video-num">#2</div>
+            <div class="vid-thumb">
+                <iframe src="https://www.youtube.com/embed/-ObXknYswQw" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <h3>[3.50 ⭐] HDDT on Samurai (Spirix Remix)</h3>
+        </div>
+        <div class="video-card" data-date="NA" data-title="[2.38 ⭐] hddthr on el sonidito x athletic theme (ditzyflama mashup)">
+            <div class="video-num">#1</div>
+            <div class="vid-thumb">
+                <iframe src="https://www.youtube.com/embed/TF_2lvbMz-E" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <h3>[2.38 ⭐] HDDTHR on El Sonidito x Athletic Theme (DitzyFlama Mashup)</h3>
+        </div>
+        <div class="no-results" id="noResults">No videos match your search.</div>
+    </div>
+</div>
+
+<script>
+    // --- DROPDOWN LOGIC ---
+    const menuBtn = document.getElementById('menuBtn');
+    const dropdown = document.getElementById('myDropdown');
+    menuBtn.onclick = (e) => { dropdown.classList.toggle("show"); e.stopPropagation(); };
+    window.onclick = (e) => { if (!e.target.matches('.dropbtn')) dropdown.classList.remove('show'); };
+
+    // --- SEARCH LOGIC ---
+    const searchInput = document.getElementById('searchInput');
+    const cards = document.querySelectorAll('.video-card');
+    const noResults = document.getElementById('noResults');
+
+    searchInput.addEventListener('keyup', (e) => {
+        const term = e.target.value.toLowerCase();
+        let visibleCount = 0;
+
+        cards.forEach(card => {
+            const title = card.getAttribute('data-title');
+            if (title.includes(term)) {
+                card.style.display = "block";
+                visibleCount++;
+            } else {
+                card.style.display = "none";
+            }
+        });
+        
+        noResults.style.display = visibleCount === 0 ? "block" : "none";
+    });
+
+    // --- SORT LOGIC ---
+    let isNewest = true;
+    const grid = document.getElementById('videoGrid');
+    const sortBtn = document.getElementById('sortBtn');
+
+    function toggleSort() {
+        isNewest = !isNewest;
+        sortBtn.innerText = isNewest ? "⬇️ NEWEST" : "⬆️ OLDEST";
+        
+        const cardsArray = Array.from(cards);
+        cardsArray.sort((a, b) => {
+            const dateA = parseInt(a.getAttribute('data-date'));
+            const dateB = parseInt(b.getAttribute('data-date'));
+            return isNewest ? dateB - dateA : dateA - dateB;
+        });
+        
+        // Re-append in new order (Search filter stays active)
+        cardsArray.forEach(card => grid.insertBefore(card, noResults));
+    }
+</script>
 
 </body>
 </html>
