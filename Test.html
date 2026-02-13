@@ -318,9 +318,33 @@ window.onclick = (e) => {
 
 renderCalendar(currentDate);
 
-// AUTO-LOAD TODAY'S DATA ON PAGE LOAD
-const today = new Date();
-selectDay(today.getFullYear(), today.getMonth() + 1, today.getDate());
+// THE FIX: Fetch index first, then load the latest entry
+async function init() {
+    try {
+        // Use your base path if needed, e.g., 'data/index.json'
+        const res = await fetch('data/index.json?t=' + Date.now());
+        const idx = await res.json();
+        availableDates = idx.available_dates;
+        
+        renderCalendar(currentDate);
+
+        if (availableDates.length > 0) {
+            // This pulls the very last date in your archive (the most recent one)
+            const latest = availableDates[availableDates.length - 1];
+            
+            // We split it to send it to your existing selectDay function
+            const [y, m, d] = latest.split('-');
+            selectDay(parseInt(y), parseInt(m), parseInt(d));
+        }
+    } catch (e) {
+        console.error(e);
+        document.getElementById('scoreGrid').innerHTML = '<div class="status-msg">Failed to load index.json</div>';
+    }
+}
+
+// Call the new init function
+init();
+
     </script>
         
     
