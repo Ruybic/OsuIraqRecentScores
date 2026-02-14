@@ -230,8 +230,7 @@ card.onclick = (e) => {
     <div class="rank-grade rank-${score.rank}">${score.rank}</div>
     
     <a href="https://osu.ppy.sh/beatmapsets/${score.beatmapset.id}" target="_blank" class="map-header" style="background-image: url('${score.beatmapset.cover}');">
-        <div class="star-rating">★ ${score.beatmapset.stars ? score.beatmapset.stars.toFixed(2) : '??'}</div>
-    </a>
+        ${score.beatmapset.stars ? `<div class="star-rating">★ ${Number(score.beatmapset.stars).toFixed(2)}</div>` : ''}
 
     <div class="card-body">
         <a href="https://osu.ppy.sh/users/${score.user_id}" target="_blank" class="user-link">
