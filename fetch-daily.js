@@ -75,7 +75,8 @@ async function main(){
           beatmapset: {
             id: s.beatmapset.id,
             title: s.beatmapset.title,
-            cover: s.beatmapset.covers.card
+            cover: s.beatmapset.covers.card,
+            stars: s.beatmap ? s.beatmap.difficulty_rating : 0
           }
         }));
       } catch (e) { return []; }
