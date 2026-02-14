@@ -217,8 +217,19 @@ async function fetchAndRender(path) {
 
     data.scores.forEach(score => {
     const card = document.createElement('div');
-    card.className = 'score-card'; // This triggers the new CSS
+    card.className = 'score-card';
+    card.style.cursor = 'pointer';
+
+    // Click handler for the whole card
+    card.onclick = (e) => {
+        // This ensures if they click the Avatar or Map Title, it doesn't open the score too
+        if (!e.target.closest('a')) {
+            window.open(`https://osu.ppy.sh/scores/osu/${score.score_id}`, '_blank');
+        }
+    };
+
     card.innerHTML = `
+
         <div class="pp-value">${Math.round(score.pp)}pp</div> 
         <div class="rank-grade rank-${score.rank}">${score.rank}</div>
         <a href="https://osu.ppy.sh/beatmapsets/${score.beatmapset.id}" target="_blank" class="map-header" style="background-image: url('${score.beatmapset.cover}');">
