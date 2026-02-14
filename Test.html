@@ -215,37 +215,34 @@ async function fetchAndRender(path) {
 
         grid.innerHTML = ''; 
 
-        data.scores.forEach(score => {
-            const ppText = score.pp ? Math.round(score.pp) + "pp" : "0pp";
-            const accText = (score.accuracy * 100).toFixed(2) + "%";
-            const modsText = score.mods && score.mods.length > 0 ? "+" + score.mods.join("") : "";
-            
-            const card = document.createElement('div');
-            card.className = 'score-card';
-            card.innerHTML = `
-                <div class="pp-value">${ppText}</div>
-                <div class="rank-grade rank-${score.rank}">${score.rank}</div>
-                <a href="https://osu.ppy.sh/beatmapsets/${score.beatmapset.id}" target="_blank" class="map-header" style="background-image: url('${score.beatmapset.cover}');">
-                </a>
-                <div class="card-body">
-                    <a href="https://osu.ppy.sh/users/${score.user_id}" target="_blank" class="user-link">
-                        <img src="https://a.ppy.sh/${score.user_id}" class="user-avatar" onerror="this.src='https://osu.ppy.sh/images/layout/avatar-guest.png'">
-                    </a>
-                    <a href="https://osu.ppy.sh/users/${score.user_id}" target="_blank" class="player-name">
-                        <img src="https://osu.ppy.sh/images/flags/IQ.png" class="flag"> ${score.user}
-                    </a>
-                    <a href="https://osu.ppy.sh/beatmapsets/${score.beatmapset.id}" target="_blank" class="map-title">${score.beatmapset.title}</a>
-                    <div class="score-stats">
-                        <div>
-                            <span class="accuracy">${accText}</span>
-                            ${modsText ? `<span class="mods">${modsText}</span>` : ''}
-                        </div>
-                        <span class="time-ago">${timeAgo(score.created_at)}</span>
-                    </div>
+    data.scores.forEach(score => {
+    const card = document.createElement('div');
+    card.className = 'score-card'; // This triggers the new CSS
+    card.innerHTML = `
+        <div class="pp-value">${Math.round(score.pp)}pp</div> 
+        <div class="rank-grade rank-${score.rank}">${score.rank}</div>
+        <a href="https://osu.ppy.sh/beatmapsets/${score.beatmapset.id}" target="_blank" class="map-header" style="background-image: url('${score.beatmapset.cover}');">
+            <div class="star-rating">★ ${score.beatmapset.difficulty_rating || '??'}</div>
+        </a>
+        <div class="card-body">
+            <a href="https://osu.ppy.sh/users/${score.user_id}" target="_blank" class="user-link">
+                <img src="https://a.ppy.sh/${score.user_id}" class="user-avatar" alt="Avatar">
+            </a>
+            <a href="https://osu.ppy.sh/users/${score.user_id}" target="_blank" class="player-name">
+                <img src="https://osu.ppy.sh/images/flags/IQ.png" class="flag"> ${score.user}
+            </a>
+            <a href="https://osu.ppy.sh/beatmapsets/${score.beatmapset.id}" target="_blank" class="map-title">${score.beatmapset.title}</a>
+            <div class="score-stats">
+                <div>
+                    <span class="accuracy">${(score.accuracy * 100).toFixed(2)}%</span>
+                    <span class="mods">${score.mods.length > 0 ? '+' + score.mods.join('') : ''}</span>
                 </div>
-            `;
-            grid.appendChild(card);
-        });
+                <div class="time-ago">${timeAgo(score.created_at)}</div>
+            </div>
+        </div>
+    `;
+    grid.appendChild(card);
+});
         
     } catch (error) {
         console.error(error);
