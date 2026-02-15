@@ -246,7 +246,8 @@ async function fetchAndRender(path) {
             <div class="score-stats">
                 <div>
                     <span class="accuracy">${(score.accuracy * 100).toFixed(2)}%</span>
-                    <span class="mods">${score.mods.length > 0 ? '+' + score.mods.join('') : ''}</span>
+                    <span class="mods">${score.mods.length > 0 ? `<span class="mods">+${score.mods.join('')}</span>` : ''}
+
                 </div>
                 <div class="time-ago">${timeAgo(score.created_at)}</div>
             </div>
