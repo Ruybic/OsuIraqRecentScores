@@ -81,7 +81,56 @@
         const grid = document.getElementById('videoGrid');
         
         try {
-            // 1. Fetch the database (using ?t= to prevent phone browser caching)
+            // 1. Fetch the database from the correct path
             const response = await fetch('data/video_database.json?t=' + Date.now());
-            if (!response.ok) throw new Error("Could not
-    
+            if (!response.ok) throw new Error("Could not load database");
+            
+            const allVideos = await response.json();
+            
+            // 2. FILTER: Only show videos where status is "Yes"
+            const visibleVideos = allVideos.filter(v => v.status === "Yes");
+            
+            if (visibleVideos.length === 0) {
+                grid.innerHTML = '<div class="status-msg">No videos found. Check back later!</div>';
+                return;
+            }
+
+            grid.innerHTML = ''; // Clear the "Loading" message
+
+            visibleVideos.forEach(video => {
+                const card = document.createElement('div');
+                card.className = 'video-card';
+                
+                card.innerHTML = `
+                    <div class="thumbnail-container" onclick="playVideo(this, '${video.id}')">
+                        <img src="https://img.youtube.com/vi/${video.id}/mqdefault.jpg" class="thumbnail-img" alt="${video.title}">
+                        <div class="play-icon"></div>
+                    </div>
+                    <div class="video-info">
+                        <div class="video-title">
+                            <span class="seq-badge">#${video.sequence}</span>${video.title}
+                        </div>
+                        <div class="channel-name">${video.channel}</div>
+                        <div class="upload-date">${video.published}</div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+
+        } catch (error) {
+            console.error(error);
+            grid.innerHTML = '<div class="status-msg">⚠️ Unable to load videos. Please refresh.</div>';
+        }
+    }
+
+    // --- PLAY FUNCTION ---
+    function playVideo(container, videoId) {
+        container.innerHTML = `<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
+        container.onclick = null;
+    }
+
+    // Start the process
+    loadVideos();
+</script>
+</body>
+</html>
