@@ -3,7 +3,7 @@ import subprocess
 import os
 
 CHANNELS = [
-    {"url": "https://www.youtube.com/@FancyToast/videos", "name": "FancyToast"},
+    {"url": "https://www.youtube.com/@FancyToast/videos501", "name": "FancyToast"},
     {"url": "https://www.youtube.com/@ano8859/videos", "name": "Ano"},
     {"url": "https://www.youtube.com/@len_osu/videos", "name": "Len"},
     {"url": "https://www.youtube.com/@ysolar/videos", "name": "Solar"},
@@ -14,6 +14,7 @@ DATABASE_FILE = "data/video_database.json"
 
 def fetch_videos():
     db = {}
+    # 1. Load existing data to preserve manual "No" statuses
     if os.path.exists(DATABASE_FILE):
         try:
             with open(DATABASE_FILE, "r", encoding="utf-8") as f:
@@ -22,12 +23,10 @@ def fetch_videos():
         except: pass
 
     for channel in CHANNELS:
-        print(f"--- Scraping {channel['name']} ---")
-        # We use --flat-playlist for speed and reliability on GitHub
+        print(f"--- Fetching {channel['name']} ---")
         cmd = [
             "yt-dlp", "--dump-json", "--flat-playlist", 
-            "--ignore-errors", "--no-warnings",
-            channel['url']
+            "--ignore-errors", "--no-warnings", channel['url']
         ]
         
         try:
@@ -37,8 +36,8 @@ def fetch_videos():
                 v_id = video.get('id')
                 if not v_id: continue
 
-                # Get date if available, otherwise use a placeholder that sorts well
                 raw_date = video.get('upload_date')
+                # If no date, use 20000101 so it stays at the bottom
                 fmt_date = f"{raw_date[:4]}-{raw_date[4:6]}-{raw_date[6:]}" if raw_date else "2000-01-01"
 
                 if v_id not in db:
@@ -50,25 +49,30 @@ def fetch_videos():
                         "url": f"https://youtu.be/{v_id}",
                         "status": "Yes"
                     }
+                else:
+                    # Update date if it was previously missing
+                    if db[v_id]["published"] == "2000-01-01" and fmt_date != "2000-01-01":
+                        db[v_id]["published"] = fmt_date
+
         except Exception as e:
             print(f"Error: {e}")
 
-    # --- THE FIX FOR SEQUENCE ---
-    # 1. Sort oldest to newest (by date, then by title as fallback)
-    all_vids = sorted(db.values(), key=lambda x: (x['published'], x['title']))
+    # --- THE MAGIC SORT ---
+    # Sort everything OLDEST to NEWEST first to assign sequence numbers
+    all_vids = sorted(db.values(), key=lambda x: (x['published'], x['id']))
     
-    # 2. Assign #1 to the OLDEST video
     for i, v in enumerate(all_vids, 1):
         v['sequence'] = i
 
-    # 3. Final Sort: NEWEST first for the website
+    # Sort NEWEST to OLDEST for the website display
     final_list = sorted(all_vids, key=lambda x: (x['published'], x['sequence']), reverse=True)
 
     os.makedirs("data", exist_ok=True)
     with open(DATABASE_FILE, "w", encoding="utf-8") as f:
         json.dump(final_list, f, indent=4)
     
-    print(f"Success! {len(final_list)} videos indexed.")
+    print(f"Total Database: {len(final_list)} videos.")
 
 if __name__ == "__main__":
-    fetch_videos()    
+    fetch_videos()
+    
