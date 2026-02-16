@@ -3,11 +3,11 @@ import subprocess
 import os
 
 CHANNELS = [
-    {"url": "https://www.youtube.com/channel/UCAZTO65RFJoH3thMzFlnHvw", "name": "FancyToast"},
-    {"url": "https://www.youtube.com/@ano8859", "name": "Ano"},
-    {"url": "https://youtube.com/@len_osu", "name": "Len"},
-    {"url": "https://youtube.com/@ysolar", "name": "Solar"},
-    {"url": "https://youtube.com/@greevcs", "name": "Gree"}
+    {"url": "https://www.youtube.com/@FancyToast/videos", "name": "FancyToast"},
+    {"url": "https://www.youtube.com/@ano8859/videos", "name": "Ano"},
+    {"url": "https://www.youtube.com/@len_osu/videos", "name": "Len"},
+    {"url": "https://www.youtube.com/@ysolar/videos", "name": "Solar"},
+    {"url": "https://www.youtube.com/@greevcs/videos", "name": "Gree"}
 ]
 
 DATABASE_FILE = "data/video_database.json"
@@ -22,33 +22,24 @@ def fetch_videos():
         except: pass
 
     for channel in CHANNELS:
-        print(f"--- Archiving: {channel['name']} ---")
-        # We removed --flat-playlist to ensure we get the real 'upload_date'
-        # but kept --playlist-end to avoid a 10-hour run. 
-        # Increase '200' if you need even more history per channel.
+        print(f"--- Scraping {channel['name']} ---")
+        # We use --flat-playlist for speed and reliability on GitHub
         cmd = [
-            "yt-dlp",
-            "--dump-json",
-            "--playlist-end", "200", 
-            "--ignore-errors",
-            "--no-warnings",
-            f"{channel['url']}/videos"
+            "yt-dlp", "--dump-json", "--flat-playlist", 
+            "--ignore-errors", "--no-warnings",
+            channel['url']
         ]
         
         try:
             result = subprocess.run(cmd, capture_output=True, text=True, encoding='utf-8')
             for line in result.stdout.splitlines():
-                if not line.strip(): continue
                 video = json.loads(line)
                 v_id = video.get('id')
-                
-                # FIXING THE DATE:
-                # yt-dlp uses 'upload_date' (YYYYMMDD). If missing, we try 'timestamp'
+                if not v_id: continue
+
+                # Get date if available, otherwise use a placeholder that sorts well
                 raw_date = video.get('upload_date')
-                if raw_date:
-                    fmt_date = f"{raw_date[:4]}-{raw_date[4:6]}-{raw_date[6:]}"
-                else:
-                    fmt_date = "2000-01-01" 
+                fmt_date = f"{raw_date[:4]}-{raw_date[4:6]}-{raw_date[6:]}" if raw_date else "2000-01-01"
 
                 if v_id not in db:
                     db[v_id] = {
@@ -59,29 +50,25 @@ def fetch_videos():
                         "url": f"https://youtu.be/{v_id}",
                         "status": "Yes"
                     }
-                else:
-                    # Update date if it was previously stuck at 2024-01-01
-                    db[v_id]["published"] = fmt_date
-
         except Exception as e:
-            print(f"Error on {channel['name']}: {e}")
+            print(f"Error: {e}")
 
-    # --- SORT & REVERSE SEQUENCE ---
-    # 1. Sort by date (Oldest to Newest)
-    all_vids = sorted(db.values(), key=lambda x: x['published'])
+    # --- THE FIX FOR SEQUENCE ---
+    # 1. Sort oldest to newest (by date, then by title as fallback)
+    all_vids = sorted(db.values(), key=lambda x: (x['published'], x['title']))
     
-    # 2. Assign sequence #1 to oldest, up to #1500 for newest
-    for i, vid in enumerate(all_vids, 1):
-        vid['sequence'] = i
+    # 2. Assign #1 to the OLDEST video
+    for i, v in enumerate(all_vids, 1):
+        v['sequence'] = i
 
-    # 3. Final Sort (Newest first for the Website display)
-    final_list = sorted(all_vids, key=lambda x: x['published'], reverse=True)
+    # 3. Final Sort: NEWEST first for the website
+    final_list = sorted(all_vids, key=lambda x: (x['published'], x['sequence']), reverse=True)
 
     os.makedirs("data", exist_ok=True)
     with open(DATABASE_FILE, "w", encoding="utf-8") as f:
         json.dump(final_list, f, indent=4)
     
-    print(f"Saved {len(final_list)} videos. Highest sequence: #{len(final_list)}")
+    print(f"Success! {len(final_list)} videos indexed.")
 
 if __name__ == "__main__":
-    fetch_videos()
+    fetch_videos()    
