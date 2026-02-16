@@ -3,11 +3,11 @@ import subprocess
 import os
 
 CHANNELS = [
-    {"url": "https://www.youtube.com/@FancyToast501/videos", "name": "FancyToast"},
+    {"url": "https://www.youtube.com/@fancytoast501/videos", "name": "FancyToast"},
     {"url": "https://www.youtube.com/@ano8859/videos", "name": "Ano"},
     {"url": "https://www.youtube.com/@len_osu/videos", "name": "Len"},
-    {"url": "https://www.youtube.com/@ysolar/videos", "name": "Solar"},
-    {"url": "https://www.youtube.com/@greevcs/videos", "name": "Gree"}
+    {"url": "https://www.youtube.com/@ysolar/videos", "name": "Sola"},
+    {"url": "https://www.youtube.com/@greevcs/videos", "name": "Greev"}
 ]
 
 DATABASE_FILE = "data/video_database.json"
