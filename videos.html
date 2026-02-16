@@ -87,7 +87,7 @@
             
             const allVideos = await response.json();
             
-            // 2. FILTER: Only show videos where status is "Yes"
+                        // 2. FILTER: Only show videos where status is "Yes"
             const visibleVideos = allVideos.filter(v => v.status === "Yes");
             
             if (visibleVideos.length === 0) {
@@ -101,6 +101,11 @@
                 const card = document.createElement('div');
                 card.className = 'video-card';
                 
+                // FIX: If the date is still the fallback or missing, show "Legacy" or "New"
+                const displayDate = (video.published === "2024-01-01" || video.published === "2000-01-01") 
+                    ? "Recently Added" 
+                    : video.published;
+
                 card.innerHTML = `
                     <div class="thumbnail-container" onclick="playVideo(this, '${video.id}')">
                         <img src="https://img.youtube.com/vi/${video.id}/mqdefault.jpg" class="thumbnail-img" alt="${video.title}">
@@ -111,7 +116,7 @@
                             <span class="seq-badge">#${video.sequence}</span>${video.title}
                         </div>
                         <div class="channel-name">${video.channel}</div>
-                        <div class="upload-date">${video.published}</div>
+                        <div class="upload-date">${displayDate}</div>
                     </div>
                 `;
                 grid.appendChild(card);
