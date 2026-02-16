@@ -1,79 +1,120 @@
 import json
 import subprocess
 import os
+from datetime import datetime
 
-# Your Target Channels
+# 1. SETUP YOUR CHANNELS
+# We use full URLs now so we can mix IDs and Handles easily.
 CHANNELS = [
-    {"id": "UCAZTO65RFJoH3thMzFlnHvw", "name": "FancyToast"},
-    {"id": "UCq_f7_7_uN82mX_f9S8h28A", "name": "Ano"}
+    # Existing
+    {"url": "https://www.youtube.com/channel/UCAZTO65RFJoH3thMzFlnHvw", "name": "FancyToast"},
+    {"url": "https://www.youtube.com/channel/UC7yJx0OuUAa9WzrNVSnfhVw", "name": "Ano"},
+    
+    # New Additions
+    {"url": "https://www.youtube.com/@len_osu", "name": "Len"},
+    {"url": "https://www.youtube.com/@ysolar", "name": "Solar"},
+    {"url": "https://www.youtube.com/@greevcs", "name": "Gree"}
 ]
 
-OUTPUT_FILE = "data/videos.json"
+DATABASE_FILE = "data/video_database.json"
+
+def load_database():
+    """Loads the existing JSON file if it exists."""
+    if os.path.exists(DATABASE_FILE):
+        with open(DATABASE_FILE, "r", encoding="utf-8") as f:
+            try:
+                # Load as a dictionary for fast ID lookups: { "VIDEO_ID": {data...}, ... }
+                data = json.load(f)
+                # Convert list back to dict if it was saved as list previously
+                if isinstance(data, list):
+                    return {v['id']: v for v in data}
+                return data
+            except json.JSONDecodeError:
+                return {}
+    return {}
 
 def get_videos():
-    all_videos = []
-    
+    # Load existing data so we don't lose your "No" edits
+    db = load_database()
+    new_videos_count = 0
+
     for channel in CHANNELS:
         print(f"Fetching: {channel['name']}...")
         
-        # We use the /videos tab specifically
-        url = f"https://www.youtube.com/channel/{channel['id']}/videos"
+        # We allow yt-dlp to handle the URL parsing
+        url = f"{channel['url']}/videos"
         
         cmd = [
             "yt-dlp",
             "--dump-json",
-            "--flat-playlist",
+            "--flat-playlist",  # Fast mode
             "--quiet",
             "--no-warnings",
-            "--user-agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36",
+            "--playlist-end", "15", # Fetch last 15 videos per channel (adjust as needed)
             url
         ]
         
         try:
-            # Capture output
             result = subprocess.run(cmd, capture_output=True, text=True, encoding='utf-8')
-            
-            if result.stderr:
-                print(f"Log for {channel['name']}: {result.stderr}")
-
             lines = result.stdout.strip().split('\n')
-            count = 0
+            
             for line in lines:
                 if not line.strip(): continue
                 
-                video_data = json.loads(line)
-                
-                # yt-dlp flat-playlist uses 'id' and 'title'
-                # For date, it might use 'upload_date' or None in flat mode
-                raw_date = video_data.get('upload_date', "20240101") 
-                formatted_date = f"{raw_date[:4]}-{raw_date[4:6]}-{raw_date[6:]}"
+                try:
+                    video_data = json.loads(line)
+                    vid_id = video_data['id']
+                    
+                    # 2. DATE HANDLING
+                    # yt-dlp returns YYYYMMDD. We format to YYYY-MM-DD.
+                    raw_date = video_data.get('upload_date')
+                    if raw_date:
+                        formatted_date = f"{raw_date[:4]}-{raw_date[4:6]}-{raw_date[6:]}"
+                    else:
+                        # Fallback if yt-dlp misses the date in flat mode
+                        formatted_date = "Unknown"
 
-                all_videos.append({
-                    "id": video_data['id'],
-                    "title": video_data['title'],
-                    "channel": channel['name'],
-                    "published": formatted_date,
-                    "timestamp": raw_date
-                })
-                count += 1
-            
-            print(f"Found {count} videos for {channel['name']}")
+                    # 3. CHECK DATABASE
+                    if vid_id in db:
+                        # Video exists. We ONLY update details, NEVER overwrite "status".
+                        # This ensures your "No" remains "No".
+                        pass 
+                    else:
+                        # NEW VIDEO FOUND!
+                        print(f"  + New video found: {video_data.get('title')[:30]}...")
+                        db[vid_id] = {
+                            "id": vid_id,
+                            "title": video_data.get('title'),
+                            "channel": channel['name'],
+                            "published": formatted_date,
+                            "url": f"https://youtu.be/{vid_id}",
+                            "status": "Yes" # Default to Yes
+                        }
+                        new_videos_count += 1
+                        
+                except json.JSONDecodeError:
+                    pass
                     
         except Exception as e:
             print(f"Error scraping {channel['name']}: {e}")
 
-    # Sort: Newest first
-    all_videos.sort(key=lambda x: x['timestamp'], reverse=True)
-
-    # Clean up
-    for v in all_videos:
-        if 'timestamp' in v: del v['timestamp']
-
-    os.makedirs(os.path.dirname(OUTPUT_FILE), exist_ok=True)
-    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-        json.dump(all_videos, f, indent=4)
+    # 4. SORTING & SEQUENCE
+    # Convert dict back to list for sorting
+    all_videos_list = list(db.values())
     
-    print(f"Final Count: {len(all_videos)} videos saved to {OUTPUT_FILE}")
+    # Sort by date (Newest first). 'Unknown' dates go to the bottom.
+    all_videos_list.sort(key=lambda x: x.get('published', '0000-00-00'), reverse=True)
+
+    # Re-save to JSON
+    os.makedirs(os.path.dirname(DATABASE_FILE), exist_ok=True)
+    with open(DATABASE_FILE, "w", encoding="utf-8") as f:
+        json.dump(all_videos_list, f, indent=4) # Indent 4 makes it easy for you to edit manually
+    
+    print(f"\nScan Complete.")
+    print(f"New videos added: {new_videos_count}")
+    print(f"Total database size: {len(all_videos_list)}")
+    print(f"Saved to: {DATABASE_FILE}")
 
 if __name__ == "__main__":
     get_videos()
+    
