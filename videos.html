@@ -95,20 +95,32 @@
         const grid = document.getElementById('videoGrid');
         
         try {
-            // 1. Fetch
-            const response = await fetch('data/video_database.json?t=' + Date.now());
-            if (!response.ok) throw new Error("Database not found");
+            // Using the full URL ensures the browser finds the file every time
+            const dbUrl = 'https://ruybic.github.io/Test/data/video_database.json';
+            
+            const response = await fetch(dbUrl + '?t=' + Date.now());
+            
+            if (!response.ok) {
+                throw new Error(`Database not found at ${dbUrl}. Status: ${response.status}`);
+            }
+            
             const data = await response.json();
             
-            // 2. Filter out "Status: No" globally
+            // 2. Filter out "Status: No" globally (case-insensitive)
             ALL_VIDEOS = data.filter(v => !v.status || v.status.toLowerCase() === 'yes');
 
             // 3. Setup UI
             setupFilters();
-            renderVideos('All'); // Show everything by default
+            renderVideos('All'); 
 
         } catch (error) {
-            grid.innerHTML = `<div class="status-msg">⚠️ Error: ${error.message}</div>`;
+            console.error(error);
+            grid.innerHTML = `
+                <div class="status-msg" style="color: #ff66aa; padding: 40px; text-align: center;">
+                    ⚠️ <strong>Load Error</strong><br>
+                    ${error.message}<br><br>
+                    <small>Wait 1 minute for GitHub to sync and refresh.</small>
+                </div>`;
         }
     }
 
