@@ -20,8 +20,16 @@
         .dropdown-content.show { display: block; }
 
         .feed-container { max-width: 1400px; margin: 30px auto; padding: 0 20px 30px; }
-        .section-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
-        .section-label { color: var(--osu-pink); font-weight: 800; font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; }
+        
+        /* CONTROL BAR STYLES */
+        .controls-area { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; margin-bottom: 25px; gap: 15px; }
+        .stats-box { font-size: 14px; color: var(--text-muted); font-weight: 600; }
+        .stats-box span { color: var(--osu-pink); font-size: 16px; }
+
+        .filter-buttons { display: flex; gap: 10px; flex-wrap: wrap; }
+        .filter-btn { background: var(--panel-bg); color: white; border: 1px solid #3e3e4a; padding: 8px 16px; border-radius: 20px; cursor: pointer; font-family: 'Exo 2'; font-size: 13px; transition: 0.2s; }
+        .filter-btn:hover { border-color: var(--osu-pink); }
+        .filter-btn.active { background: var(--osu-pink); border-color: var(--osu-pink); color: #111; font-weight: 700; }
 
         .video-grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
 
@@ -36,9 +44,8 @@
 
         .video-info { padding: 15px; flex-grow: 1; }
         .video-title { font-weight: 700; color: white; font-size: 14px; margin-bottom: 8px; line-height: 1.4; }
-        .seq-badge { color: var(--osu-pink); margin-right: 5px; } /* Style for #1, #2 */
         .channel-name { color: var(--osu-pink); font-size: 12px; font-weight: 600; }
-        .upload-date { color: var(--text-muted); font-size: 11px; }
+        .upload-date { color: var(--text-muted); font-size: 11px; margin-top: 4px; }
         
         iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
     </style>
@@ -61,11 +68,15 @@
 </header>
 
 <div class="feed-container">
-    <div class="section-header">
-        <span class="section-label">COMMUNITY SHOWCASE</span>
+    
+    <div class="controls-area">
+        <div class="stats-box" id="countDisplay">Loading...</div>
+        <div class="filter-buttons" id="filterContainer">
+            </div>
     </div>
+
     <div class="video-grid" id="videoGrid">
-        <div class="status-msg">Loading latest videos...</div>
+        <div class="status-msg">Fetching database...</div>
     </div>
 </div>
 
@@ -76,64 +87,102 @@
     menuBtn.onclick = (e) => { dropdown.classList.toggle("show"); e.stopPropagation(); };
     window.onclick = (e) => { if (!e.target.matches('.dropbtn')) dropdown.classList.remove('show'); };
 
-    // --- VIDEO LOADER ---
-    async function loadVideos() {
+    // --- GLOBAL VARS ---
+    let ALL_VIDEOS = [];
+
+    // --- MAIN FUNCTION ---
+    async function init() {
         const grid = document.getElementById('videoGrid');
         
         try {
-            // 1. Fetch the database from the correct path
+            // 1. Fetch
             const response = await fetch('data/video_database.json?t=' + Date.now());
-            if (!response.ok) throw new Error("Could not load database");
+            if (!response.ok) throw new Error("Database not found");
+            const data = await response.json();
             
-            const allVideos = await response.json();
-            
-                        // 2. FILTER: Only show videos where status is "Yes"
-            const visibleVideos = allVideos.filter(v => v.status === "Yes");
-            
-            if (visibleVideos.length === 0) {
-                grid.innerHTML = '<div class="status-msg">No videos found. Check back later!</div>';
-                return;
-            }
+            // 2. Filter out "Status: No" globally
+            ALL_VIDEOS = data.filter(v => !v.status || v.status.toLowerCase() === 'yes');
 
-            grid.innerHTML = ''; // Clear the "Loading" message
-
-                        visibleVideos.forEach(video => {
-                const card = document.createElement('div');
-                card.className = 'video-card';
-                
-                // 1. This defines the variable (Make sure this exists!)
-                const displayDate = (video.published === "2000-01-01" || !video.published) ? "Archived" : video.published;
-
-                card.innerHTML = `
-                    <div class="thumbnail-container" onclick="playVideo(this, '${video.id}')">
-                        <img src="https://img.youtube.com/vi/${video.id}/mqdefault.jpg" class="thumbnail-img" alt="${video.title}">
-                        <div class="play-icon"></div>
-                    </div>
-                    <div class="video-info">
-                        <div class="video-title">
-                            <span class="seq-badge">#${video.sequence}</span>${video.title}
-                        </div>
-                        <div class="channel-name">${video.channel}</div>
-                        <div class="upload-date">${displayDate}</div>
-                    </div>
-                `;
-                grid.appendChild(card);
-            });
+            // 3. Setup UI
+            setupFilters();
+            renderVideos('All'); // Show everything by default
 
         } catch (error) {
-            console.error(error);
-            grid.innerHTML = '<div class="status-msg">⚠️ Unable to load videos. Please refresh.</div>';
+            grid.innerHTML = `<div class="status-msg">⚠️ Error: ${error.message}</div>`;
         }
     }
 
-    // --- PLAY FUNCTION ---
+    // --- SETUP FILTERS ---
+    function setupFilters() {
+        const container = document.getElementById('filterContainer');
+        
+        // Get unique channel names
+        const channels = ['All', ...new Set(ALL_VIDEOS.map(v => v.channel))];
+
+        container.innerHTML = '';
+        channels.forEach(channel => {
+            const btn = document.createElement('button');
+            btn.className = 'filter-btn' + (channel === 'All' ? ' active' : '');
+            btn.textContent = channel;
+            btn.onclick = () => {
+                // Switch active class
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                renderVideos(channel);
+            };
+            container.appendChild(btn);
+        });
+    }
+
+    // --- RENDER VIDEOS ---
+    function renderVideos(filterChannel) {
+        const grid = document.getElementById('videoGrid');
+        const countDisplay = document.getElementById('countDisplay');
+        
+        // Filter logic
+        const videosToShow = (filterChannel === 'All') 
+            ? ALL_VIDEOS 
+            : ALL_VIDEOS.filter(v => v.channel === filterChannel);
+
+        // Update Count
+        countDisplay.innerHTML = `<span>${videosToShow.length}</span> Videos Available`;
+
+        if (videosToShow.length === 0) {
+            grid.innerHTML = '<div class="status-msg">No videos found for this filter.</div>';
+            return;
+        }
+
+        grid.innerHTML = ''; // Clear grid
+
+        videosToShow.forEach(video => {
+            const card = document.createElement('div');
+            card.className = 'video-card';
+            
+            const displayDate = (video.published === "2000-01-01" || !video.published) ? "Archived" : video.published;
+
+            card.innerHTML = `
+                <div class="thumbnail-container" onclick="playVideo(this, '${video.id}')">
+                    <img src="https://img.youtube.com/vi/${video.id}/mqdefault.jpg" class="thumbnail-img" alt="${video.title}">
+                    <div class="play-icon"></div>
+                </div>
+                <div class="video-info">
+                    <div class="video-title">${video.title || 'Untitled'}</div>
+                    <div class="channel-name">${video.channel}</div>
+                    <div class="upload-date">${displayDate}</div>
+                </div>
+            `;
+            grid.appendChild(card);
+        });
+    }
+
+    // --- PLAY HELPER ---
     function playVideo(container, videoId) {
         container.innerHTML = `<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
         container.onclick = null;
     }
 
-    // Start the process
-    loadVideos();
+    // Run!
+    init();
 </script>
 </body>
 </html>
