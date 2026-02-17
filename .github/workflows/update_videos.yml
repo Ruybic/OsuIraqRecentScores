@@ -35,23 +35,17 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           
-          # 1. Add changes first
           git add data/video_database.json
-          
-          # 2. "Stash" them temporarily to allow a clean pull
           git stash
           git pull origin main --rebase
-          
-          # 3. Pop the changes back in
           git stash pop || echo "No changes to pop"
           
-          # 4. Check for changes and push
           git add data/video_database.json
           if git diff --staged --quiet; then
             echo "No new video data found. Skipping push."
           else
             echo "New data detected! Committing changes..."
-            git commit -m "Update video feed: real dates & sequence"
+            git commit -m "Update video feed and stats"
             git push origin main
           fi
           
