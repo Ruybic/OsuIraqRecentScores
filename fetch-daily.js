@@ -8,7 +8,7 @@ const COUNTRY = "IQ";
 const MODE = "osu";
 
 // --- CONFIGURATION ---
-const PAGES_TO_SCAN = 4; // 4 pages = Top 200 players. 
+const PAGES_TO_SCAN = 10; // 10 pages = Top 500 players. 
 const MANUAL_USER_IDS = []; // Add specific IDs here (e.g. [123456, 789101]) to track them regardless of rank.
 const DELAY_BETWEEN_BATCHES = 1000; // 1 second pause to stay safe from API bans.
 
