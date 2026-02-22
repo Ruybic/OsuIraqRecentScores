@@ -1,0 +1,37 @@
+name: Fetch Daily Leaderboard
+on:
+  schedule:
+    # 18:00 UTC is 9:00 PM in Baghdad (UTC+3)
+    # This runs early enough to avoid the midnight score-fetching rush
+    - cron: '0 18 * * *' 
+  workflow_dispatch:
+
+jobs:
+  update-leaderboard:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install Dependencies
+        run: npm install node-fetch
+
+      - name: Run Leaderboard Fetcher
+        env:
+          OSU_CLIENT_ID: ${{ secrets.OSU_CLIENT_ID }}
+          OSU_CLIENT_SECRET: ${{ secrets.OSU_CLIENT_SECRET }}
+        run: node fetch_leaderboard.js
+
+      - name: Commit and Push
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add data/leaderboards/
+          git commit -m "📊 Update Daily Leaderboard [6PM UTC]" || exit 0
+          git push
+          
