@@ -147,25 +147,41 @@ const fmtTime = (s) => (s / 3600).toFixed(0) + 'h';
 
 async function fetchRankings() {
     try {
-        // 1. Get latest date from the dedicated leaderboard index
+        // 1. Get latest date from index
         const indexRes = await fetch('data/leaderboards/index.json?t=' + Date.now());
         const index = await indexRes.json();
+        
+        if (!index.available_dates || index.available_dates.length === 0) {
+            throw new Error("No dates available in index.json");
+        }
+
         const latestDate = index.available_dates[index.available_dates.length - 1];
         
-        // 2. Padding Fix for URLs
+        // 2. Remove padding (Converts "2026-02-22" to y:2026, m:2, d:22)
         const parts = latestDate.split('-');
         const y = parts[0];
-        const m = parts[1].padStart(2, '0');
-        const d = parts[2].padStart(2, '0');
+        const m = parseInt(parts[1], 10).toString(); 
+        const d = parseInt(parts[2], 10).toString();
         
-        // 3. Fetch data
-        const dataRes = await fetch(`data/leaderboards/${y}/${m}/${d}.json?t=` + Date.now());
+        // 3. Construct Path - Ensure this matches your repo folder case (data vs Data)
+        const finalPath = `data/leaderboards/${y}/${m}/${d}.json?t=` + Date.now();
+        console.log("Fetching data from:", finalPath);
+
+        const dataRes = await fetch(finalPath);
+        if (!dataRes.ok) {
+            throw new Error(`Data file not found at: ${finalPath}`);
+        }
+
         currentData = await dataRes.json();
+        renderList('pp'); 
         
-        renderList('pp'); // Initial Render
     } catch (e) {
-        console.error(e);
-        document.getElementById('leaderboardGrid').innerHTML = '<div class="loader">FAILED TO LOAD DATA. PLEASE TRY AGAIN LATER.</div>';
+        console.error("Fetch Error:", e);
+        document.getElementById('leaderboardGrid').innerHTML = `
+            <div class="loader" style="color: #ff4444;">
+                FAILED TO LOAD DATA<br>
+                <span style="font-size: 12px; color: #888;">${e.message}</span>
+            </div>`;
     }
 }
 
