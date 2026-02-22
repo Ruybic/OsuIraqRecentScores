@@ -7,11 +7,20 @@ const CLIENT_SECRET = process.env.OSU_CLIENT_SECRET;
 const COUNTRY = "IQ";
 const MODE = "osu";
 
-const PAGES_TO_SCAN = 10; // 10 pages * 50 = Top 500 players
+const PAGES_TO_SCAN = 10; 
 const DELAY = 800; 
 
 const sleep = (ms) => new Promise(res => setTimeout(res, ms));
-function today(){ return new Date().toISOString().split('T')[0]; }
+
+// --- FIXED DATE PADDING ---
+function getPaddedDate() {
+    const now = new Date();
+    const y = now.getFullYear();
+    const m = (now.getMonth() + 1).toString().padStart(2, '0');
+    const d = now.getDate().toString().padStart(2, '0');
+    return { y, m, d, full: `${y}-${m}-${d}` };
+}
+
 function mkdirp(dir){ if(!fs.existsSync(dir)) fs.mkdirSync(dir,{recursive:true}); }
 
 async function getToken(){
@@ -26,11 +35,11 @@ async function getToken(){
 async function main(){
   const token = await getToken();
   const headers = { Authorization: `Bearer ${token}` };
+  const dateInfo = getPaddedDate();
 
   console.log(`🏆 Fetching Top ${PAGES_TO_SCAN * 50} rankings for ${COUNTRY}...`);
   let baseRankings = [];
   
-  // 1. Fetch Leaderboard Pages
   for(let page = 1; page <= PAGES_TO_SCAN; page++) {
     try {
         const res = await fetch(`https://osu.ppy.sh/api/v2/rankings/${MODE}/performance?country=${COUNTRY}&cursor[page]=${page}`, {headers});
@@ -42,8 +51,7 @@ async function main(){
 
   const userIds = baseRankings.map(r => r.user.id);
 
-  // 2. Fetch Full User Stats (Medals & Last Visit) in batches of 50
-  console.log(`🏅 Fetching full stats (Medals/Activity) for ${userIds.length} users...`);
+  console.log(`🏅 Fetching full stats for ${userIds.length} users...`);
   const fullStatsMap = {};
   for (let i = 0; i < userIds.length; i += 50) {
       const batch = userIds.slice(i, i + 50);
@@ -63,25 +71,22 @@ async function main(){
       await sleep(DELAY);
   }
 
-  // 3. Calculate "Daily PP Gained" by cross-referencing today's scores json
-  const dateParts = today().split('-');
-  const todayScoresPath = path.join('data', dateParts[0], dateParts[1], dateParts[2] + '.json');
+  // Check Daily PP from the Scores JSON (using the same padded path)
+  const todayScoresPath = path.join('data', dateInfo.y.toString(), dateInfo.m, dateInfo.d + '.json');
   const userDailyPP = {};
   if (fs.existsSync(todayScoresPath)) {
       const dailyData = JSON.parse(fs.readFileSync(todayScoresPath));
       if (dailyData.scores) {
           dailyData.scores.forEach(s => {
               if (!userDailyPP[s.user_id]) userDailyPP[s.user_id] = 0;
-              userDailyPP[s.user_id] += s.pp; // Summing raw PP gained today
+              userDailyPP[s.user_id] += s.pp;
           });
       }
   }
 
-  // 4. Fetch the #1 Top Play for each user
-  console.log(`🔥 Fetching #1 Top Plays...`);
+  console.log(`🔥 Fetching Top Plays and Grade Counts...`);
   const finalLeaderboard = [];
   
-  // Using batches of 10 to stay within API limits safely
   for (let i = 0; i < baseRankings.length; i += 10) {
       const batch = baseRankings.slice(i, i + 10);
       const promises = batch.map(async (player) => {
@@ -104,9 +109,14 @@ async function main(){
           } catch(e) {}
 
           const fullStats = fullStatsMap[player.user.id] || { medals: 0, last_visit: new Date(0).toISOString() };
+          
+          // --- GRADE LOGIC: Combine Normal + Hidden grades ---
+          const g = player.grade_counts;
+          const totalSS = (g.ss || 0) + (g.ssh || 0);
+          const totalS = (g.s || 0) + (g.sh || 0);
 
           return {
-              rank: player.global_rank, // Or just use index + 1 for country rank
+              rank: player.global_rank,
               id: player.user.id,
               user: player.user.username,
               avatar: player.user.avatar_url,
@@ -116,7 +126,8 @@ async function main(){
               play_time: player.play_time,
               total_score: player.total_score,
               total_hits: player.total_hits,
-              a_ranks: player.grade_counts ? player.grade_counts.a : 0,
+              ss_count: totalSS, // NEW
+              s_count: totalS,   // NEW
               medals: fullStats.medals,
               last_active: fullStats.last_visit,
               daily_pp: userDailyPP[player.user.id] || 0,
@@ -129,23 +140,21 @@ async function main(){
       await sleep(DELAY);
   }
 
-  // 5. Save the data
-  const dir = path.join('data', 'leaderboards', dateParts[0], dateParts[1]);
+  // --- SAVE WITH PADDED FOLDERS ---
+  const dir = path.join('data', 'leaderboards', dateInfo.y.toString(), dateInfo.m);
   mkdirp(dir);
-  fs.writeFileSync(path.join(dir, dateParts[2] + '.json'), JSON.stringify(finalLeaderboard, null, 2));
+  fs.writeFileSync(path.join(dir, dateInfo.d + '.json'), JSON.stringify(finalLeaderboard, null, 2));
 
-  // Update leaderboard index
   const indexFile = path.join('data', 'leaderboards', 'index.json');
   let indexData = { available_dates: [] };
   if(fs.existsSync(indexFile)) indexData = JSON.parse(fs.readFileSync(indexFile));
-  if(!indexData.available_dates.includes(today())) {
-      indexData.available_dates.push(today());
+  if(!indexData.available_dates.includes(dateInfo.full)) {
+      indexData.available_dates.push(dateInfo.full);
       indexData.available_dates.sort();
       fs.writeFileSync(indexFile, JSON.stringify(indexData, null, 2));
   }
 
-  console.log(`✅ Saved ${finalLeaderboard.length} users to Leaderboard!`);
+  console.log(`✅ Saved ${finalLeaderboard.length} users to /${dateInfo.y}/${dateInfo.m}/${dateInfo.d}.json`);
 }
 
 main();
-            
